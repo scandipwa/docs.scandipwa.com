@@ -1,0 +1,18 @@
+.BurgerButon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 20px;
+    height: 30px;
+    margin: auto;
+    align-self: center;
+    padding-top: 6px;
+}
+
+.BurgerButton-Line {
+    width: 100%;
+    height: 3px;
+    background-color: #ef6423;
+    border-radius: 5px;
+    margin-bottom: 4px;
+}
