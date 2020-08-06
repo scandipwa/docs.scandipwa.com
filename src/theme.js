@@ -15,7 +15,8 @@ const colors = {
   lighter: '#373940', // light blue
   dark: '#282c34', // dark blue
   darker: '#20232a', // really dark blue
-  brand: '#ef6423', // orange
+  // brand: '#ef6423', // orange
+  brand: '#fff', // orange
   brandLight: '#DEAD97',
   text: '#1a1a1a', // very dark grey / black substitute
   subtle: '#6d6d6d', // light grey for text
