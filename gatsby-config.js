@@ -17,12 +17,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-source-react-error-codes',
-    'gatsby-transformer-authors-yaml',
     'gatsby-transformer-home-example-code',
-    'gatsby-transformer-versions-yaml',
-    'gatsby-plugin-netlify',
     'gatsby-plugin-glamor',
-    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
@@ -49,14 +45,14 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-code-buttons',
-          options: {
-            buttonClass: `customButtonClass`,
-            buttonText: `Copy`,
-            toasterClass: `customToasterClass`,
-            toasterTextClass: `customToasterTextClass`,
-            toasterText: 'Copied',
-            svgIcon: ``,
-          }
+            options: {
+              buttonClass: `customButtonClass`,
+              buttonText: `Copy`,
+              toasterClass: `customToasterClass`,
+              toasterTextClass: `customToasterTextClass`,
+              toasterText: 'Copied',
+              svgIcon: ``,
+            }
           },
           'gatsby-remark-responsive-iframe',
           {
@@ -79,7 +75,6 @@ module.exports = {
         ],
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
