@@ -73,7 +73,7 @@
     "start": "yarn dev"
   },
   "devDependencies": {
-    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-flow": "^7.9.0",
     "eslint-config-prettier": "^2.6.0",
     "gh-pages": "^3.1.0",
     "lz-string": "^1.4.4",
