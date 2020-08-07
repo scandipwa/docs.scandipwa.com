@@ -81,7 +81,9 @@ This document is an addition to the video tutorial above. You are welcome to wat
 
 2. In there, you should create a class `ComponentNamePlugin`, its members are meant to wrap around the `SampleClass` members and be ran instead of the original members. It is essential that wrapper members must be arrow functions, otherwise your plugin's context will not be available from inside of them.
 
->**Note: It is recommended to stick to the naming convention regarding the arguments of these functions.**
+>**Note**:
+>
+> It is recommended to stick to the naming convention regarding the arguments of these functions.
 
 Each member which wraps around a **_function_** has the following arguments.
 - `args` is an array of original arguments that are passed to the function this one is wrapped around.
@@ -151,7 +153,9 @@ const classWrapper = (Class) => {
 
 - Optional: a position, in which this plugin will be called. **Defaults to 100**. There may be multiple plugins for a single member if there are several extensions active in the application. The closer the position to 0 - the sooner it is called. The higher a position - the later. Non-unique.
 
-> **Note: you can create class members that do not exist in the original classes and they will be called as you'd expect writing them directly in the class**
+> **Note**:
+>
+> you can create class members that do not exist in the original classes and they will be called as you'd expect writing them directly in the class
 
 Configuration should follow this format:
 

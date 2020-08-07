@@ -322,6 +322,7 @@ const sharedStyles = {
     },
 
     '& h3': {
+      marginBottom: 20,
       '::before': {
         content: ' ',
         display: 'block',

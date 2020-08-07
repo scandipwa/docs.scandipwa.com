@@ -22,14 +22,21 @@ class DocSearch extends Component<{}, State> {
     // eslint-disable-next-line no-undef
     if (window.docsearch) {
       window.docsearch({
-        apiKey: '36221914cce388c46d0420343e0bb32e',
-        indexName: 'react',
+        apiKey: 'e0afafc71f35e994ea7ccadc350779bc',
+        appId: 'CBK9UYL4P2',
+        indexName: 'Documentation',
         inputSelector: '#algolia-doc-search',
       });
     } else {
       console.warn('Search has failed to load and now is being disabled');
       this.setState({enabled: false});
     }
+    console.log(window.docsearch({
+      apiKey: 'e0afafc71f35e994ea7ccadc350779bc',
+      appId: 'CBK9UYL4P2',
+      indexName: 'Documentation',
+      inputSelector: '#algolia-doc-search',
+    }))
   }
 
   render() {

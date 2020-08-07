@@ -67,6 +67,8 @@
       title: Postman & GraphQL Playground
     - id: vsc-extensions
       title: VSCode Extensions
+    - id: plugin-mechanism
+      title: ScandiPWA plugins
     - id: eslint-stylelint
       title: ESlint & StyleLint
     - id: contribute

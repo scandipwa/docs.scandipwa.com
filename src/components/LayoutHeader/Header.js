@@ -124,7 +124,7 @@ const Header = ({location}: {location: Location}) => (
           ))}
         </nav> */}
 
-        {/* <DocSearch /> */}
+        
 
         <div
           css={{
@@ -140,6 +140,7 @@ const Header = ({location}: {location: Location}) => (
             width: 'calc(100% / 4)',
             },
           }}>
+            {/* <DocSearch /> */}
           {/* <Link
             css={{
               padding: '5px 10px',
