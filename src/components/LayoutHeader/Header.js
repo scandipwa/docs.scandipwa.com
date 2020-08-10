@@ -13,6 +13,7 @@ import {colors, fonts, media} from 'theme';
 // import {version} from 'site-constants';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
 // import DocSearch from './DocSearch';
+import { Search } from './../Search/Search'
 
 // $FlowFixMe
 // import navHeader from '../../../content/headerNav.yml';
@@ -68,7 +69,7 @@ const Header = ({location}: {location: Location}) => (
               flex: '0 0 auto',
             },
           }}
-          to="/docs/linux.html">
+          to="/">
           {/* <img src={logoSvg} alt="" width="150" /> */}
           <div css={{paddingTop: 20}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="170" height="100%" viewBox="0 0 206 50">
@@ -141,6 +142,7 @@ const Header = ({location}: {location: Location}) => (
             },
           }}>
             {/* <DocSearch /> */}
+            <Search />
           {/* <Link
             css={{
               padding: '5px 10px',
@@ -186,7 +188,7 @@ const Header = ({location}: {location: Location}) => (
               //   display: 'none',
               // },
             }}
-            href="https://github.com/scandipwa/scandipwa.github.io/"
+            href="https://github.com/scandipwa/docs.scandipwa.com/"
             target="_blank"
             rel="noopener">
             GitHub
