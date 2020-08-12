@@ -17,17 +17,8 @@
     position: relative;
     background-color: #ddd;
     border-right: 3px solid #ef6423;
-    margin-left: 33px;
+    margin-left: 3px;
 }
-
-/* .resultHit:hover::before {
-    content: '';
-    position: absolute;
-    background-color: #ef6423;
-    height: 40%;
-    width: 3px;
-    right: 0;
-} */
 
 .resultLink:hover {
     text-decoration: underline;
