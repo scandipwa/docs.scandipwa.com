@@ -13,7 +13,7 @@ import {colors, fonts, media} from 'theme';
 // import {version} from 'site-constants';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
 // import DocSearch from './DocSearch';
-import { Search } from './../Search/Search'
+import Search from './../Search/Search';
 
 // $FlowFixMe
 // import navHeader from '../../../content/headerNav.yml';
@@ -142,7 +142,8 @@ const Header = ({location}: {location: Location}) => (
             },
           }}>
             {/* <DocSearch /> */}
-            <Search />
+            <Search indices={[{name: 'Pages'}]} />
+
           {/* <Link
             css={{
               padding: '5px 10px',
@@ -168,7 +169,7 @@ const Header = ({location}: {location: Location}) => (
           </Link> */}
 
           <a
-            css={{
+            css={{ 
               padding: '5px 10px',
               marginLeft: 10,
               whiteSpace: 'nowrap',
