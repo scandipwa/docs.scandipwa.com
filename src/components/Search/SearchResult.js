@@ -1,5 +1,4 @@
 import { default as React } from "react"
-import { useState, useEffect } from "react"
 import { media } from 'theme'
 import {
     Index,
@@ -57,8 +56,8 @@ const HitsInIndex = ({ index, query, hits }) => (
                     className="resultHit"
                     style={{
                         display: 'grid',
-                        gridTemplateColumns: '37% 60%',
-                        gridGap: '3%',
+                        gridTemplateColumns: '37% 61%',
+                        gridGap: '2%',
                         margin: '10px 0',
                     }}>
                     <a href={getLink(hit.title)} onClick={onLink(getLink(hit.title))} >
@@ -117,9 +116,9 @@ const HitsIn = connectHits(HitsOrAbsence)
 
 const SearchResult = ({ indices, show, query }) => {
 
-    if (!show) {
-        return null
-    }
+    // if (!show) {
+        // return null
+    // }
 
     return (
         <div

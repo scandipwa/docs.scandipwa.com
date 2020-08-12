@@ -9,15 +9,26 @@
 }
 
 .resultHit {
+    position: relative;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
 .resultHit:hover {
-    position: relative;
     background-color: #ddd;
-    border-right: 3px solid #ef6423;
-    margin-left: 3px;
+    /* border-right: 3px solid #ef6423; */
+}
+.resultHit:hover:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 3px;
+    background-color: #ef6423;
+    right: 0;
+}
+
+.resultLink {
+    padding-right: 10px;
 }
 
 .resultLink:hover {
