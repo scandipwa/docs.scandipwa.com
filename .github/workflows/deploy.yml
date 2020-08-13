@@ -6,13 +6,15 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout repository
+        uses: actions/checkout@v2
         with:
           ssh-key: {{ secrets.key }}
-      - uses: actions/setup-node@v2-beta
+      - name: set up node 12
+        uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
       - name: Install dependencies
