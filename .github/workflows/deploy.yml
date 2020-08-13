@@ -12,7 +12,7 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
         with:
-          ssh-key: {{ secrets.key }}
+          ssh-key: ${{ secrets.key }}
       - name: set up node 12
         uses: actions/setup-node@v2-beta
         with:
