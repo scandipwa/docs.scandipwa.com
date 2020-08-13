@@ -24,7 +24,7 @@ export default connectSearchBox(
             setTimeout(() => {
                 setQuery('')
                 setFieldValue('')
-            }, 500)
+            }, 300)
         }
 
         return (

@@ -43,8 +43,9 @@ const HitsInIndex = ({ hits }) => {
     const upPress = useKeyPress("ArrowUp");
     const enterPress = useKeyPress("Enter");
     const tabPress = useKeyPress("Tab");
-    const [cursor, setCursor] = useState(0);
+    const [cursor, setCursor] = useState(5);
     const [activeLinkUrl, setActiveLinkUrl] = useState('')
+    const [mouseIn, setMouseIn] = useState(false)
     let quantity = null;
 
     useEffect(() => {
@@ -65,6 +66,15 @@ const HitsInIndex = ({ hits }) => {
         }
     }, [enterPress, tabPress])
 
+    const handleMouseEnter = () => {
+        setMouseIn(true)
+    }
+
+    const handleMouseLeave = () => {
+        setMouseIn(false)
+        setCursor(5)
+        setActiveLinkUrl('')
+    }
 
 
 
@@ -94,20 +104,20 @@ const HitsInIndex = ({ hits }) => {
                 </h2>
             </div>
             <div>
-                <div>
+                <div
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
                     {hits.filter((hit, i) => hit.title !== 'Page Not Found' && i < 5).map((hit, i) => {
-                        quantity = i
+                        quantity = i + 1
 
                         if (i === 0 && !activeLinkUrl) setActiveLinkUrl(hit.slug)
                         else if (i === cursor && activeLinkUrl !== hit.slug) setActiveLinkUrl(hit.slug)
 
-
-
                         return (
-                            <a key={i}href={hit.slug} >
+                            <a key={i} href={hit.slug} >
                                 <div
-
-                                    className={`resultHit ${i === cursor ? "active" : ""}`}
+                                    className={`resultHit ${( i === cursor && !mouseIn ) ? "active" : "" }`}
                                     style={{
                                         display: 'grid',
                                         gridTemplateColumns: '37% 61%',
@@ -198,8 +208,10 @@ const SearchResult = ({ indices, show, query }) => {
                 [media.lessThan('large')]: {
                     width: 450,
                 },
-                [media.lessThan('medium')]: {
-                    width: 350,
+                [media.lessThan('small')]: {
+                    position: 'fixed',
+                    top: '40px',
+                    width: '100%'
                 },
             }}
         >
