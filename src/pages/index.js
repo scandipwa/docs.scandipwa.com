@@ -167,7 +167,7 @@ class Home extends Component {
                       </a>
                     <CtaItem>
                       <ButtonLink
-                        to="./docs/linux.html"
+                        to="/docs/linux.html"
                         type="primary">
                         Let`s Get Started
                       </ButtonLink>
