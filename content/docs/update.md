@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Upgrading to the latest version
+title: Theme Upgrade to the latest version
 description: We make ScandiPWA better each day and this is a way to get the best version available.
 
 # Micro navigation

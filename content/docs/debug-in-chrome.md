@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: How to Debug ScandiPWA in Chrome
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: This guide is for learning <b>How to Debug ScandiPWA in Chrome</b>.
 
 # Micro navigation
 micro_nav:

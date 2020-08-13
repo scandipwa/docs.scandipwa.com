@@ -6,6 +6,7 @@ comments: false
 
 # Hero section
 title: FAQ about installation
+description: Here you can find solutions about installation
 
 # Micro navigation
 micro_nav:
@@ -573,7 +574,7 @@ Resolve it by running the following commands:
 
 ```bash
 $ composer update
-$ docker-composer up
+$ docker-compose up
 ```
 
 ## How to add scandipwa-ca.pem into keychain for Ubuntu for base installation?

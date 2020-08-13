@@ -3,6 +3,7 @@ import { createRef, default as React, useState } from "react"
 import { InstantSearch } from "react-instantsearch-dom"
 import SearchBox from "./SearchBox"
 import SearchResult from "./SearchResult"
+import SearchResultTitles from "./SearchResultTitles"
 import useClickOutside from "./useClickOutside"
 
 export default function Search({ indices }) {
@@ -35,7 +36,7 @@ export default function Search({ indices }) {
                     setFocus={setFocus}
                     onFocus={() => setFocus(true)}
                     hasFocus={hasFocus} />
-                <SearchResult
+                <SearchResultTitles
                     query={query}
                     show={!!query}
                     indices={indices}

@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: Rewriting and extending theme
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: How to rewrite and extend the theme.
 
 # Micro navigation
 micro_nav:

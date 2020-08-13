@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Granular (identity) caching
+title: Implementing Caching for New Caching Identities
 description: How to implement cache identities, for granular data caching!
 
 # Micro navigation

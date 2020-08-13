@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Useful CLI commands
+title: CLI in Docker
 description: The data is passed through the application constantly. Multiple application parts are responsible for this data processing. Learn the main actors, data-pipes and conditions in this guide!
 
 # Micro navigation

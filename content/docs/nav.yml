@@ -5,7 +5,7 @@
     - id: mac
       title: MacOs
     - id: with-remote-m2
-      title: Remote Magento Instance 
+      title: Remote Magento Instance
     - id: update
       title: Theme Upgrade
 - title: A to Z Overview
@@ -51,6 +51,8 @@
       title: Data Flow
     - id: technology-stack
       title: Technology Stack
+    - id: configuration
+      title: Changing environment
     - id: build-and-configuration
       title: Theme Build and Configuration
     - id: caching
@@ -79,6 +81,8 @@
       title: Installation on Existing Magento 2 Server
     - id: coding-standard
       title: BEM and Coding Standards
+    - id: tools
+      title: Tools of ScandiPWA
     - id: react-best-practices
       title: React Best Practices
     - id: best-practices-styles

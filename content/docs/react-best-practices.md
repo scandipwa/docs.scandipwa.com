@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: React Best Practices
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: Learn the best React practices in this guide.
 
 # Micro navigation
 micro_nav:

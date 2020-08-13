@@ -215,8 +215,8 @@ class Home extends Component {
                         </ul>
                       <li css={{fontSize: 20}}>FAQ</li>
                         <ul>
-                          <li><a href="./docs/development.html">Installation</a></li>
-                          <li><a href="./docs/installing.html">Development</a></li>
+                          <li><a href="./docs/installing.html">Installation</a></li>
+                          <li><a href="./docs/development.html">Development</a></li>
                           <li><a href="./docs/billing-and-license.html">Billing and license</a></li>
                           <li><a href="./docs/product-support.html">Product support</a></li>
                           <li><a href="./docs/what-is-pwa.html">What is PWA</a></li>
@@ -232,6 +232,7 @@ class Home extends Component {
                           <li><a href="./docs/file-structure.html">File Structure</a></li>
                           <li><a href="./docs/data-flow.html">Data Flow</a></li>
                           <li><a href="./docs/technology-stack.html">Technology Stack</a></li>
+                          <li><a href="./docs/configuration.html">Changing environment</a></li>
                           <li><a href="./docs/build-and-configuration.html">Theme Build and Configuration</a></li>
                           <li><a href="./docs/caching.html">Implementing Caching for New Caching Identities</a></li>
                         </ul>
@@ -248,6 +249,7 @@ class Home extends Component {
                           <li><a href="./docs/migrate-newer-version.html">Migrating to a Newer Version</a></li>
                           <li><a href="./docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li>
                           <li><a href="./docs/coding-standard.html">BEM and Coding Standards</a></li>
+                          <li><a href="./docs/tools.html">Tools of ScandiPWA</a></li>
                           <li><a href="./docs/react-best-practices.html">React Best Practices</a></li>
                           <li><a href="./docs/best-practices-styles.html">Best Practices Working with Styles</a></li>
                         </ul>

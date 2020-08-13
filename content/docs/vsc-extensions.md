@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: How to use VSCode Extensions
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: Learn how to use VSCode Extensions.
 
 # Micro navigation
 micro_nav:

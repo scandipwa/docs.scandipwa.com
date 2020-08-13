@@ -6,6 +6,7 @@ comments: false
 
 # Hero section
 title: What is PWA?
+description: This guide tells about what is PWA.
 
 # Micro navigation
 micro_nav:

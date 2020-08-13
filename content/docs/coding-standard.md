@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Coding Standard
+title: BEM and Coding Standards
 description: Strict coding guidelines allow for more readable consistent code. Learn BEM, coding-style & more!
 
 # Micro navigation

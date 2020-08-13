@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: Best Practices Working with Styles
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+title: Best Practices Working With Styles
+description: In this guide you`ll be provided with the best <b> working with styles - practices</b>.
 
 # Micro navigation
 micro_nav:

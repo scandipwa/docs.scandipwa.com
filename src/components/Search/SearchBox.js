@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useRef } from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
 import './Search.css'
 import search from "./../../images/search.png"
@@ -15,6 +15,7 @@ export default connectSearchBox(
         }
 
         const inputRef = useRef();
+
         const focusInput = () => {
             inputRef.current.focus()
         }

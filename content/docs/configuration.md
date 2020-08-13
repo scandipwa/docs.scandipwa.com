@@ -28,9 +28,9 @@ page_nav:
 All service versions are stored and taken from variables, independently configurable for each environment.
 For global changes in services (enable, disable, add), you should edit `docker-compose.yml`.
 
-For specific environment edits, like port mapping, file sharing etc, you should not edit `docker-compose.yml`, and 
+For specific environment edits, like port mapping, file sharing etc, you should not edit `docker-compose.yml`, and
 work on environment specific overwrites, eg: `docker-compose.local.yml`.
-See [Template structure overview](/docker/02-structure-overview.md) for more details.
+<!-- See [Template structure overview](/docker/02-structure-overview.md) for more details. -->
 
 Two types of variable configuration is used:
 

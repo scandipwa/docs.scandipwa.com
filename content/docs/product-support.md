@@ -6,6 +6,7 @@ comments: false
 
 # Hero section
 title: FAQ product support
+description: Find the solution of product support issues here.
 
 # Micro navigation
 micro_nav:

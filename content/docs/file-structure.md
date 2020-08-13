@@ -45,7 +45,7 @@ Because the ScandiPWA is compiled to a valid Magento 2 theme, it must follow [Ma
 
 > **Note**:
 >
-> initially `Magento_Theme` folder is empty. You have to compile the application - see the [FAQ](/docs/installing.html?id=luma-theme-is-displayed).
+> initially `Magento_Theme` folder is empty. You have to compile the application - see the [FAQ](/docs/installation.html?id=luma-theme-is-displayed).
 
 <!-- doesn`t links to luma-theme-is-displayed -->
 

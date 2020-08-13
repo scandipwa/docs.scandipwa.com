@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: File structure and UI components
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: Learn the file structure and UI components.
 
 # Micro navigation
 micro_nav:

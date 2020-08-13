@@ -6,6 +6,15 @@
 .searchResult {
     scrollbar-width: none;
     -ms-overflow-style: none;
+    border-radius: 5px;
+}
+
+.FoundIn {
+    padding: 10px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #282c34;
 }
 
 .resultHit {
@@ -14,9 +23,17 @@
     padding-bottom: 5px;
 }
 
+.resultHit::before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 1px;
+    background-color: #999;
+    left: 37%;
+}
+
 .resultHit:hover {
     background-color: #ddd;
-    /* border-right: 3px solid #ef6423; */
 }
 .resultHit:hover:after {
     position: absolute;
@@ -42,6 +59,19 @@
     border: none;
     background-color: transparent;
     color: #fff;
+}
+
+.active {
+    background-color: #ddd;
+}
+
+.active::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 3px;
+    background-color: #ef6423;
+    right: 0;
 }
 
 .searchInput:focus {

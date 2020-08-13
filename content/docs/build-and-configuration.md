@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: How to Work With Theme Build and Configuration 
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+title: Theme Build and Configuration
+description: In this guide is explained how to <b>Work With Theme Build and Configuration</b>.
 
 # Micro navigation
 micro_nav:

@@ -6,6 +6,7 @@ comments: false
 
 # Hero section
 title: FAQ about development
+description: Resolve your development issue in this FAQ.
 
 # Micro navigation
 micro_nav:

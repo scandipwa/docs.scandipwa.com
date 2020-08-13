@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: How to Contribute
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: How to contribute? Find out here.
 
 # Micro navigation
 micro_nav:

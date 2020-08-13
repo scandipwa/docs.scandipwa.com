@@ -8,7 +8,6 @@ redirect_from:
   - "docs/index.html"
   - "docs/getting-started-ko-KR.html"
   - "docs/getting-started-zh-CN.html"
-  - "docs/installation.html"
   - "download.html"
   - "downloads.html"
   - "docs/try-react.html"

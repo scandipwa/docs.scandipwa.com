@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: How to Set Up ScandiPWA Frontend
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+title: ScandiPWA Frontend Set Up
+description: This guide will lead you through setting up ScandiPWA Frontend.
 
 # Micro navigation
 micro_nav:

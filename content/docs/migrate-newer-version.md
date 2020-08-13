@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: How to Migrate to a Newer Version
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+description: How t migrate to a Newer Version of ScandiPWA.
 
 # Micro navigation
 micro_nav:

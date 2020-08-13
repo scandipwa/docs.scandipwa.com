@@ -15,6 +15,7 @@ const pageQuery = `{
         id
         frontmatter {
           title
+          description
         }
         headings {
             value

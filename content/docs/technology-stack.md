@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: How to Work with the ScandiPWA Technology Stack
-description: This guide is for setting up on Linux machines. This guide is meant for <b>local installation only</b>.
+title: Work with the ScandiPWA Technology Stack
+description: learn how to Work with the ScandiPWA Technology Stack.
 
 # Micro navigation
 micro_nav:

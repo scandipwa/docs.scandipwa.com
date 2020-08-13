@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Xdebug
+title: Configuring XDebug
 description: Learn how to configure and use the most powerful debugger for PHP!
 
 # Micro navigation

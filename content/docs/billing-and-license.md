@@ -5,7 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: FAQ about billing and license
+title: Billing and license
+description: An article about Billing and license
 
 # Micro navigation
 micro_nav:
