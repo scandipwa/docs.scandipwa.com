@@ -9,8 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: fregante/setup-git-token@v1
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.token }}
+      - uses: fregante/setup-git-token@v1
         with:
           name: Maksim
           email: zmoaty10@gmail.com
