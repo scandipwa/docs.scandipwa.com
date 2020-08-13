@@ -9,8 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: actions/checkout@v2
         with:
-          access-token: ${{ secrets.key }}
-          deploy-branch: gh-pages
+          ssh-key: {{ secrets.key }}
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: Install dependencies
+        run: yarn
+      - name: Deploy website on Github Pages
+        run: yarn deploy
