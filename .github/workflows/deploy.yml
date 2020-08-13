@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: '12'
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn
+          yarn upgrade --depth 5 @babel/preset-env
+          yarn upgrade --depth 5 @babel/compat-data
       - name: Deploy website on Github Pages
         run: yarn deploy
