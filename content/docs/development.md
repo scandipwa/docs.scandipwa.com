@@ -140,3 +140,15 @@ You should develop using [ScandiPWA plugin mechanism](http://docs.scandipwa.com/
 3. Utilizes custom Cache entity (singleton), to gather all entities, that were loaded during current request.
 4. Flush happens based on default cache_flush events for most entities.
 5. CMS pages has own event observers to track response/flush.
+
+## Don't see src folder changes immediatelly on update
+
+Make sure -f docker-compose.local.yml is included
+
+## Copying /abstract/_icons.scss file in custom pwa folder and changing menu icon didn't affect to the site.
+
+Replace main.scss and replace it. After import original files from vendor and your custom file.
+
+## Content is not appearing on fronted after installing ScandiPWA in running Magento instance
+
+Your server is not configured to execute PHP. Configure web server property.
