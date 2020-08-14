@@ -605,3 +605,32 @@ The problem is that the port is already in use. Make sure to stop all other serv
 ## How to setup crons to allow the GraphQL queries when front-end is running on a different domain?
 
 Follow [the remote Magento 2 installation guide](./with-remote-m2.html).
+
+## Error during installation upon first bootstrap
+
+Enter the container inapp bash and run the following command:
+
+```bash
+magento se:un
+```
+
+After that re-create the stack.
+
+## Directory /var/www/public/app/design/frontend/Scandiweb/pwa folder is completely empty
+
+In order to resolve this run the following command:
+
+```bash
+php bin/magento scandipwa:theme:bootstrap Scandiweb/pwa
+```
+
+After that:
+1. Shut down all the docker instances and start the up without frontend one
+2. Wait docker instances come up and then 
+3. Start the frontend one
+
+## Can I install ScandiPWA on Debian?
+
+Windows is not supporting symlinks. You can simply copy file instead of symlinking.
+
+Make sure that .env and .application are present in your project directory.
