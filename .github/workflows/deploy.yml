@@ -15,6 +15,10 @@ jobs:
           persist-credentials: false
           token: ${{ secrets.token }}
 
+      - uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.token }}
+
       - name: set up node 12
         uses: actions/setup-node@v2-beta
         with:
