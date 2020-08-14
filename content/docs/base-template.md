@@ -296,3 +296,4 @@ The styles of this element can be found in `src/app/component/Popup`.
 ## Loaders
 
 The styles of this element can be found in `src/app/component/Loader`.
+
