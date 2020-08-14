@@ -43,7 +43,7 @@ const HitsInIndex = ({ hits }) => {
     const upPress = useKeyPress("ArrowUp");
     const enterPress = useKeyPress("Enter");
     const tabPress = useKeyPress("Tab");
-    const [cursor, setCursor] = useState(5);
+    const [cursor, setCursor] = useState(0);
     const [activeLinkUrl, setActiveLinkUrl] = useState('')
     const [mouseIn, setMouseIn] = useState(false)
     let quantity = null;
@@ -62,7 +62,9 @@ const HitsInIndex = ({ hits }) => {
 
     useEffect(() => {
         if (activeLinkUrl && (enterPress || tabPress)) {
-            window.location.href = activeLinkUrl
+            cursor === quantity
+                ? window.location.href = hits[0].slug
+                : window.location.href = activeLinkUrl
         }
     }, [enterPress, tabPress])
 
@@ -75,7 +77,6 @@ const HitsInIndex = ({ hits }) => {
         setCursor(5)
         setActiveLinkUrl('')
     }
-
 
 
     const getShortDescription = (description) => {
@@ -94,7 +95,6 @@ const HitsInIndex = ({ hits }) => {
         }
         return description
     }
-
 
     return (
         <>
@@ -117,7 +117,7 @@ const HitsInIndex = ({ hits }) => {
                         return (
                             <a key={i} href={hit.slug} >
                                 <div
-                                    className={`resultHit ${( i === cursor && !mouseIn ) ? "active" : "" }`}
+                                    className={`resultHit ${(i === cursor && !mouseIn) ? "active" : ""}`}
                                     style={{
                                         display: 'grid',
                                         gridTemplateColumns: '37% 61%',
