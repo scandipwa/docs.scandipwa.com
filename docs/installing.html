@@ -58,7 +58,7 @@
 <p>The wrong version of elastic-search is installed. This might happen after migration to 2.14.0 from versions bellow. Try following:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="52069432778167430000"
+              data-toaster-id="20565933931360215000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -67,7 +67,7 @@
 docker volume ls | grep elasticsearch-data # lookup your project elastic-search volume
 docker volume rm <YOUR_VOLUME_NAME> # remove the old volume
 dcf pull # pull latest images, should include latest start.sh which sets M2 to right ES version
-dcf up -d # start the stack again`, `52069432778167430000`)"
+dcf up -d # start the stack again`, `20565933931360215000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -85,12 +85,12 @@ dcf up -d <span class="token comment"># start the stack again</span></code></pre
 <p>The <code class="gatsby-code-text">elasticsearch</code> is might not be working. The reason of problems above can be seen in the logs of application container, to see the logs, use:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="3796897580321689600"
+              data-toaster-id="5333886407889654000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`docker-compose logs -f app`, `3796897580321689600`)"
+              onClick="copyToClipboard(`docker-compose logs -f app`, `5333886407889654000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -103,12 +103,12 @@ dcf up -d <span class="token comment"># start the stack again</span></code></pre
 <p>There you will see the message saying “indexer is not available”. The <strong>elasticsearch</strong> is an indexer of Magento 2 (by our configuration). Make sure this container (the container will be named <code class="gatsby-code-text">scandipwa-base_elasticsearch_1</code>) is <code class="gatsby-code-text">up</code>:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="55945325074662100000"
+              data-toaster-id="32372551218983035000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`docker-compose ps`, `55945325074662100000`)"
+              onClick="copyToClipboard(`docker-compose ps`, `32372551218983035000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -121,12 +121,12 @@ dcf up -d <span class="token comment"># start the stack again</span></code></pre
 <p>If <code class="gatsby-code-text">elasticsearch</code> is showing <code class="gatsby-code-text">stopped</code> status, then it is down and must be restarted. But there must be a reason of elasticsearch stop. Check the logs of this container:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="54556573050365940000"
+              data-toaster-id="97682436062535470000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`docker-compose logs -f elasticsearch`, `54556573050365940000`)"
+              onClick="copyToClipboard(`docker-compose logs -f elasticsearch`, `97682436062535470000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -140,12 +140,12 @@ dcf up -d <span class="token comment"># start the stack again</span></code></pre
 <p>On your <strong>host</strong> machine, execute following command:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="77655324450158460000"
+              data-toaster-id="91669896355979030000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`sudo sysctl -w vm.max_map_count=262144 # for too low \`max_map_count\``, `77655324450158460000`)"
+              onClick="copyToClipboard(`sudo sysctl -w vm.max_map_count=262144 # for too low \`max_map_count\``, `91669896355979030000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -162,12 +162,12 @@ dcf up -d <span class="token comment"># start the stack again</span></code></pre
 <p>After this, you can restart the <code class="gatsby-code-text">elasticsearch</code> container. To do it:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="80808264190389490000"
+              data-toaster-id="42290812590793300000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`docker-compose restart elasticsearch`, `80808264190389490000`)"
+              onClick="copyToClipboard(`docker-compose restart elasticsearch`, `42290812590793300000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -188,7 +188,7 @@ dcf up -d <span class="token comment"># start the stack again</span></code></pre
 <p>Sometimes the nginx can not find <code class="gatsby-code-text">varnish</code> host. Execute following commands:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="57907457471548790000"
+              data-toaster-id="49486219522162060000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -199,7 +199,7 @@ dc restart varnish
 
 # without aliases (not recommended)
 docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml restart nginx ssl-term
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml restart varnish`, `57907457471548790000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml restart varnish`, `49486219522162060000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -219,7 +219,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>Execute following commands:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="86325651692270620000"
+              data-toaster-id="44246952406202400000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -228,7 +228,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 dc restart varnish
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml restart varnish`, `86325651692270620000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml restart varnish`, `44246952406202400000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -246,12 +246,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>First, check if the <code class="gatsby-code-text">app</code> container is <code class="gatsby-code-text">up</code>. You can do this by executing (look for the <code class="gatsby-code-text">scandipwa-base_app_1</code> container status):</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="96360132025243030000"
+              data-toaster-id="44497388508749320000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`docker-compose ps`, `96360132025243030000`)"
+              onClick="copyToClipboard(`docker-compose ps`, `44497388508749320000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -265,7 +265,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>You can see when the application is ready to receive connections by watching <code class="gatsby-code-text">app</code> logs, using this command:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="70680566068370145000"
+              data-toaster-id="71365651028157440000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -274,7 +274,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 applogs
 
 # without aliases (not recommended)
-docker-compose logs -f --tail=100 app`, `70680566068370145000`)"
+docker-compose logs -f --tail=100 app`, `71365651028157440000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -291,12 +291,12 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>If you can see following output, the application is ready!</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="37414635605736260000"
+              data-toaster-id="30201155414986404000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`NOTICE: ready to handle connections`, `37414635605736260000`)"
+              onClick="copyToClipboard(`NOTICE: ready to handle connections`, `30201155414986404000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -310,12 +310,12 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>If the app is ready to handle connections, but the site still respond with <code class="gatsby-code-text">502</code>, you might want to look into <code class="gatsby-code-text">app</code> logs a little deeper. Execute:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="47295696389296650000"
+              data-toaster-id="41440124155791640000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`docker-compose logs -f app`, `47295696389296650000`)"
+              onClick="copyToClipboard(`docker-compose logs -f app`, `41440124155791640000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -330,7 +330,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>Inspect the <code class="gatsby-code-text">app</code> container logs, using following command:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="71578163742173676000"
+              data-toaster-id="79643296294220760000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -339,7 +339,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 applogs
 
 # without aliases (not recommended)
-docker-compose logs -f --tail=100 app`, `71578163742173676000`)"
+docker-compose logs -f --tail=100 app`, `79643296294220760000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -356,12 +356,12 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>If you find the following error in the logs:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="94146934112819200000"
+              data-toaster-id="93482688751411050000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`Please set COMPOSER_AUTH environment variable`, `94146934112819200000`)"
+              onClick="copyToClipboard(`Please set COMPOSER_AUTH environment variable`, `93482688751411050000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -374,12 +374,12 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>Make sure you have a valid Magento 2 <code class="gatsby-code-text">COMPOSER_AUTH</code> set. This is an environment variable set on your host machine. To test if it is set, use:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="95712598564434670000"
+              data-toaster-id="1875521265697965800"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`env | grep COMPOSER_AUTH`, `95712598564434670000`)"
+              onClick="copyToClipboard(`env | grep COMPOSER_AUTH`, `1875521265697965800`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -397,12 +397,12 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="37648193742469910000"
+              data-toaster-id="54165200945173680000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`export COMPOSER_AUTH='{&quot;http-basic&quot;:{&quot;repo.magento.com&quot;: {&quot;username&quot;: &quot;<PUBLIC KEY FROM MAGENTO MARKETPLACE>&quot;, &quot;password&quot;: &quot;<PRIVATE KEY FROM MAGENTO MARKETPLACE>&quot;}}}'`, `37648193742469910000`)"
+              onClick="copyToClipboard(`export COMPOSER_AUTH='{&quot;http-basic&quot;:{&quot;repo.magento.com&quot;: {&quot;username&quot;: &quot;<PUBLIC KEY FROM MAGENTO MARKETPLACE>&quot;, &quot;password&quot;: &quot;<PRIVATE KEY FROM MAGENTO MARKETPLACE>&quot;}}}'`, `54165200945173680000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -416,12 +416,12 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>If upon ispection you see a different error:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="13557120777052778000"
+              data-toaster-id="10392482066167984000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`COMPOSER_AUTH environment variable is malformed, should be a valid JSON object`, `13557120777052778000`)"
+              onClick="copyToClipboard(`COMPOSER_AUTH environment variable is malformed, should be a valid JSON object`, `10392482066167984000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -435,7 +435,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>This issue is common with AWS ECS setups. If you happened to use one, make sure to set it in the following way (without quotes):</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="95114501643508920000"
+              data-toaster-id="35048637238347436000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -443,7 +443,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
               onClick="copyToClipboard(`{
     &quot;name&quot;: &quot;COMPOSER_AUTH&quot;,
     &quot;value&quot;: &quot;{\&quot;http-basic\&quot;:{\&quot;repo.magento.com\&quot;: {\&quot;username\&quot;: \&quot;<PUBLIC KEY FROM MAGENTO MARKETPLACE>\&quot;, \&quot;password\&quot;: \&quot;<PRIVATE KEY FROM MAGENTO MARKETPLACE>\&quot;}}}&quot;
-}`, `95114501643508920000`)"
+}`, `35048637238347436000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -459,7 +459,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 <p>If the different, <code class="gatsby-code-text">Invalid credentials ...</code> error appears, like this, for example:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="15284442478572102000"
+              data-toaster-id="51152393306383260000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -468,7 +468,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 Invalid credentials for 'https://repo.magento.com/packages.json', aborting
 
 # the more specific one, like this:
-The 'https://repo.magento.com/archives/magento/framework/magento-framework-102.0.3.0.zip' URL required authentication.`, `15284442478572102000`)"
+The 'https://repo.magento.com/archives/magento/framework/magento-framework-102.0.3.0.zip' URL required authentication.`, `51152393306383260000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -491,12 +491,12 @@ The <span class="token string">'https://repo.magento.com/archives/magento/framew
 <p>If the following waring appears during infrastracture run (using <code class="gatsby-code-text">up -d</code>):</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="19140933704087626000"
+              data-toaster-id="40062782064641245000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`WARNING: Found orphan containers (scandipwa-base_frontend_1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.`, `19140933704087626000`)"
+              onClick="copyToClipboard(`WARNING: Found orphan containers (scandipwa-base_frontend_1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.`, `40062782064641245000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -509,7 +509,7 @@ The <span class="token string">'https://repo.magento.com/archives/magento/framew
 <p>This indicates you missed the <code class="gatsby-code-text">--remove-orphans</code> flag. Please run your setups using it, like so:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="93911396259718270000"
+              data-toaster-id="91063416627651430000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -518,7 +518,7 @@ The <span class="token string">'https://repo.magento.com/archives/magento/framew
 dc up -d --remove-orphans
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml up -d --remove-orphans`, `93911396259718270000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml up -d --remove-orphans`, `91063416627651430000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -535,7 +535,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>Or in <strong>development</strong> setup:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="81106687281046110000"
+              data-toaster-id="60493684807030040000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -544,7 +544,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 dcf up -d --remove-orphans
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml -f docker-compose.frontend.yml up -d --remove-orphans`, `81106687281046110000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml -f docker-compose.frontend.yml up -d --remove-orphans`, `60493684807030040000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -575,12 +575,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>If at any point when looking on logs of the <code class="gatsby-code-text">app</code> container the following message pops up:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="68212492080865510000"
+              data-toaster-id="5239087281224664000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`<ANY ACTION> Operation not permited`, `68212492080865510000`)"
+              onClick="copyToClipboard(`<ANY ACTION> Operation not permited`, `5239087281224664000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -593,12 +593,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>You have a permission issue. To resolve it, run following command on your host machine, from the <code class="gatsby-code-text">scandipwa-base</code> project directory:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="90530377951725780000"
+              data-toaster-id="83334294095747580000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`sudo chmod -R 777 .`, `90530377951725780000`)"
+              onClick="copyToClipboard(`sudo chmod -R 777 .`, `83334294095747580000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -612,7 +612,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>You could have ran some command in the <code class="gatsby-code-text">app</code> container as <code class="gatsby-code-text">root</code> user. You must run them from <code class="gatsby-code-text">user</code>. How?</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="14865701613603033000"
+              data-toaster-id="68417137446747290000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -621,7 +621,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 inapp bash
 
 # use \`-u user\` argument to execute as a user
-docker-compose exec -u user app`, `14865701613603033000`)"
+docker-compose exec -u user app`, `68417137446747290000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -639,12 +639,12 @@ docker-compose <span class="token builtin class-name">exec</span> -u user app</c
 <p>If the Google Chrome shows following issue in Chrome:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="64991562426281705000"
+              data-toaster-id="96060831081283290000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`NET::ERR_CERT_REVOKED > issuer: ScandiPWA ...`, `64991562426281705000`)"
+              onClick="copyToClipboard(`NET::ERR_CERT_REVOKED > issuer: ScandiPWA ...`, `96060831081283290000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -663,12 +663,12 @@ docker-compose <span class="token builtin class-name">exec</span> -u user app</c
 <p>If following error appears on container startup:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="26068899166875447000"
+              data-toaster-id="77171690727237470000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`ERROR: for <CONTAINER NAME> Can not start service ... : listen tcp 0.0.0.0:<PORT>: bind: address already in use`, `26068899166875447000`)"
+              onClick="copyToClipboard(`ERROR: for <CONTAINER NAME> Can not start service ... : listen tcp 0.0.0.0:<PORT>: bind: address already in use`, `77171690727237470000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -684,12 +684,12 @@ docker-compose <span class="token builtin class-name">exec</span> -u user app</c
 <p>First time, when uploading a demo-dump, you might stumble across the error:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="94733692256070220000"
+              data-toaster-id="27299862612281900000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`Database migration failed: manual action required`, `94733692256070220000`)"
+              onClick="copyToClipboard(`Database migration failed: manual action required`, `27299862612281900000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -702,7 +702,7 @@ docker-compose <span class="token builtin class-name">exec</span> -u user app</c
 <p>This could mean, that the database dump apply was not executed successfully. In order to resolve this, run the migration again, but manually:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="80837994757447570000"
+              data-toaster-id="26225337540251160000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -716,7 +716,7 @@ mysql -u root -pscandipwa magento < /tmp/dump.sql
 
 
 # or if you have a mysql locally installed
-mysql -h localhost -P 3307 --protocol=tcp -u root -pscandipwa < deploy/latest.sql`, `80837994757447570000`)"
+mysql -h localhost -P 3307 --protocol=tcp -u root -pscandipwa < deploy/latest.sql`, `26225337540251160000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -739,13 +739,13 @@ mysql -h localhost -P <span class="token number">3307</span> --protocol<span cla
 <p>If when setting up, you notice the following issue:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="68321318299105346000"
+              data-toaster-id="40096168238479520000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`# note: PROJECT_IMAGE is an example variable
-WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.`, `68321318299105346000`)"
+WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.`, `40096168238479520000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -759,12 +759,12 @@ WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.</code></pre
 <p>Your machine does not support symlinks. Possibly, you are setting up on Windows. To resolve the issue, fix following files: <code class="gatsby-code-text">.env</code> and <code class="gatsby-code-text">.application</code>. To fix them, replace the content of those files with the content of the file mentioned inside. So, for example:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="15244809121956448000"
+              data-toaster-id="92138192725877850000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`.env # replace content with deploy/local/env`, `15244809121956448000`)"
+              onClick="copyToClipboard(`.env # replace content with deploy/local/env`, `92138192725877850000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -785,12 +785,12 @@ WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.</code></pre
 <p>When installing a theme using <code class="gatsby-code-text">scandipwa/installer</code> the following (or similar) error might appear:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="30019805078401053000"
+              data-toaster-id="55530953561948480000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`Your requirements could not be resolved to an installable set of packages.`, `30019805078401053000`)"
+              onClick="copyToClipboard(`Your requirements could not be resolved to an installable set of packages.`, `55530953561948480000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -806,12 +806,12 @@ WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.</code></pre
 </ul>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="65054974580796010000"
+              data-toaster-id="17284062960255975000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`composer require scandipwa/installer ^1.0`, `65054974580796010000`)"
+              onClick="copyToClipboard(`composer require scandipwa/installer ^1.0`, `17284062960255975000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -832,12 +832,12 @@ WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.</code></pre
 </ul>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="45420487135761900000"
+              data-toaster-id="36363995028725360000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`composer update scandipwa/customization`, `45420487135761900000`)"
+              onClick="copyToClipboard(`composer update scandipwa/customization`, `36363995028725360000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -861,7 +861,7 @@ WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.</code></pre
 <p>If the customization selected is not displayed on FE, check the <code class="gatsby-code-text">frontend</code> container. It must be <code class="gatsby-code-text">stopped</code>, or not running at all. The command for this:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="46374877004743500000"
+              data-toaster-id="56674145173205770000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -870,7 +870,7 @@ WARNING: The PROJECT_IMAGE is not set. Defaulting to a blank string.</code></pre
 dcf ps | grep frontend
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml ps | grep frontend`, `46374877004743500000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml ps | grep frontend`, `56674145173205770000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -887,7 +887,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>Must output nothing, or <code class="gatsby-code-text">stopped</code> in the container status. If it is running, the re-create the setup without frontend container:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="76372322509567820000"
+              data-toaster-id="97619166499795850000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -896,7 +896,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 dc up -d --remove-orphans
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml up -d --remove-orphans`, `76372322509567820000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml up -d --remove-orphans`, `97619166499795850000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -921,12 +921,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="70191288299186570000"
+              data-toaster-id="3578333643128784000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`npm ci && npm run build`, `70191288299186570000`)"
+              onClick="copyToClipboard(`npm ci && npm run build`, `3578333643128784000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -943,12 +943,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="55289125336584454000"
+              data-toaster-id="11842404986938292000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`magento c:f`, `55289125336584454000`)"
+              onClick="copyToClipboard(`magento c:f`, `11842404986938292000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -963,12 +963,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>If you see the blank screen and the browser console is showing an error:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="23481619458131874000"
+              data-toaster-id="39744001011190910000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`Uncaught SyntaxError: Invalid regular expression: missing /`, `23481619458131874000`)"
+              onClick="copyToClipboard(`Uncaught SyntaxError: Invalid regular expression: missing /`, `39744001011190910000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -993,12 +993,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>If when setting up for the first time the following error appeared:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="63647783706030550000"
+              data-toaster-id="45365644237108986000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`ENOENT: no such file or directory, open '<PATH_TO_THEME_FOLDER>/package.json'`, `63647783706030550000`)"
+              onClick="copyToClipboard(`ENOENT: no such file or directory, open '<PATH_TO_THEME_FOLDER>/package.json'`, `45365644237108986000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1014,12 +1014,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="14411422332381129000"
+              data-toaster-id="14196148039612133000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`rm -rf <PATH_TO_THEME_FOLDER>`, `14411422332381129000`)"
+              onClick="copyToClipboard(`rm -rf <PATH_TO_THEME_FOLDER>`, `14196148039612133000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1034,7 +1034,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="63322664986476765000"
+              data-toaster-id="64534210658218890000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -1043,7 +1043,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 dc up -d --remove-orphans
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml up -d --remove-orphans`, `63322664986476765000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml up -d --remove-orphans`, `64534210658218890000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1062,7 +1062,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="57371045096349070000"
+              data-toaster-id="87706308155203670000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -1071,7 +1071,7 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 applogs
 
 # without aliases (not recommended)
-docker-compose logs -f --tail=100 app`, `57371045096349070000`)"
+docker-compose logs -f --tail=100 app`, `87706308155203670000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1090,7 +1090,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 </ol>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="78755700278425290000"
+              data-toaster-id="84501130780083810000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -1099,7 +1099,7 @@ docker-compose logs -f --tail<span class="token operator">=</span><span class="t
 dcf up -d --remove-orphans
 
 # without aliases (not recommended)
-docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml -f docker-compose.frontend.yml up -d --remove-orphans`, `78755700278425290000`)"
+docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compose.ssl.yml -f docker-compose.frontend.yml up -d --remove-orphans`, `84501130780083810000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1129,12 +1129,12 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>If port is already allocated when running for steps - setup guide steps - Start the development-setup (optional) or Start the infrastructure in production-like mode:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="76977284173356560000"
+              data-toaster-id="46270183410912030000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker-compose -f docker-compose.yml -f docker-compose.local.yml up`, `76977284173356560000`)"
+              onClick="copyToClipboard(`\$ docker-compose -f docker-compose.yml -f docker-compose.local.yml up`, `46270183410912030000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1147,14 +1147,14 @@ docker-compose -f docker-compose.yml -f docker-compose.local.yml -f docker-compo
 <p>In order to fix it you have to stop aall running containers:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="56960804633004280000"
+              data-toaster-id="37847886176793950000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker stop \$(docker ps -aq)
 # OR
-\$ sudo service <apache2> stop`, `56960804633004280000`)"
+\$ sudo service <apache2> stop`, `37847886176793950000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1169,12 +1169,12 @@ $ <span class="token function">sudo</span> <span class="token function">service<
 <p>After that and run launch command again:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="94756396408347850000"
+              data-toaster-id="98308943828289960000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker-compose -f docker-compose.yml -f docker-compose.local.yml up`, `94756396408347850000`)"
+              onClick="copyToClipboard(`\$ docker-compose -f docker-compose.yml -f docker-compose.local.yml up`, `98308943828289960000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1190,13 +1190,13 @@ $ <span class="token function">sudo</span> <span class="token function">service<
 <p>Run the following commands:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="45836390093108820000"
+              data-toaster-id="46034657143407290000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ cd <PATH TO PROJECT ROOT>/opt/cert
-\$ sudo cp -f scandipwa-ca.pem /usr/local/share/ca-certificates/scandipwa-ca.pem`, `45836390093108820000`)"
+\$ sudo cp -f scandipwa-ca.pem /usr/local/share/ca-certificates/scandipwa-ca.pem`, `46034657143407290000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1215,12 +1215,12 @@ $ <span class="token function">sudo</span> <span class="token function">cp</span
 <p>The error can be experienced on the installation step “Start the development-setup (optional)” after running the following command:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="24915450632225620000"
+              data-toaster-id="90977089413357170000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker-compose -f docker-compose.yml -f docker-compose.local.yml up`, `24915450632225620000`)"
+              onClick="copyToClipboard(`\$ docker-compose -f docker-compose.yml -f docker-compose.local.yml up`, `90977089413357170000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1233,13 +1233,13 @@ $ <span class="token function">sudo</span> <span class="token function">cp</span
 <p>Resolve it by running the following commands:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="90493209007946170000"
+              data-toaster-id="87916987956659850000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ composer update
-\$ docker-compose up`, `90493209007946170000`)"
+\$ docker-compose up`, `87916987956659850000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1272,12 +1272,12 @@ $ docker-compose up</code></pre></div>
 <p>Enter the container inapp bash and run the following command:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="4264960556303121400"
+              data-toaster-id="58246381437429150000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`magento se:un`, `4264960556303121400`)"
+              onClick="copyToClipboard(`magento se:un`, `58246381437429150000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1292,12 +1292,12 @@ $ docker-compose up</code></pre></div>
 <p>In order to resolve this run the following command:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="29426427468960560000"
+              data-toaster-id="10938649254584609000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`php bin/magento scandipwa:theme:bootstrap Scandiweb/pwa`, `29426427468960560000`)"
+              onClick="copyToClipboard(`php bin/magento scandipwa:theme:bootstrap Scandiweb/pwa`, `10938649254584609000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -1315,7 +1315,7 @@ $ docker-compose up</code></pre></div>
 </ol>
 <h2 id="can-i-install-scandipwa-on-debian"><a href="#can-i-install-scandipwa-on-debian" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Can I install ScandiPWA on Debian?</h2>
 <p>Windows is not supporting symlinks. You can simply copy file instead of symlinking.</p>
-<p>Make sure that .env and .application are present in your project directory.</p></div></div></article><div class="css-1kbu8hg"><div><div style="opacity:0;transition:opacity 0.5s ease" class="css-1egtd8l"><div style="transform:translate(0px, 40px);transition:transform 0.5s ease" class="css-x8vket"><nav class="css-18bhv22 css-1aai96l"><div><button aria-controls="section_02764900929880516" class="css-1j8jxus"><div class="css-200vt3">Start &amp; Upgrade<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+<p>Make sure that .env and .application are present in your project directory.</p></div></div></article><div class="css-1kbu8hg"><div><div style="opacity:0;transition:opacity 0.5s ease" class="css-1egtd8l"><div style="transform:translate(0px, 40px);transition:transform 0.5s ease" class="css-x8vket"><nav class="css-18bhv22 css-1aai96l"><div><button aria-controls="section_09017283488662078" class="css-1j8jxus"><div class="css-200vt3">Start &amp; Upgrade<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -1324,7 +1324,7 @@ $ docker-compose up</code></pre></div>
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_02764900929880516" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/linux.html">Linux</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/mac.html">MacOs</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/with-remote-m2.html">Remote Magento Instance</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/update.html">Theme Upgrade</a></li></ul></div><div><button aria-controls="section_08169571317091524" class="css-1j8jxus"><div class="css-200vt3">A to Z Overview<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_09017283488662078" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/linux.html">Linux</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/mac.html">MacOs</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/with-remote-m2.html">Remote Magento Instance</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/update.html">Theme Upgrade</a></li></ul></div><div><button aria-controls="section_018155700915558026" class="css-1j8jxus"><div class="css-200vt3">A to Z Overview<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -1333,7 +1333,7 @@ $ docker-compose up</code></pre></div>
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_08169571317091524" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/motivation.html">Motivation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/challenges.html">Challenges</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure-ui.html">File structure and UI components</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/rewriting-extending.html">Rewriting and extending theme</a></li></ul></div><div><button aria-controls="section_07460440588490784" class="css-1j8jxus"><div class="css-200vt3">FAQ<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_018155700915558026" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/motivation.html">Motivation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/challenges.html">Challenges</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure-ui.html">File structure and UI components</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/rewriting-extending.html">Rewriting and extending theme</a></li></ul></div><div><button aria-controls="section_03889219366195207" class="css-1j8jxus"><div class="css-200vt3">FAQ<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -1342,7 +1342,7 @@ $ docker-compose up</code></pre></div>
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_07460440588490784" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/development.html">Development</a></li><li class="css-atv6j6"><a aria-current="page" class="css-1b7a3df" href="/docs/installing.html"><span class="css-nmtjfb"></span>Installation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/billing-and-license.html">Billing and license</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/product-support.html">Product support</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/what-is-pwa.html">What is PWA</a></li></ul></div><div><button aria-controls="section_04323052174643025" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Introductory<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_03889219366195207" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/development.html">Development</a></li><li class="css-atv6j6"><a aria-current="page" class="css-1b7a3df" href="/docs/installing.html"><span class="css-nmtjfb"></span>Installation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/billing-and-license.html">Billing and license</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/product-support.html">Product support</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/what-is-pwa.html">What is PWA</a></li></ul></div><div><button aria-controls="section_023143225481524943" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Introductory<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -1351,7 +1351,7 @@ $ docker-compose up</code></pre></div>
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_04323052174643025" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/base-template.html">Base Template</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/extension.html">Customizing and Overwriting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/creating-resolver.html">Creating GraphQL resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-and-inspect.html">Debugging and Inspecting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/frontend-setup.html">Setting Up Frontend</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure.html">File Structure</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/data-flow.html">Data Flow</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/technology-stack.html">Technology Stack</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/configuration.html">Changing environment</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/build-and-configuration.html">Theme Build and Configuration</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/caching.html">Implementing Caching for New Caching Identities</a></li></ul></div><div><button aria-controls="section_009376988203091186" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Intermediate<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_023143225481524943" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/base-template.html">Base Template</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/extension.html">Customizing and Overwriting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/creating-resolver.html">Creating GraphQL resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-and-inspect.html">Debugging and Inspecting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/frontend-setup.html">Setting Up Frontend</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure.html">File Structure</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/data-flow.html">Data Flow</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/technology-stack.html">Technology Stack</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/configuration.html">Changing environment</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/build-and-configuration.html">Theme Build and Configuration</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/caching.html">Implementing Caching for New Caching Identities</a></li></ul></div><div><button aria-controls="section_022263686373811087" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Intermediate<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -1360,7 +1360,7 @@ $ docker-compose up</code></pre></div>
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_009376988203091186" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-in-chrome.html">Debugging in Chrome</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/xdebug.html">Configuring XDebug</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/cli.html">CLI in Docker</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/postman-graphql-playground.html">Postman &amp; GraphQL Playground</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/vsc-extensions.html">VSCode Extensions</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/plugin-mechanism.html">ScandiPWA plugins</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/eslint-stylelint.html">ESlint &amp; StyleLint</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/contribute.html">How to Contribute</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/migrate-newer-version.html">Migrating to a Newer Version</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/coding-standard.html">BEM and Coding Standards</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/tools.html">Tools of ScandiPWA</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/react-best-practices.html">React Best Practices</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/best-practices-styles.html">Best Practices Working with Styles</a></li></ul></div></nav></div></div><div role="button" tabindex="0" class="css-t3yz8c"><div class="css-tctv7l"><div class="css-7ef8f8"><div class="BurgerButon"><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div></div></div></div></div></div></div></div></div></div></div></div><footer class="css-vn0yrr"><div class="css-tctv7l"><div class="css-1fr488m"><div class="css-142w44y"><div class="css-1i3z83x"><div class="css-1gwkwnu"><a href="https://scandipwa.com/privacy.html" target="_blank" rel="noopener" class="css-dvkktt">Privacy Policy<svg x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="css-83uoqv"><path fill="currentColor" d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_022263686373811087" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-in-chrome.html">Debugging in Chrome</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/xdebug.html">Configuring XDebug</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/cli.html">CLI in Docker</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/postman-graphql-playground.html">Postman &amp; GraphQL Playground</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/vsc-extensions.html">VSCode Extensions</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/plugin-mechanism.html">ScandiPWA plugins</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/eslint-stylelint.html">ESlint &amp; StyleLint</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/contribute.html">How to Contribute</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/migrate-newer-version.html">Migrating to a Newer Version</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/coding-standard.html">BEM and Coding Standards</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/tools.html">Tools of ScandiPWA</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/react-best-practices.html">React Best Practices</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/best-practices-styles.html">Best Practices Working with Styles</a></li></ul></div></nav></div></div><div role="button" tabindex="0" class="css-t3yz8c"><div class="css-tctv7l"><div class="css-7ef8f8"><div class="BurgerButon"><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div></div></div></div></div></div></div></div></div></div></div></div><footer class="css-vn0yrr"><div class="css-tctv7l"><div class="css-1fr488m"><div class="css-142w44y"><div class="css-1i3z83x"><div class="css-1gwkwnu"><a href="https://scandipwa.com/privacy.html" target="_blank" rel="noopener" class="css-dvkktt">Privacy Policy<svg x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="css-83uoqv"><path fill="currentColor" d="
       M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,
       0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z
     "></path><polygon fill="currentColor" points="
