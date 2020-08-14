@@ -70,7 +70,6 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop -p 8000",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages",
     "flow": "flow",
     "lint": "eslint .",
     "reset": "rimraf ./.cache",
