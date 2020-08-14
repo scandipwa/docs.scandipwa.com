@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+          token: ${{ secrets.token }}
 
       - name: set up node 12
         uses: actions/setup-node@v2-beta
@@ -20,13 +21,7 @@ jobs:
           node-version: '12'
 
       - name: Install and Build 🔧
-        run: |
-          yarn
-          yarn build
+        run:  yarn
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.5.9
-        with:
-          ACCESS_TOKEN: ${{ secrets.token }}
-          BRANCH: gh-pages
-          FOLDER: public
+        run: yarn deploy
