@@ -1,0 +1,89 @@
+{
+  "name": "scandipwa-website",
+  "description": "ScandiPWA Website",
+  "version": "0.0.1",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/scandipwa/docs.scandipwa.com"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.4.0",
+    "babel-eslint": "^8.0.1",
+    "core-js": "3",
+    "eslint": "^4.8.0",
+    "eslint-config-fbjs": "^2.0.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-relay": "^0.0.19",
+    "gatsby": "^2.0.0",
+    "gatsby-plugin-algolia": "^0.11.2",
+    "gatsby-plugin-catch-links": "^2.0.0",
+    "gatsby-plugin-glamor": "^2.0.0",
+    "gatsby-plugin-manifest": "^2.0.0",
+    "gatsby-plugin-nprogress": "^2.0.0",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.4.12",
+    "gatsby-remark-code-buttons": "^2.0.4",
+    "gatsby-remark-copy-linked-files": "^2.0.0",
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-images": "^2.0.0",
+    "gatsby-remark-prismjs": "^3.0.2",
+    "gatsby-remark-responsive-iframe": "^2.0.0",
+    "gatsby-remark-smartypants": "^2.0.0",
+    "gatsby-source-filesystem": "^2.0.0",
+    "gatsby-transformer-remark": "^2.0.0",
+    "github-slugger": "^1.2.1",
+    "glamor": "^2.20.40",
+    "hex2rgba": "^0.0.1",
+    "mdast-util-to-string": "^1.0.5",
+    "normalize.css": "^8.0.0",
+    "prettier": "^1.7.4",
+    "prismjs": "^1.15.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.0",
+    "react-instantsearch-dom": "^6.7.0",
+    "react-live": "1.8.0-0",
+    "request-promise": "^4.2.2",
+    "rimraf": "^2.6.1",
+    "slugify": "^1.2.1",
+    "unist-util-visit": "^1.1.3"
+  },
+  "engines": {
+    "node": "12.x.x",
+    "yarn": "^1.3.2"
+  },
+  "homepage": "https://docs.scandipwa.com/",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "CC",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactjs/reactjs.org.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop -p 8000",
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages",
+    "flow": "flow",
+    "lint": "eslint .",
+    "reset": "rimraf ./.cache",
+    "start": "yarn dev"
+  },
+  "devDependencies": {
+    "@babel/compat-data": "^7.11.0",
+    "@babel/preset-flow": "^7.0.0",
+    "eslint-config-prettier": "^2.6.0",
+    "gh-pages": "^3.1.0",
+    "lz-string": "^1.4.4",
+    "npm-run-all": "^4.1.5",
+    "recursive-readdir": "^2.2.1",
+    "unist-util-map": "^1.0.3"
+  }
+}
