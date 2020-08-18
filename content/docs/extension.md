@@ -414,23 +414,17 @@ You need to create a file with the following path, that is going to be taken in 
 
 2. Retrieving the original functionality
 
-You can import anything exported from the original plugin file to extend it, just as when extending source theme files. To do that you can reference the original file by relative path, but that is a bit too long. To make it simpler, a different approach has been implemented. Now you can import original functionality using a generated alias, that depends on directories' names and consists of vendor name and extension name, written in PascalCase and separated by underscore.
+You can import anything exported from the original plugin file to extend it, just as when extending source theme files. To do that you can reference the original file by relative path, but that is a bit too long. To make it simpler, a different approach has been implemented.
 
-So if you need to import something from this file:
+Now you can import original functionality using a generated alias, that depends on the package name in `composer.json` file in the root of your extension. It consists of vendor name and extension name, written in PascalCase and separated by underscore.
 
-```bash
-.../awesome-extension-provider/paypal-graphql/src/scandipwa/app/component/PayPal/index.js
-```
-
-You can do it by referencing the original file by following alias, anywhere throughout the application:
+So if you need to import something from the `scandipwa/paypal-graphql` package you can do it by referencing the original file by following alias, anywhere throughout the application:
 
 ```javascript
-import PayPal from 'AwesomeExtensionProvider_PaypalGraphql/app/component/PayPal';
+import PayPal from 'Scandipwa_PaypalGraphql.Component/PayPal';
 // instead of
 import PayPal from '../../../<some more iterations>/awesome-extension-provider/paypal-graphql/src/scandipwa/app/component/PayPal';
 ```
-
-Notice how `src/scandipwa` part disappeared in here just as in the first approach.
 
 > **Note**:
 >
