@@ -53,18 +53,22 @@
       45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,
       14.9 62.8,22.9 71.5,22.9
       "></polygon></svg></a></div></div></div></header><div class="css-1tv5sxm css-15lkjjo"><div class="css-5v0gxc css-95xunl"><div class="css-12vsfho"><div class="css-tctv7l"><div class="css-10335ra"><article class="css-174qq1k"><header class="css-hgc6lu"><h1 class="css-vqj14j">ScandiPWA plugins</h1></header><div class="css-124oy3v"><div class="css-1xtc414"><p>ScandiPWA v3 (currently in beta) supports frontend plugins, which allow reusing one piece of code throughout a lot of completely different projects. This guide is devoted to explaining all the functionality related to plugins.</p>
-<h2 id="watch-an-explanation-video"><a href="#watch-an-explanation-video" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Watch an explanation video</h2>
+<h2 id="watch-outdated-explanation-videos-with-correct-general-approach"><a href="#watch-outdated-explanation-videos-with-correct-general-approach" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Watch outdated explanation videos with correct general approach</h2>
+<blockquote>
+<p><strong>Note</strong>:</p>
+<p>this videos are going to be updated, they are <strong>much less relevant</strong> then the text documentation. Use them to understand the main workflows, but seek <strong>ONLY</strong> these guidelines that are described in this article, because many things changed since these two videos have been released.</p>
+</blockquote>
 <h3 id="implementing-an-extension-from-scratch"><a href="#implementing-an-extension-from-scratch" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementing an extension from scratch</h3>
 <div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; " > <div class="video"> <iframe src="https://www.youtube.com/embed/9f6rpIrlNMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%; "></iframe> </div> </div>
-<h3 id="implementing-an-extension-from-customisation"><a href="#implementing-an-extension-from-customisation" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementing an extension from customisation</h3>
+<h3 id="implementing-an-extension-from-customization"><a href="#implementing-an-extension-from-customization" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementing an extension from customization</h3>
 <div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; " > <div class="video"> <iframe src="https://www.youtube.com/embed/N2TJJbSDTbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%; "></iframe> </div> </div>
 <h2 id="extensions-file-structure"><a href="#extensions-file-structure" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extension’s file structure</h2>
 <p>ScandiPWA extension is M2 composer package with one extra directory - <code class="gatsby-code-text">scandipwa</code>. Inside of it ScandiPWA frontend-related functionality is stored. Any other M2 related folders with backend-related functionality can be stored in such package. You see <code class="gatsby-code-text">etc</code> and <code class="gatsby-code-text">Model</code> in this example, but these are not the only possible ones.</p>
 <p>All <em>directories</em> inside of <code class="gatsby-code-text">scandipwa</code> are optional, nevertheless following the provided structure is mandatory. You see <code class="gatsby-code-text">app</code> and <code class="gatsby-code-text">sw</code> subdirectories in it, these folders’ structure is the same as you see in <code class="gatsby-code-text">vendor/scandipwa/source/src/(app|sw)</code> and they have the same meaning: inside of them are all parts that your extension requires: extra components, queries, routes etc.</p>
-<p><code class="gatsby-code-text">Plugin</code> directory contains plugin definitions: which functionality parts are you plugging into and how you want to change their behaviour. More about that below.</p>
+<p><code class="gatsby-code-text">Plugin</code> directory contains plugin definitions: which functionality parts are you plugging into and how you want to change their behaviour. More about that below. All the files with <code class="gatsby-code-text">.plugin.js</code> extension will be found there and imported into the application.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="31726659100090737000"
+              data-toaster-id="22861847314196603000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -76,21 +80,21 @@
  ┃ ┣ 📂Model
  ┃ ┃ ┗ # ...
  ┃ ┗ 📂scandipwa   # Frontend-related functionality
- ┃   ┣ 📜 index.js # Plugin FE entry point - mandatory!
- ┃   ┣ 📂 app      # Application logic
+ ┃   ┣ 📂 app      # Plugins and functionality for the app context
  ┃   ┃ ┣ 📂component
  ┃   ┃ ┣ 📂query
  ┃   ┃ ┣ 📂route
  ┃   ┃ ┣ 📂store
  ┃   ┃ ┣ 📂util
  ┃   ┃ ┗ 📂plugin  # Plugging logic declarations
- ┃   ┃   ┗ 📜<SourceComponentName>.plugin.js
- ┃   ┗ 📂 sw       # Service Worker
+ ┃   ┃   ┗ 📜<name>.plugin.js
+ ┃   ┗ 📂 sw       # Plugins and functionality for the Service Worker context
  ┃     ┣ 📂handler
  ┃     ┣ 📂util
  ┃     ┗ 📂plugin  # Plugging logic declarations
- ┃       ┗ 📜<SourceServiceWorkerFileName>.plugin.js
- ┗ 📜composer.json`, `31726659100090737000`)"
+ ┃       ┗ 📜<name>.plugin.js
+ ┣ 📜package.json  # JS dependencies
+ ┗ 📜composer.json # Composer dependencies and the PACKAGE NAME which is mandatory`, `22861847314196603000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -106,26 +110,26 @@
  ┃ ┣ 📂Model
  ┃ ┃ ┗ <span class="token comment"># ...</span>
  ┃ ┗ 📂scandipwa   <span class="token comment"># Frontend-related functionality</span>
- ┃   ┣ 📜 index.js <span class="token comment"># Plugin FE entry point - mandatory!</span>
- ┃   ┣ 📂 app      <span class="token comment"># Application logic</span>
+ ┃   ┣ 📂 app      <span class="token comment"># Plugins and functionality for the app context</span>
  ┃   ┃ ┣ 📂component
  ┃   ┃ ┣ 📂query
  ┃   ┃ ┣ 📂route
  ┃   ┃ ┣ 📂store
  ┃   ┃ ┣ 📂util
  ┃   ┃ ┗ 📂plugin  <span class="token comment"># Plugging logic declarations</span>
- ┃   ┃   ┗ 📜<span class="token operator">&lt;</span>SourceComponentName<span class="token operator">></span>.plugin.js
- ┃   ┗ 📂 sw       <span class="token comment"># Service Worker</span>
+ ┃   ┃   ┗ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.plugin.js
+ ┃   ┗ 📂 sw       <span class="token comment"># Plugins and functionality for the Service Worker context</span>
  ┃     ┣ 📂handler
  ┃     ┣ 📂util
  ┃     ┗ 📂plugin  <span class="token comment"># Plugging logic declarations</span>
- ┃       ┗ 📜<span class="token operator">&lt;</span>SourceServiceWorkerFileName<span class="token operator">></span>.plugin.js
- ┗ 📜composer.json</code></pre></div>
+ ┃       ┗ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.plugin.js
+ ┣ 📜package.json  <span class="token comment"># JS dependencies</span>
+ ┗ 📜composer.json <span class="token comment"># Composer dependencies and the PACKAGE NAME which is mandatory</span></code></pre></div>
 <h2 id="a-step-by-step-algorithm-of-creating-a-simple-extension"><a href="#a-step-by-step-algorithm-of-creating-a-simple-extension" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A step-by-step algorithm of creating a simple extension</h2>
-<p>This document is an addition to the video tutorial above. You are welcome to watch it in order to learn from an example. Start with understanding how you wish to change ScandiPWA logic. Find the places which need modification.</p>
+<p>This document is a more relevant alternative to the video tutorials above. You are still welcome to watch them in order to learn the general approach from an example. Start with understanding how you wish to change ScandiPWA logic. Find the places which need modification.</p>
 <ol>
-<li>Create a <code class="gatsby-code-text">localmodules</code> directory in the magento root of your application. Then create a composer package there. Inside of it, in <code class="gatsby-code-text">src/scandipwa/plugin</code>, create <code class="gatsby-code-text">ComponentName.plugin.js</code> file, where <code class="gatsby-code-text">ComponentName</code> is name of the component you’d like to modify.</li>
-<li>In there, you should create a class <code class="gatsby-code-text">ComponentNamePlugin</code>, its members are meant to wrap around the <code class="gatsby-code-text">SampleClass</code> members and be ran instead of the original members. It is essential that wrapper members must be arrow functions, otherwise your plugin’s context will not be available from inside of them.</li>
+<li>Create a <code class="gatsby-code-text">localmodules</code> directory in the magento root of your application. Then create a composer package there. Inside of it, in <code class="gatsby-code-text">src/scandipwa/app/plugin</code>, create <code class="gatsby-code-text">&lt;name&gt;.plugin.js</code> file.</li>
+<li>Create a function that is going to wrap around the original namespace member, following the guidelines above. This function is going to be called instead of the original member, very similar to the Magento 2 <strong>“around plugins.”</strong></li>
 </ol>
 <blockquote>
 <p><strong>Note</strong>:</p>
@@ -134,37 +138,40 @@
 <p>Each member which wraps around a <strong><em>function</em></strong> has the following arguments.</p>
 <ul>
 <li><code class="gatsby-code-text">args</code> is an array of original arguments that are passed to the function this one is wrapped around.</li>
-<li><code class="gatsby-code-text">callback</code> is function that calls the next plugin if there is one, or the original method, when all plugins defined for this method are applied.</li>
-<li><code class="gatsby-code-text">instance</code> references the object you are plugging into.</li>
+<li><code class="gatsby-code-text">callback</code> is a function that calls the next plugin if there is one, or the original method (bound to the instance), when all plugins defined for this method are applied.</li>
+<li><code class="gatsby-code-text">instance</code> references the instance of class that you are plugging into.</li>
 </ul>
 <p>Each member which wraps around a <strong><em>property</em></strong>  has the following arguments:</p>
 <ul>
-<li><code class="gatsby-code-text">originalMember</code> is the member you are plugging into.</li>
-<li><code class="gatsby-code-text">instance</code> references the object you are plugging into.</li>
+<li><code class="gatsby-code-text">prop</code> is a member you are plugging into.</li>
+<li><code class="gatsby-code-text">instance</code> same as above.</li>
 </ul>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="60389633491346650000"
+              data-toaster-id="73808086998389770000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`// This wraps around the member function, logs the arguments and adds one to the first argument
-// It is essential that wrapper function is an arrow function!
-// Otherwise other member functions will not be available from it.
+// It is essential that wrapper function is an arrow function, if you are writing a class.
 const aroundFunction = (args, callback, instance) => {
-    console.log(args); // [ ...arguments ]
-    args[0] += 1;
+	// Arguments, which have been passed to the member
+	// Either original or already modified by other plugins.
+    console.log(args);
 
-    // The context must ALWAYS be passed to the callback, using 'apply' for that
-    // Note that the original member (or the next plugin) will be called with changed arguments
-    callback.apply(instance, args);
+	// Use array destructuring to get specific arguments from the array
+	const [something] = args;
+
+	// The callback is always bound to the \`instance\`, you do not need to provide context here.
+	// It is impossible to bind the callback to something else hence.
+    callback(...args);
 }
 
 // This wraps around a property
-const property = (initialProperty, instance) => {
+const property = (prop, instance) => {
     return {
-        ...initialProperty,
+        ...prop,
         // And adds this new value to it
         someAddedValue: 'new value!'
     }
@@ -179,8 +186,9 @@ const classWrapper = (Class) => {
     return connect(...)(Class);
 
     // Replace the original class with something else
+	// DANGEROUS and NOT RECOMMENDED
     return OtherClass;
-}`, `60389633491346650000`)"
+}`, `73808086998389770000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -190,21 +198,24 @@ const classWrapper = (Class) => {
               </div>
             </div>
 <div class="gatsby-highlight" data-language="jsx"><pre class="gatsby-code-jsx"><code class="gatsby-code-jsx"><span class="token comment">// This wraps around the member function, logs the arguments and adds one to the first argument</span>
-<span class="token comment">// It is essential that wrapper function is an arrow function!</span>
-<span class="token comment">// Otherwise other member functions will not be available from it.</span>
+<span class="token comment">// It is essential that wrapper function is an arrow function, if you are writing a class.</span>
 <span class="token keyword">const</span> <span class="token function-variable function">aroundFunction</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">args<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> instance</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ ...arguments ]</span>
-    args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token comment">// Arguments, which have been passed to the member</span>
+	<span class="token comment">// Either original or already modified by other plugins.</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token comment">// The context must ALWAYS be passed to the callback, using 'apply' for that</span>
-    <span class="token comment">// Note that the original member (or the next plugin) will be called with changed arguments</span>
-    <span class="token function">callback</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>instance<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// Use array destructuring to get specific arguments from the array</span>
+	<span class="token keyword">const</span> <span class="token punctuation">[</span>something<span class="token punctuation">]</span> <span class="token operator">=</span> args<span class="token punctuation">;</span>
+
+	<span class="token comment">// The callback is always bound to the `instance`, you do not need to provide context here.</span>
+	<span class="token comment">// It is impossible to bind the callback to something else hence.</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// This wraps around a property</span>
-<span class="token keyword">const</span> <span class="token function-variable function">property</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">initialProperty<span class="token punctuation">,</span> instance</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">property</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">prop<span class="token punctuation">,</span> instance</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
-        <span class="token operator">...</span>initialProperty<span class="token punctuation">,</span>
+        <span class="token operator">...</span>prop<span class="token punctuation">,</span>
         <span class="token comment">// And adds this new value to it</span>
         someAddedValue<span class="token operator">:</span> <span class="token string">'new value!'</span>
     <span class="token punctuation">}</span>
@@ -219,6 +230,7 @@ const classWrapper = (Class) => {
     <span class="token keyword">return</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">(</span>Class<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// Replace the original class with something else</span>
+	<span class="token comment">// DANGEROUS and NOT RECOMMENDED</span>
     <span class="token keyword">return</span> OtherClass<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <ol start="3">
@@ -227,24 +239,24 @@ const classWrapper = (Class) => {
 <li>
 <p>How what exactly in the namespace would you like to modify</p>
 <ul>
-<li><em>‘member-function’</em> plugins intercept calls to <strong>instance members</strong>. These plugins are used to change the behavior of member functions, which are called on instance.</li>
-<li><em>‘member-property’</em> is an approach to change <strong>properties</strong>, which are not available on prototypes, e.g. state in a way it’s defined throughout the ScandiPWA (<code class="gatsby-code-text">state = { ... };</code>).</li>
-<li><em>‘static-member’</em> plugins enable changing classes’ <strong>static members</strong>.</li>
-<li><em>‘function’</em> is an approach to change <strong>functions</strong> which are not class members, e.g. <code class="gatsby-code-text">mapStateToProps</code> or <code class="gatsby-code-text">mapDispatchToProps</code>.</li>
-<li><em>‘class’</em> is an approach to modify <strong>classes</strong>. These plugins are able to modify the class, wrapping it into HOC or, in extreme cases, replacing it with other class. The second approach is not recommended because it is not well-compatible with potential other plugins wrapping around members of the same namespaces.</li>
+<li><strong>‘member-function’</strong> plugins intercept calls to <strong>instance members</strong>. These plugins are used to change the behavior of member functions, which are called on instance.</li>
+<li><strong>‘member-property’</strong> is an approach to change <strong>properties</strong>, which are not available on prototypes, e.g. state in a way it’s defined throughout the ScandiPWA (<code class="gatsby-code-text">state = { ... };</code>). Do not use this for class properties, which are arrow functions (<code class="gatsby-code-text">onUpdate = () =&gt; {....}</code>), use the <em>member-function</em> for that.</li>
+<li><strong>‘static-member’</strong> plugins enable changing classes’ <strong>static members</strong>.</li>
+<li><strong>‘function’</strong> is an approach to change <strong>functions</strong> which are not class members, e.g. <code class="gatsby-code-text">mapStateToProps</code> or <code class="gatsby-code-text">mapDispatchToProps</code>.</li>
+<li><strong>‘class’</strong> is an approach to modify <strong>classes</strong>. These plugins are able to modify the class, wrapping it into HOC or, in extreme cases, replacing it with other class. Replacing is not recommended because it is not well-compatible with potential other plugins wrapping around members of the same namespaces.</li>
 </ul>
 </li>
-<li>Name of the member to modify (for everything apart of ‘function’ and ‘class’ plugins)</li>
+<li>Name of the member to modify (for everything apart of ‘function’ and ‘class’ plugins, which are the only namespaces members and have reduced structure)</li>
 <li>Optional: a position, in which this plugin will be called. <strong>Defaults to 100</strong>. There may be multiple plugins for a single member if there are several extensions active in the application. The closer the position to 0 - the sooner it is called. The higher a position - the later. Non-unique.</li>
 </ol>
 <blockquote>
 <p><strong>Note</strong>:</p>
-<p>you can create class members that do not exist in the original classes and they will be called as you’d expect writing them directly in the class</p>
+<p>You can create class members that do not exist in the original classes and they will be called as you’d expect writing them directly in the class. It is useful when you need some lifecycle member functions that are not present in the original class. <strong>REMEMBER</strong> to call <code class="gatsby-code-text">callback</code> even if the original member is not present, that will make your plugin compatible with other plugins around the same member, by calling them after your plugin finishes its work.</p>
 </blockquote>
 <p>Configuration should follow this format:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="74032157200646850000"
+              data-toaster-id="76348129149052240000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -265,7 +277,7 @@ const classWrapper = (Class) => {
         'function': Plugins4,
         'class': Plugins5
     }
-}`, `74032157200646850000`)"
+}`, `76348129149052240000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -294,7 +306,7 @@ const classWrapper = (Class) => {
 <p>Where <code class="gatsby-code-text">Plugins</code> is either a function, an object or an Array of functions/objects. See valid <code class="gatsby-code-text">Plugins</code> blocks’ example below.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="46232918709281040000"
+              data-toaster-id="94768220796355440000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -321,7 +333,7 @@ const Plugins4 = [
         position: 1000,
         implementation: notVeryImportantFunction
     }
-];`, `46232918709281040000`)"
+];`, `94768220796355440000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -356,7 +368,7 @@ const Plugins4 = [
 <p>The example below demonstrates an example of multiple syntax opportunities for writing a configuration part.</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="69329160202580390000"
+              data-toaster-id="42952565667965720000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -384,7 +396,7 @@ const Plugins4 = [
         'function': [ I, J ],
         'class': K
     }
-}`, `69329160202580390000`)"
+}`, `42952565667965720000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -418,43 +430,17 @@ const Plugins4 = [
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
 <ol start="4">
-<li>Having an <code class="gatsby-code-text">index.js</code> file in the root of your extension is mandatory. It should contain no logic, only a single export: array that consists of relative paths from that file to all the <code class="gatsby-code-text">.plugin.js</code> files your extension declares. See the example below.</li>
-</ol>
-<div
-              class="gatsby-code-button-container"
-              data-toaster-id="31416089427512440000"
-              data-toaster-class="gatsby-code-button-toaster customToasterClass"
-              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
-              data-toaster-text="Copied"
-              data-toaster-duration="3500"
-              onClick="copyToClipboard(`module.exports = [
-    './app/plugin/SomeAppPlugin.plugin.js',
-    './sw/plugin/SomeSWPlugin.plugin.js'
-]`, `31416089427512440000`)"
-            >
-              <div
-                class="gatsby-code-button customButtonClass"
-                data-tooltip=""
-              >
-                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
-              </div>
-            </div>
-<div class="gatsby-highlight" data-language="jsx"><pre class="gatsby-code-jsx"><code class="gatsby-code-jsx">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'./app/plugin/SomeAppPlugin.plugin.js'</span><span class="token punctuation">,</span>
-    <span class="token string">'./sw/plugin/SomeSWPlugin.plugin.js'</span>
-<span class="token punctuation">]</span></code></pre></div>
-<ol start="5">
 <li>Activate your plugin. In the FE root of your theme, there is a file called <code class="gatsby-code-text">scandipwa.json</code>. It is responsible for theme’s configuration. Active plugins should be defined there.</li>
 </ol>
 <p>Contents:</p>
 <ul>
 <li><code class="gatsby-code-text">&lt;extension name&gt;</code>: should be picked by you, it is not related to any functionality, just denotes which plugin files are meant for which extension. Put anything you like here.</li>
-<li><code class="gatsby-code-text">&lt;path&gt;</code>: a single relative path from Magento root to the <code class="gatsby-code-text">scandipwa/index.js</code> file.</li>
+<li><code class="gatsby-code-text">&lt;path&gt;</code>: a single relative path from Magento root to the extension’s root.</li>
 </ul>
 <p>The format for the ‘extensions’ block of this file is the following:</p>
 <div
               class="gatsby-code-button-container"
-              data-toaster-id="61171752100679350000"
+              data-toaster-id="79927567576523490000"
               data-toaster-class="gatsby-code-button-toaster customToasterClass"
               data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
               data-toaster-text="Copied"
@@ -462,12 +448,12 @@ const Plugins4 = [
               onClick="copyToClipboard(`{
     // ...
     &quot;extensions&quot;: {
-        &quot;<extension>&quot;: &quot;<path>&quot;,
+        &quot;PayPal&quot;: &quot;vendor/scandipwa/paypal-graphql&quot;,
         &quot;<extension2>&quot;: &quot;<path2>&quot;,
         /** other extensions */
     }
     // ...
-}`, `61171752100679350000`)"
+}`, `79927567576523490000`)"
             >
               <div
                 class="gatsby-code-button customButtonClass"
@@ -479,14 +465,14 @@ const Plugins4 = [
 <div class="gatsby-highlight" data-language="jsx"><pre class="gatsby-code-jsx"><code class="gatsby-code-jsx"><span class="token punctuation">{</span>
     <span class="token comment">// ...</span>
     <span class="token string">"extensions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token string">"&lt;extension>"</span><span class="token operator">:</span> <span class="token string">"&lt;path>"</span><span class="token punctuation">,</span>
+        <span class="token string">"PayPal"</span><span class="token operator">:</span> <span class="token string">"vendor/scandipwa/paypal-graphql"</span><span class="token punctuation">,</span>
         <span class="token string">"&lt;extension2>"</span><span class="token operator">:</span> <span class="token string">"&lt;path2>"</span><span class="token punctuation">,</span>
         <span class="token comment">/** other extensions */</span>
     <span class="token punctuation">}</span>
     <span class="token comment">// ...</span>
 <span class="token punctuation">}</span></code></pre></div>
 <h2 id="plugins-for-plugins"><a href="#plugins-for-plugins" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins for plugins!</h2>
-<p>ScandiPWA allows <strong>plugging into plugins</strong>. All classes that your plugin requires should be assigned namespaces by wrapping them into the <code class="gatsby-code-text">middleware</code> function. The only exception is that plugin class in <code class="gatsby-code-text">.plugin.js</code> file cannot be plugged into due to configuration builder’s limitations. It still can be overriden as described in the extension guide though.</p></div></div></article><div class="css-1kbu8hg"><div><div style="opacity:0;transition:opacity 0.5s ease" class="css-1egtd8l"><div style="transform:translate(0px, 40px);transition:transform 0.5s ease" class="css-x8vket"><nav class="css-18bhv22 css-1aai96l"><div><button aria-controls="section_049785068132510624" class="css-1j8jxus"><div class="css-200vt3">Start &amp; Upgrade<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+<p>ScandiPWA allows <strong>plugging into plugins</strong>. All classes that your plugin requires should be assigned namespaces by wrapping them into the <code class="gatsby-code-text">middleware</code> function. The only exception is that plugin class in <code class="gatsby-code-text">.plugin.js</code> file <strong>cannot</strong> be plugged into due to configuration builder’s limitations. It still can be overriden as described in the extension guide though.</p></div></div></article><div class="css-1kbu8hg"><div><div style="opacity:0;transition:opacity 0.5s ease" class="css-1egtd8l"><div style="transform:translate(0px, 40px);transition:transform 0.5s ease" class="css-x8vket"><nav class="css-18bhv22 css-1aai96l"><div><button aria-controls="section_039146123441804925" class="css-1j8jxus"><div class="css-200vt3">Start &amp; Upgrade<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -495,7 +481,7 @@ const Plugins4 = [
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_049785068132510624" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/linux.html">Linux</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/mac.html">MacOs</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/with-remote-m2.html">Remote Magento Instance</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/update.html">Theme Upgrade</a></li></ul></div><div><button aria-controls="section_0027634468217465624" class="css-1j8jxus"><div class="css-200vt3">A to Z Overview<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_039146123441804925" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/linux.html">Linux</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/mac.html">MacOs</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/with-remote-m2.html">Remote Magento Instance</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/update.html">Theme Upgrade</a></li></ul></div><div><button aria-controls="section_03278533234368801" class="css-1j8jxus"><div class="css-200vt3">A to Z Overview<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -504,7 +490,7 @@ const Plugins4 = [
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_0027634468217465624" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/motivation.html">Motivation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/challenges.html">Challenges</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure-ui.html">File structure and UI components</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/rewriting-extending.html">Rewriting and extending theme</a></li></ul></div><div><button aria-controls="section_09654337834922315" class="css-1j8jxus"><div class="css-200vt3">FAQ<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_03278533234368801" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/motivation.html">Motivation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/challenges.html">Challenges</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure-ui.html">File structure and UI components</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/rewriting-extending.html">Rewriting and extending theme</a></li></ul></div><div><button aria-controls="section_05199854014302274" class="css-1j8jxus"><div class="css-200vt3">FAQ<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -513,7 +499,7 @@ const Plugins4 = [
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_09654337834922315" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/development.html">Development</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/installing.html">Installation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/billing-and-license.html">Billing and license</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/product-support.html">Product support</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/what-is-pwa.html">What is PWA</a></li></ul></div><div><button aria-controls="section_0800257115116382" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Introductory<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_05199854014302274" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/development.html">Development</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/installing.html">Installation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/billing-and-license.html">Billing and license</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/product-support.html">Product support</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/what-is-pwa.html">What is PWA</a></li></ul></div><div><button aria-controls="section_07661537019616567" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Introductory<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -522,7 +508,7 @@ const Plugins4 = [
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_0800257115116382" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/base-template.html">Base Template</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/extension.html">Customizing and Overwriting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/creating-resolver.html">Creating GraphQL resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-and-inspect.html">Debugging and Inspecting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/frontend-setup.html">Setting Up Frontend</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure.html">File Structure</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/data-flow.html">Data Flow</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/technology-stack.html">Technology Stack</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/configuration.html">Changing environment</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/build-and-configuration.html">Theme Build and Configuration</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/caching.html">Implementing Caching for New Caching Identities</a></li></ul></div><div><button aria-controls="section_021130037956181047" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Intermediate<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_07661537019616567" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/base-template.html">Base Template</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/extension.html">Customizing and Overwriting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/creating-resolver.html">Creating GraphQL resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-and-inspect.html">Debugging and Inspecting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/frontend-setup.html">Setting Up Frontend</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure.html">File Structure</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/data-flow.html">Data Flow</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/technology-stack.html">Technology Stack</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/configuration.html">Changing environment</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/build-and-configuration.html">Theme Build and Configuration</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/caching.html">Implementing Caching for New Caching Identities</a></li></ul></div><div><button aria-controls="section_05664778725403343" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Intermediate<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -531,7 +517,7 @@ const Plugins4 = [
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_021130037956181047" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-in-chrome.html">Debugging in Chrome</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/xdebug.html">Configuring XDebug</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/cli.html">CLI in Docker</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/postman-graphql-playground.html">Postman &amp; GraphQL Playground</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/vsc-extensions.html">VSCode Extensions</a></li><li class="css-atv6j6"><a aria-current="page" class="css-1b7a3df" href="/docs/plugin-mechanism.html"><span class="css-nmtjfb"></span>ScandiPWA plugins</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/eslint-stylelint.html">ESlint &amp; StyleLint</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/contribute.html">How to Contribute</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/migrate-newer-version.html">Migrating to a Newer Version</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/coding-standard.html">BEM and Coding Standards</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/tools.html">Tools of ScandiPWA</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/react-best-practices.html">React Best Practices</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/best-practices-styles.html">Best Practices Working with Styles</a></li></ul></div></nav></div></div><div role="button" tabindex="0" class="css-t3yz8c"><div class="css-tctv7l"><div class="css-7ef8f8"><div class="BurgerButon"><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div></div></div></div></div></div></div></div></div></div></div></div><footer class="css-vn0yrr"><div class="css-tctv7l"><div class="css-1fr488m"><div class="css-142w44y"><div class="css-1i3z83x"><div class="css-1gwkwnu"><a href="https://scandipwa.com/privacy.html" target="_blank" rel="noopener" class="css-dvkktt">Privacy Policy<svg x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="css-83uoqv"><path fill="currentColor" d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_05664778725403343" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-in-chrome.html">Debugging in Chrome</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/xdebug.html">Configuring XDebug</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/cli.html">CLI in Docker</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/postman-graphql-playground.html">Postman &amp; GraphQL Playground</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/vsc-extensions.html">VSCode Extensions</a></li><li class="css-atv6j6"><a aria-current="page" class="css-1b7a3df" href="/docs/plugin-mechanism.html"><span class="css-nmtjfb"></span>ScandiPWA plugins</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/eslint-stylelint.html">ESlint &amp; StyleLint</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/contribute.html">How to Contribute</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/migrate-newer-version.html">Migrating to a Newer Version</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/coding-standard.html">BEM and Coding Standards</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/tools.html">Tools of ScandiPWA</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/react-best-practices.html">React Best Practices</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/best-practices-styles.html">Best Practices Working with Styles</a></li></ul></div></nav></div></div><div role="button" tabindex="0" class="css-t3yz8c"><div class="css-tctv7l"><div class="css-7ef8f8"><div class="BurgerButon"><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div></div></div></div></div></div></div></div></div></div></div></div><footer class="css-vn0yrr"><div class="css-tctv7l"><div class="css-1fr488m"><div class="css-142w44y"><div class="css-1i3z83x"><div class="css-1gwkwnu"><a href="https://scandipwa.com/privacy.html" target="_blank" rel="noopener" class="css-dvkktt">Privacy Policy<svg x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="css-83uoqv"><path fill="currentColor" d="
       M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,
       0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z
     "></path><polygon fill="currentColor" points="
