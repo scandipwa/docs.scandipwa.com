@@ -58,6 +58,10 @@
 .algolia-docsearch-suggestion--wrapper {
     position: relative !important;
 }
+
+.algolia-docsearch-suggestion--highlight {
+    box-shadow: none !important;
+}
 .algolia-autocomplete .ds-dropdown-menu:before {
     display: block;
     position: absolute;
