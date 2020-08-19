@@ -25,7 +25,7 @@ class DocSearch extends Component<{}, State> {
         apiKey: 'f2b1e3681970e9ef3586944d88792e04',
         indexName: 'scandipwa',
         inputSelector: '#algolia-doc-search',
-        debug: true
+        debug: false
       });
     } else {
       console.warn('Search has failed to load and now is being disabled');
