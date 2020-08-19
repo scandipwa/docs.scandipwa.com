@@ -13,7 +13,7 @@ const ReactDOM = require('react-dom');
 require('normalize.css');
 require('./src/css/reset.css');
 require('./src/prism-styles');
-require('./src/css/algolia.css');
+require('./src/css/search.css');
 require('./src/css/gatsbyCodeButtons.css');
 
 

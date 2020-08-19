@@ -6,19 +6,11 @@
  */
 
 import Container from 'components/Container';
-// import HeaderLink from './HeaderLink';
 import {Link} from 'gatsby';
 import React from 'react';
 import {colors, fonts, media} from 'theme';
-// import {version} from 'site-constants';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
-// import DocSearch from './DocSearch';
-import Search from './../Search/Search';
-
-// $FlowFixMe
-// import navHeader from '../../../content/headerNav.yml';
-
-// import logoSvg from 'icons/logo.png';
+import DocSearch from './DocSearch';
 
 const Header = ({location}: {location: Location}) => (
   <header
@@ -70,7 +62,6 @@ const Header = ({location}: {location: Location}) => (
             },
           }}
           to="/">
-          {/* <img src={logoSvg} alt="" width="150" /> */}
           <div css={{paddingTop: 20}}>
             <svg xmlns="http://www.w3.org/2000/svg" width="170" height="100%" viewBox="0 0 206 50">
                   <g fill="none" fillRule="evenodd">
@@ -85,47 +76,6 @@ const Header = ({location}: {location: Location}) => (
           </div>
         </Link>
 
-        {/* <nav
-          css={{
-            flex: '1',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'stretch',
-            overflowX: 'auto',
-            overflowY: 'hidden',
-            WebkitOverflowScrolling: 'touch',
-            height: '100%',
-
-            // Hide horizontal scrollbar
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            '::-webkit-scrollbar': {
-              display: 'none',
-            },
-
-            [media.size('xsmall')]: {
-              flexGrow: '1',
-              width: 'auto',
-            },
-            [media.greaterThan('xlarge')]: {
-              width: null,
-            },
-            [media.lessThan('small')]: {
-              maskImage:
-                'linear-gradient(to right, transparent, black 20px, black 90%, transparent)',
-            },
-          }}>
-          {navHeader.items.map(link => (
-            <HeaderLink
-              key={link.title}
-              isActive={location.pathname.includes(link.activeSelector)}
-              title={link.title}
-              to={link.to}
-            />
-          ))}
-        </nav> */}
-
-        
 
         <div
           css={{
@@ -141,32 +91,7 @@ const Header = ({location}: {location: Location}) => (
             width: 'calc(100% / 4)',
             },
           }}>
-            {/* <DocSearch /> */}
-            <Search indices={[{name: 'Pages'}]} />
-
-          {/* <Link
-            css={{
-              padding: '5px 10px',
-              whiteSpace: 'nowrap',
-              ...fonts.small,
-
-              ':hover': {
-                color: colors.brand,
-              },
-
-              ':focus': {
-                outline: 0,
-                backgroundColor: colors.lighter,
-                borderRadius: 15,
-              },
-
-              [media.lessThan('medium')]: {
-                display: 'none',
-              },
-            }}
-            to="/versions">
-            v{version}
-          </Link> */}
+            <DocSearch />
 
           <a
             css={{ 
@@ -185,9 +110,6 @@ const Header = ({location}: {location: Location}) => (
                 borderRadius: 15,
               },
 
-              // [media.lessThan('large')]: {
-              //   display: 'none',
-              // },
             }}
             href="https://github.com/scandipwa/docs.scandipwa.com/"
             target="_blank"

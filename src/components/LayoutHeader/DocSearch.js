@@ -22,10 +22,10 @@ class DocSearch extends Component<{}, State> {
     // eslint-disable-next-line no-undef
     if (window.docsearch) {
       window.docsearch({
-        apiKey: 'e0afafc71f35e994ea7ccadc350779bc',
-        appId: 'CBK9UYL4P2',
-        indexName: 'Documentation',
+        apiKey: 'f2b1e3681970e9ef3586944d88792e04',
+        indexName: 'scandipwa',
         inputSelector: '#algolia-doc-search',
+        debug: true
       });
     } else {
       console.warn('Search has failed to load and now is being disabled');

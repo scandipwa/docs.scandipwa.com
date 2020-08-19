@@ -7,7 +7,7 @@
 import React from 'react';
 
 const JS_NPM_URLS = [
-  'https://unpkg.com/docsearch.js@2.4.1/dist/cdn/docsearch.min.js',
+  'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js',
 ];
 
 type Props = {|
@@ -39,6 +39,10 @@ export default class HTML extends React.Component<Props> {
           <meta name="apple-mobile-web-app-title" content="React" />
 
           {this.props.headComponents}
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+          />
         </head>
         <body {...this.props.bodyAttributes}>
           <div
