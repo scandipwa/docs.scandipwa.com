@@ -176,3 +176,32 @@ You can do it by configuring NGINX. Additionally creating a separate store-view 
 ## How do I add icons to the header, for example, wishlist icon?
 
 You need to extend the header component and add the new icon.
+
+## Can't open non-pwa page
+
+All URLs that are PWA have to be configured in getBypassCacheHosts within scandipwa/source/src/sw/handler/UrlHandler.js file.
+
+Example: 
+
+```bash
+'(?!^.*admin)', // Magento Admin. '(?!^.*default/inipay/std/test)', //
+```
+
+## How can I add additional fields in the checkout?
+
+To add additional fields in the checkout:
+
+1. Override and extend CheckoutAddressForm component (CheckoutAddressForm.component.js) method filedMap in the front end
+2. The key you add must be a key matching GraphQL schema defined field key you plan to send to BE
+3. On backend create a new Magento module, add new field to schema - the child field of input AddressInput
+4. If that does not work add a resolver to the field and save the value of the field in quote
+
+## Can't add new menu items to menu
+
+Pay attention to the root parent item and make sure your root structure looks something like this: root < rootitem < men, women, kids, etc.
+
+You need to create a new item to be on root.
+
+## Where do I change the stylesheet for menu items?
+
+You change the stylesheet where the BEM (block) part is declared. If class starts with "Hello-Friends_isGood" then look for "Hello" component.
