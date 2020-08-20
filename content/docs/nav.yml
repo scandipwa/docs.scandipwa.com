@@ -8,6 +8,8 @@
       title: Remote Magento Instance
     - id: update
       title: Theme Upgrade
+    - id: automated-setup
+      title: Automated Setup
 - title: A to Z Overview
   items:
     - id: motivation
