@@ -634,3 +634,7 @@ After that:
 Windows is not supporting symlinks. You can simply copy file instead of symlinking.
 
 Make sure that .env and .application are present in your project directory.
+
+## Unable to setup ScandiPWA on the existing Magento 2.3.3 Enterprise edition
+
+The issue is caused by ScandiPWA slider not supporting PHP 7.3
