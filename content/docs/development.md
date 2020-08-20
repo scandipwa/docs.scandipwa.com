@@ -152,3 +152,27 @@ Replace main.scss and replace it. After import original files from vendor and yo
 ## Content is not appearing on fronted after installing ScandiPWA in running Magento instance
 
 Your server is not configured to execute PHP. Configure web server property.
+
+## How do I get public and private key from Magento marketplace?
+
+Follow the steps provided in [the offical Magento Developer Docs](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/connect-auth.html#:~:text=Click%20Access%20Keys%20in%20the,you%20can%20click%20to%20copy).
+
+## ERROR: 413 Request Entity Too Large when uploading Slider images
+
+Slider has 1 MB limit for images. Optimize image to be smaller than 1 MB. This will also boost your performance.
+
+## How do I recompile file on frontend?
+
+Restart the frontend container.
+
+## How can I add an image to the splash screen?
+
+To add an image to the splash screen you need modify config/webmanifest.config.js file.
+
+## Can I use ScandiPWA theme only for mobile and tablet versions of the website?
+
+You can do it by configuring NGINX. Additionally creating a separate store-view would help archive this.
+
+## How do I add icons to the header, for example, wishlist icon?
+
+You need to extend the header component and add the new icon.
