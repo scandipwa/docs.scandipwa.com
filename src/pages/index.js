@@ -220,7 +220,7 @@ class Home extends Component {
                           <li><a href="./docs/development.html">Development</a></li>
                           <li><a href="./docs/billing-and-license.html">Billing and license</a></li>
                           <li><a href="./docs/product-support.html">Product support</a></li>
-                          <li><a href="./docs/what-is-pwa.html">What is PWA</a></li>
+                          <li><a href="./docs/what-is-pwa.html">What is PWA?</a></li>
                         </ul>
                       <li css={{fontSize: 20}}>How-to tutorials - Introductory</li>
                         <ul>
