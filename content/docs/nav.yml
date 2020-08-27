@@ -8,6 +8,8 @@
       title: Remote Magento Instance
     - id: update
       title: Theme Upgrade
+    - id: automated-setup
+      title: Automated Setup
 - title: A to Z Overview
   items:
     - id: motivation
@@ -29,7 +31,7 @@
     - id: product-support
       title: Product support
     - id: what-is-pwa
-      title: What is PWA
+      title: What is PWA?
 - title: How-To Tutorials - Introductory
   # isOrdered: true
   items:

@@ -205,6 +205,7 @@ class Home extends Component {
                           <li><a href="./docs/mac.html">MacOS</a></li>
                           <li><a href="./docs/with-remote-m2.html">Remote Magento Instance</a></li>
                           <li><a href="./docs/update.html">Theme Upgrade</a></li>
+                          <li><a href="./docs/automated-setup.html">Automated Setup</a></li>
                         </ul>
                       <li css={{fontSize: 20}}>A to Z Overview</li>
                         <ul>
@@ -219,7 +220,7 @@ class Home extends Component {
                           <li><a href="./docs/development.html">Development</a></li>
                           <li><a href="./docs/billing-and-license.html">Billing and license</a></li>
                           <li><a href="./docs/product-support.html">Product support</a></li>
-                          <li><a href="./docs/what-is-pwa.html">What is PWA</a></li>
+                          <li><a href="./docs/what-is-pwa.html">What is PWA?</a></li>
                         </ul>
                       <li css={{fontSize: 20}}>How-to tutorials - Introductory</li>
                         <ul>

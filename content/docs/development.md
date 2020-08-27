@@ -152,3 +152,56 @@ Replace main.scss and replace it. After import original files from vendor and yo
 ## Content is not appearing on fronted after installing ScandiPWA in running Magento instance
 
 Your server is not configured to execute PHP. Configure web server property.
+
+## How do I get public and private key from Magento marketplace?
+
+Follow the steps provided in [the offical Magento Developer Docs](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/connect-auth.html#:~:text=Click%20Access%20Keys%20in%20the,you%20can%20click%20to%20copy).
+
+## ERROR: 413 Request Entity Too Large when uploading Slider images
+
+Slider has 1 MB limit for images. Optimize image to be smaller than 1 MB. This will also boost your performance.
+
+## How do I recompile file on frontend?
+
+Restart the frontend container.
+
+## How can I add an image to the splash screen?
+
+To add an image to the splash screen you need modify config/webmanifest.config.js file.
+
+## Can I use ScandiPWA theme only for mobile and tablet versions of the website?
+
+You can do it by configuring NGINX. Additionally creating a separate store-view would help archive this.
+
+## How do I add icons to the header, for example, wishlist icon?
+
+You need to extend the header component and add the new icon.
+
+## Can't open non-pwa page
+
+All URLs that are PWA have to be configured in getBypassCacheHosts within scandipwa/source/src/sw/handler/UrlHandler.js file.
+
+Example: 
+
+```bash
+'(?!^.*admin)', // Magento Admin. '(?!^.*default/inipay/std/test)', //
+```
+
+## How can I add additional fields in the checkout?
+
+To add additional fields in the checkout:
+
+1. Override and extend CheckoutAddressForm component (CheckoutAddressForm.component.js) method filedMap in the front end
+2. The key you add must be a key matching GraphQL schema defined field key you plan to send to BE
+3. On backend create a new Magento module, add new field to schema - the child field of input AddressInput
+4. If that does not work add a resolver to the field and save the value of the field in quote
+
+## Can't add new menu items to menu
+
+Pay attention to the root parent item and make sure your root structure looks something like this: root < rootitem < men, women, kids, etc.
+
+You need to create a new item to be on root.
+
+## Where do I change the stylesheet for menu items?
+
+You change the stylesheet where the BEM (block) part is declared. If class starts with "Hello-Friends_isGood" then look for "Hello" component.
