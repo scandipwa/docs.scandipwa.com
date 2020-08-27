@@ -57,6 +57,8 @@
       title: Theme Build and Configuration
     - id: caching
       title: Implementing Caching for New Caching Identities
+    - id: parent-theme
+      title: Implementing a parent theme
 - title: How-To Tutorials - Intermediate
   items:
     - id: debug-in-chrome

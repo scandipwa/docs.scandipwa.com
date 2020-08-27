@@ -235,6 +235,7 @@ class Home extends Component {
                           <li><a href="./docs/configuration.html">Changing environment</a></li>
                           <li><a href="./docs/build-and-configuration.html">Theme Build and Configuration</a></li>
                           <li><a href="./docs/caching.html">Implementing Caching for New Caching Identities</a></li>
+                          <li><a href="./docs/parent-theme.html">Implementing a parent theme</a></li>
                         </ul>
                       <li css={{fontSize: 20}}>How-to tutorials - Intermediate</li>
                         <ul>

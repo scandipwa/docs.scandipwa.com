@@ -26,7 +26,7 @@ ScandiPWA v3 (currently in beta) supports implementing parent themes, which allo
 
 ## A step-by-step algorithm of implementing a parent theme
 
-1. Implement your custom theme, you can refer to [this guide](/docs/development/extension/).
+1. Implement your custom theme, you can refer to [this guide](./extension.html).
 
 2. Create a parent theme directory: `app/design/frontend/<vendor>/<themename>` or use the default `app/design/frontend/Scandiweb/pwa_parent`.
 
@@ -60,9 +60,9 @@ ScandiPWA v3 (currently in beta) supports implementing parent themes, which allo
     class AddToCart extends ParentAddToCart { ... }
 ```
 
-    - Using components. To import component and use it somewhere in your application (not to extend it) use the regular `Component/<ComponentName>` alias. When resolving a file, Fallback plugin is going to look in the following directories subsequently:
+- Using components. To import component and use it somewhere in your application (not to extend it) use the regular `Component/<ComponentName>` alias. When resolving a file, Fallback plugin is going to look in the following directories subsequently:
 
-    1. Custom theme (`app/design/frontend/.../pwa`)
-    2. Parent theme (`parentRoot` in scandipwa.json)
-    3. Vendor theme (`src/scandipwa/source`)
+1. Custom theme (`app/design/frontend/.../pwa`)
+2. Parent theme (`parentRoot` in scandipwa.json)
+3. Vendor theme (`src/scandipwa/source`)
 

@@ -31,12 +31,6 @@ class DocSearch extends Component<{}, State> {
       console.warn('Search has failed to load and now is being disabled');
       this.setState({enabled: false});
     }
-    console.log(window.docsearch({
-      apiKey: 'e0afafc71f35e994ea7ccadc350779bc',
-      appId: 'CBK9UYL4P2',
-      indexName: 'Documentation',
-      inputSelector: '#algolia-doc-search',
-    }))
   }
 
   render() {
@@ -97,7 +91,7 @@ class DocSearch extends Component<{}, State> {
 
               ':focus': {
                 paddingLeft: '29px',
-                width: '8rem',
+                width: '9rem',
                 outline: 'none',
               },
             },
