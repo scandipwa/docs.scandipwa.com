@@ -638,3 +638,11 @@ Make sure that .env and .application are present in your project directory.
 ## Unable to setup ScandiPWA on the existing Magento 2.3.3 Enterprise edition
 
 The issue is caused by ScandiPWA slider not supporting PHP 7.3
+
+## ERROR: Exception #0 (InvalidArgumentException): Required parameter 'theme_dir' was not passed
+
+This error happens if theme is set up but is not compiled or wrong theme is selected in admin. You can check it in Magento_Theme folder which is located in ./app/design/frontend/Scandiweb/pwa.
+
+## Will ScandiPWA theme work without Varnish?
+
+Varnish is an essential part of ScandiPWA. For easy and quick setup we recommend [Docker Installation](https://docs.scandipwa.com/docs/linux.html) as it has needed services including Varnish pre-configured.

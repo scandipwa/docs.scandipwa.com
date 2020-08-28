@@ -205,3 +205,40 @@ You need to create a new item to be on root.
 ## Where do I change the stylesheet for menu items?
 
 You change the stylesheet where the BEM (block) part is declared. If class starts with "Hello-Friends_isGood" then look for "Hello" component.
+
+## How do I create a multi-language website?
+
+You can find information on multilanguage support [here](https://github.com/scandipwa/base-theme/releases/tag/2.7.0).
+
+## How can I add a new page to the router?
+
+Follow these steps to add a new page to the router:
+1. Add it from constructor. 
+2. Make sure you export everything just like the original class did. 
+3. Import everything you plan to reuse (make sure to not import the default export).
+
+## How can you add CMS block identifiers in the header?
+
+You need to add them into the router as well because the request is proceessed there. currently the page is responsible for block loading not the CMS block itself. Add CMS block to getCmsBlocksToRequests() in the index.js (the main router). See the template for this file in override in [docs](https://docs.scandipwa.com/#/scandipwa/development/overrides).
+
+## Translation is not working even after rebuilding the theme
+
+Make sure you have set up Magento locale correctly in your store.
+
+## ERROR: "Command make not found"
+
+This command should be preinstalled. If it is not install the make command.
+
+## How can I implement autoslider?
+
+You would have to make direct changes to the JS component and do custom implementation of this feature.
+
+## How can I call custom Magento modules with ScandiPWA theme?
+
+If the module interacts with Frontend then you will have to implement ScandiPWA compatibility for it. Backend only modules work out of the box without any additional work.
+
+Please see how [Plugin Mechanism](https://docs.scandipwa.com/docs/plugin-mechanism.html) works and how you can use it to create reusable ScandiPWA theme extensions.
+
+## How can I add changes to index.js file under the app directory?
+
+Index.js file has to be renamed before you can make overrides within it. Afterwards make sure to change the file name to the new one in the webpack configuration.
