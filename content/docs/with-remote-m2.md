@@ -86,19 +86,19 @@ git clone https://github.com/scandipwa/base-theme.git
 
 > **Note**:
 >
-> sometimes, after the repository is cloned, the git chooses the `master` branch as default. This is the legacy (incorrect) default branch in case of `base-theme`. Please make sure you are using `2.x-stable`. You can do it using following command:
+> sometimes, after the repository is cloned, the git chooses the `master` branch as default. This is the legacy (incorrect) default branch in case of `base-theme`. Please make sure you are using `3.x-stable`. You can do it using following command:
 
 ```bash
-git status # expected output `On branch 2.x-stable`
+git status # expected output `On branch 3.x-stable`
 ```
 
 If any other output has been returned, execute the following command to checkout the correct branch:
 
 ```bash
-git checkout 2.x-stable
+git checkout 3.x-stable
 ```
 
-Later, for development purposes any new branch created from `2.x-stable` can be used.
+Later, for development purposes any new branch created from `3.x-stable` can be used.
 
 2. Add following key to `package.json`:
 

@@ -118,16 +118,16 @@ git clone https://github.com/scandipwa/scandipwa-base.git
 
 > **Note**:
 >
-> sometimes, after the repository is cloned, the git chooses the `master` branch as default. This is the legacy (incorrect) default branch in case of `scandipwa-base`. Please make sure you are using `2.x-stable`. You can do it using following command:
+> sometimes, after the repository is cloned, the git chooses the `master` branch as default. This is the legacy (incorrect) default branch in case of `scandipwa-base`. Please make sure you are using `3.x-stable`. You can do it using following command:
 
 ```bash
-git status # expected output `On branch 2.x-stable`
+git status # expected output `On branch 3.x-stable`
 ```
 
 If any other output has been returned, execute the following command to checkout the correct branch:
 
 ```bash
-git checkout 2.x-stable
+git checkout 3.x-stable
 ```
 
 2. Generate and trust a self-signed SSL certificate.
