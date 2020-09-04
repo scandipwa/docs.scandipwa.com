@@ -646,3 +646,15 @@ This error happens if theme is set up but is not compiled or wrong theme is sele
 ## Will ScandiPWA theme work without Varnish?
 
 Varnish is an essential part of ScandiPWA. For easy and quick setup we recommend [Docker Installation](https://docs.scandipwa.com/docs/linux.html) as it has needed services including Varnish pre-configured.
+
+## ERROR: Can't resolve '.../pwa/src/app/index.js' in '.../app/design/frontend/Scandiweb/pwa'
+
+Vendor folder is missing. You have to add it.
+
+## After installing ScandiPWA in production mode nothing is displayed in store and 502 is returned from /admin
+
+Restart Nginx, ssl-term and Varnish.
+
+## ERROR: Exception #0 (CredisException): NOAUTH Authentication required
+
+Your Redis doesn't have password setup but you are trying to connect using a password. Try not setting password at all.
