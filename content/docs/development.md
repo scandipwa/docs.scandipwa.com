@@ -242,3 +242,11 @@ Please see how [Plugin Mechanism](https://docs.scandipwa.com/docs/plugin-mechani
 ## How can I add changes to index.js file under the app directory?
 
 Index.js file has to be renamed before you can make overrides within it. Afterwards make sure to change the file name to the new one in the webpack configuration.
+
+## How do I make some elements extendable (Accordion) just in mobile view?
+
+The best way would be to create a Magento widget with title and field for content. Alternatively, you can parse all elements to make them extendable.
+
+## Cache clean command not working: bin/magento c:c
+
+You should never run commands from your host machine if you are using Docker. You should run it from the container using the in app command.
