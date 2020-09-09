@@ -23,19 +23,19 @@ In the video below, ScandiPWA front-end lead Alfred is talking about the build a
 </div>
 
 Topics covered in this tutorial:
-1.	[What Is Webpack?](#1.-what-is-webpack?) <br>
-    1.1.	[webpack: Source And Destination Folders](#1.1.-webpack:-source-and-destination-folders)
-2.	[Differences Between Production And Development Set-Up](#2.-differences-between-production-and-development-set-up) <br>
-    2.1.	[Code Minification And Splitting](#2.1.-code-minification-and-splitting) <br>
-    2.2.	[The Manifest](#2.2.-The-`manifest`) <br>
-    2.3.	[Service Worker Pre-cache](#2.3.-service-worker-pre-cache) <br>
-    2.4.	[The Source Map](#2.4.-the-source-map) <br>
-    2.5.	[The Hot Reload](#2.5.-the-hot-reload) <br>
-    2.6.	[The Development Server](#2.6.-the-development-server) <br>
-    2.7.	[The HTML Entry File](#2.7.-the-html-entry-file) <br>
-    2.8.	[Debugging And Building](#2.8.-debugging-and-building) <br>
-3.	[The `config` Folder](#3.-the-`config`-folder)
-4.	[Available Commands](#4.-available-commands)
+1.	[What Is Webpack?](#1-what-is-webpack) <br>
+    1.1.	[webpack: Source And Destination Folders](#11-webpack-source-and-destination-folders)
+2.	[Differences Between Production And Development Set-Up](#2-differences-between-production-and-development-set-up) <br>
+    2.1.	[Code Minification And Splitting](#21-code-minification-and-splitting) <br>
+    2.2.	[The Manifest](#22-The-`manifest`) <br>
+    2.3.	[Service Worker Pre-cache](#23-service-worker-pre-cache) <br>
+    2.4.	[The Source Map](#24-the-source-map) <br>
+    2.5.	[The Hot Reload](#25-the-hot-reload) <br>
+    2.6.	[The Development Server](#26-the-development-server) <br>
+    2.7.	[The HTML Entry File](#27-the-html-entry-file) <br>
+    2.8.	[Debugging And Building](#28-debugging-and-building) <br>
+3.	[The `config` Folder](#3-the-`config`-folder)
+4.	[Available Commands](#4-available-commands)
 
 ## 1. What Is Webpack?
 Webpack allows us to bundle a theme or an application. It’s run in the development set-up in order to create prioritized bundles of modules and files that will then be run as the application starts. 
@@ -147,11 +147,11 @@ If we take a look at the `root.phtml` and `index.production.phtml` files, we can
 This is where the differences between the production and development set-up will come in.
 |PRODUCTION|DEVELOPMENT|
 |-----|----|
-|[Code is minified](#2.1.-code-minification-and-splitting)|[Source maps](#2.4.-the-source-map)|
-|[Code splitting or bundling](#2.1.-code-minification-and-splitting)|[Hot reload (`NODE_ENV`)](#2.5.-the-hot-reload)|
-|[Service Worker Pre-Cache to pre-load assets](#2.3.-service-worker-pre-cache)|[Dev server (with cache)](#2.6.-the-development-server)|
-|[`index.production.phtml`](#2.7.-the-html-entry-file)|[`index.development.html`](#2.7.-the-html-entry-file)|
-|[TWO-STEP BUILD](#2.8.-debugging-and-building)|[NO FILES GENERATED](#2.8.-debugging-and-building)| 
+|[Code is minified](#21-code-minification-and-splitting)|[Source maps](#24-the-source-map)|
+|[Code splitting or bundling](#21-code-minification-and-splitting)|[Hot reload (`NODE_ENV`)](#25-the-hot-reload)|
+|[Service Worker Pre-Cache to pre-load assets](#23-service-worker-pre-cache)|[Dev server (with cache)](#26-the-development-server)|
+|[`index.production.phtml`](#27-the-html-entry-file)|[`index.development.html`](#27-the-html-entry-file)|
+|[TWO-STEP BUILD](#28-debugging-and-building)|[NO FILES GENERATED](#28-debugging-and-building)| 
 <br>
 
 ### 2.1.	Code Minification And Splitting
@@ -225,7 +225,7 @@ And lastly, the biggest difference in terms of debugging is the fact that no fil
 ```
 A brief overview of the `config` folder would be as follows:
 -	`webpack.development.config.js` and `webpack.production.config.js`
-    -	The differences are as mentioned in [section 2](#2.-differences-between-production-and-development-set-up).
+    -	The differences are as mentioned in [section 2](#2-differences-between-production-and-development-set-up).
 -	`webpack.extract-translations.config.js`
     -	Extracts the internationalization strings from the application. We need to do this periodically in order to update the `.json` files with new translations.
 
