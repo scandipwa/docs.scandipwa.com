@@ -27,7 +27,7 @@ Topics covered in this tutorial:
     1.1.	[webpack: Source And Destination Folders](#webpack-source-and-destination-folders)
 2.	[Differences Between Production And Development Set-Up](#2-differences-between-production-and-development-set-up) <br>
     2.1.	[Code Minification And Splitting](#code-minification-and-splitting) <br>
-    2.2.	[The Manifest](#The-`manifest`) <br>
+    2.2.	[The Manifest](#the-manifest) <br>
     2.3.	[Service Worker Pre-cache](#service-worker-pre-cache) <br>
     2.4.	[The Source Map](#the-source-map) <br>
     2.5.	[The Hot Reload](#the-hot-reload) <br>
