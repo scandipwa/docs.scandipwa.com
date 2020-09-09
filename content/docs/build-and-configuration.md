@@ -303,7 +303,7 @@ Another approach would be by adding a NGINX config, which you can locate in our 
 If none of these solutions work, we would recommend developing your application in our Docker environment which includes everything you need to start building applications seamlessly.
 
 ### `npm run extract-translations` 
-This command will parse through all of your files and find every single template literal (` --(` `); `) that you’ve added. Notice that there should be a simple string in between the backticks, not a variable. After that, the contents of the backticks will be put into the `i18n` internationalization folder under the specific language, e.g. all English strings will be appended to the `en_US.json` file.
+This command will parse through all of your files and find every single template literal ( --(\` \`); ) that you’ve added. Notice that there should be a simple string in between the backticks, not a variable. After that, the contents of the backticks will be put into the `i18n` internationalization folder under the specific language, e.g. all English strings will be appended to the `en_US.json` file.
 
 If a language file’s string translation is `null`, that means that we don’t have a translation for the specific term at the moment, so feel free to contribute if you know the language.
 
