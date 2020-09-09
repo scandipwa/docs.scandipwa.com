@@ -34,8 +34,8 @@ Topics covered in this tutorial:
     2.6.	[The Development Server](#the-development-server) <br>
     2.7.	[The HTML Entry File](#the-html-entry-file) <br>
     2.8.	[Debugging And Building](#debugging-and-building) <br>
-3.	[The `config` Folder](#3the-config-folder) <br>
-4.	[Available Commands](#4available-commands) <br>
+3.	[The `config` Folder](#3-the-config-folder) <br>
+4.	[Available Commands](#4-available-commands) <br>
 
 ## 1. What Is Webpack?
 Webpack allows us to bundle a theme or an application. It’s run in the development set-up in order to create prioritized bundles of modules and files that will then be run as the application starts. 
