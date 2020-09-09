@@ -83,7 +83,7 @@ It might be inconvenient in development to import or load CSS files as they are.
 
 To quickly sum up, webpack is a code transformation tool that can handle JavaScript and other files using various loaders. It will take your source files and output transformed files into a destination folder, while also simultaneously optimizing the code, plugging in extensions, or performing other tasks that you’ve set.
 
-### 1.1. webpack: source and destination folders
+### 1.1. webpack: Source And Destination Folders
 Let’s look at our folder structure:
 ```bash
 📂pwa
@@ -141,14 +141,14 @@ Now Magento will understand that there’s a theme that’ll override the root t
  ┃ ┗ 📂public  
  ┗   ┗ 📜index.production.phtml
 ```
-## 2. Differences between production and development set-up
+## 2. Differences Between Production And Development Set-Up
 If we take a look at the `root.phtml` and `index.production.phtml` files, we can see that they’re very similar. However, the style files will look completely different. This is because, in the process of parsing the code, the `babel` plug-in will transform and optimize it. 
 
 This is where the differences between the production and development set-up will come in.
 |PRODUCTION|DEVELOPMENT|
 |-----|----|
 |[Code is minified](#2.1.-code-minification-and-splitting)|[Source maps](#2.4.-the-source-map)|
-|Code splitting or bundling|[Hot reload (`NODE_ENV`)](#2.5.-the-hot-reload)|
+|[Code splitting or bundling](#2.1.-code-minification-and-splitting)|[Hot reload (`NODE_ENV`)](#2.5.-the-hot-reload)|
 |[Service Worker Pre-Cache to pre-load assets](#2.3.-service-worker-pre-cache)|[Dev server (with cache)](#2.6.-the-development-server)|
 |[`index.production.phtml`](#2.7.-the-html-entry-file)|[`index.development.html`](#2.7.-the-html-entry-file)|
 |[TWO-STEP BUILD](#2.8.-debugging-and-building)|[NO FILES GENERATED](#2.8.-debugging-and-building)| 
@@ -204,7 +204,7 @@ It’s worthwhile mentioning that in production set-up, the build process itself
 
 And lastly, the biggest difference in terms of debugging is the fact that no files are generated in development mode, due to the development server’s memory cache. This can be seen by browsing our folder structures. In development mode the `Magento-Theme` folder will not appear. 
 
-## 3.	The `config` folder
+## 3.	The `config` Folder
 ```bash
 📂source
  ┣ 📂<…>
@@ -253,7 +253,7 @@ npm or Node package manager allows us to use some nifty aliases that are defined
 ```
  These are only two of the ready made scripts. Check out more npm presets in the `package.json` file.
 
-### What to run in which situation?
+### What To Run In Which Situation?
 If you’re using our Docker environment you don’t have to run anything. Docker does the job on its own.
 
 However, if you decide to develop on your local machine, the following commands might come in handy: 
