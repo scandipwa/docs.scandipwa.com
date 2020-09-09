@@ -24,17 +24,17 @@ In the video below, ScandiPWA front-end lead Alfred is talking about the build a
 
 Topics covered in this tutorial:
 1.	[What Is Webpack?](#1-what-is-webpack) <br>
-    1.1.	[webpack: Source And Destination Folders](#11-webpack-source-and-destination-folders)
+    1.1.	[webpack: Source And Destination Folders](#webpack-source-and-destination-folders)
 2.	[Differences Between Production And Development Set-Up](#2-differences-between-production-and-development-set-up) <br>
-    2.1.	[Code Minification And Splitting](#21-code-minification-and-splitting) <br>
-    2.2.	[The Manifest](#22-The-`manifest`) <br>
-    2.3.	[Service Worker Pre-cache](#23-service-worker-pre-cache) <br>
-    2.4.	[The Source Map](#24-the-source-map) <br>
-    2.5.	[The Hot Reload](#25-the-hot-reload) <br>
-    2.6.	[The Development Server](#26-the-development-server) <br>
-    2.7.	[The HTML Entry File](#27-the-html-entry-file) <br>
-    2.8.	[Debugging And Building](#28-debugging-and-building) <br>
-3.	[The `config` Folder](#3-the-`config`-folder)
+    2.1.	[Code Minification And Splitting](#code-minification-and-splitting) <br>
+    2.2.	[The Manifest](#The-`manifest`) <br>
+    2.3.	[Service Worker Pre-cache](#service-worker-pre-cache) <br>
+    2.4.	[The Source Map](#the-source-map) <br>
+    2.5.	[The Hot Reload](#the-hot-reload) <br>
+    2.6.	[The Development Server](#the-development-server) <br>
+    2.7.	[The HTML Entry File](#the-html-entry-file) <br>
+    2.8.	[Debugging And Building](#debugging-and-building) <br>
+3.	[The `config` Folder](#3-the-config-folder)
 4.	[Available Commands](#4-available-commands)
 
 ## 1. What Is Webpack?
@@ -73,7 +73,7 @@ Due to the fact that not all browsers support the shorthand properties of `flex`
 Fortunately, webpack has a `postcss-loader`, which will do this for you using the `autoprefixer` plug-in. So, the processed code will look something like this:
 ```css
 …
--webkit-flex: 101;  # Chrome, Safari
+-webkit-flex: 101;  # Chrome and Safari
 -moz-flex: 101;     # Mozilla
 -o-flex: 101;       # Opera
 -ms-flex: 101;      # Internet Explorer
@@ -83,7 +83,8 @@ It might be inconvenient in development to import or load CSS files as they are.
 
 To quickly sum up, webpack is a code transformation tool that can handle JavaScript and other files using various loaders. It will take your source files and output transformed files into a destination folder, while also simultaneously optimizing the code, plugging in extensions, or performing other tasks that you’ve set.
 
-### 1.1. webpack: Source And Destination Folders
+### 1.1.
+### webpack: Source And Destination Folders
 Let’s look at our folder structure:
 ```bash
 📂pwa
@@ -147,32 +148,37 @@ If we take a look at the `root.phtml` and `index.production.phtml` files, we can
 This is where the differences between the production and development set-up will come in.
 |PRODUCTION|DEVELOPMENT|
 |-----|----|
-|[Code is minified](#21-code-minification-and-splitting)|[Source maps](#24-the-source-map)|
-|[Code splitting or bundling](#21-code-minification-and-splitting)|[Hot reload (`NODE_ENV`)](#25-the-hot-reload)|
-|[Service Worker Pre-Cache to pre-load assets](#23-service-worker-pre-cache)|[Dev server (with cache)](#26-the-development-server)|
-|[`index.production.phtml`](#27-the-html-entry-file)|[`index.development.html`](#27-the-html-entry-file)|
-|[TWO-STEP BUILD](#28-debugging-and-building)|[NO FILES GENERATED](#28-debugging-and-building)| 
+|[Code is minified](#code-minification-and-splitting)|[Source maps](#the-source-map)|
+|[Code splitting or bundling](#code-minification-and-splitting)|[Hot reload (`NODE_ENV`)](#the-hot-reload)|
+|[Service Worker Pre-Cache to pre-load assets](#service-worker-pre-cache)|[Dev server (with cache)](#the-development-server)|
+|[`index.production.phtml`](#the-html-entry-file)|[`index.development.html`](#the-html-entry-file)|
+|[TWO-STEP BUILD](#debugging-and-building)|[NO FILES GENERATED](#debugging-and-building)| 
 <br>
 
-### 2.1.	Code Minification And Splitting
+### 2.1.
+### Code Minification And Splitting
 In the production set-up code will be minified by the `babel` plug-in, i.e. all of the unnecessary characters will be removed, making it appear as a single line. 
 
 `Webpack` will ensure that the code will get split into multiple parts, in this specific case its 20 bundles. Code splitting allows us to load the code when needed, thus making the website faster and more efficient. Besides bundling, `webpack` also ensures that the code is loaded as needed according to priority.
 
-### 2.2.	The `manifest`
+### 2.2.
+### The `manifest`
 Let’s look at the `manifest` a little. It doesn’t differ between the development and production set-ups. The `manifest` is a specific feature of PWA or Progressive Web Applications in general. It is automatically generated and allows us to install the application correctly. 
 
 PWA manifests usually include things like the app name, author, version, description and a list of resources among other things.
 
-### 2.3.	Service Worker Pre-cache
+### 2.3.
+### Service Worker Pre-cache
 The `precache-manifest`, however, is only generated in production. Service Worker Pre-cache will download all of the split code or bundles by itself without a specific request and return the bundles immediately when requested. 
 
 The pre-loaded bundles will also ensure that all of the application will be available to you offline even though you haven’t visited it. This only applies to the application’s parts like ‘my account’, ‘card’, ‘checkout’, etc., not the actual data.
 
-### 2.4.	The Source Map
+### 2.4. 
+### The Source Map
 One of the things that only appears in development is a source map. Source maps provide a reference for the code, mapping the minified or transformed code to the original source, thus being a handy debugging tool.
 
-### 2.5.	The Hot Reload
+### 2.5.	
+### The Hot Reload
 Not all of the logic can be executed in development mode.
 ```bash
 📂source
@@ -191,15 +197,18 @@ The value `process.env.NODE_ENV === ‘development’` ensures that our React ap
 
 The app is kept running on the development server with periodic injections of new file versions that are edited at runtime. The main plus of hot reload is the fact that the app's state is not lost, which is especially useful when customizing a theme.
 
-### 2.6.	The Development Server
+### 2.6.	
+### The Development Server
 The development server is what allows us to use hot reload and memory cache. Only changed files are regenerated, which allows us to perform bundling quicker. 
 
 This is why if you run `npm run build` it takes a long time every time, but if you run `npm run watch` it takes a long time only once and any subsequent loads will be quick.
 
-### 2.7.	The HTML Entry File
+### 2.7.	
+### The HTML Entry File
 Another thing that differs between the production and development set-up is the HTML entry file. In a production environment, this file is called `index.production.phtml` and in development, it’s `index.development.html`.
 
-### 2.8.	Debugging And Building
+### 2.8.	
+### Debugging And Building
 It’s worthwhile mentioning that in production set-up, the build process itself is different, i.e. the production set-up application follows a two-step build process where first the Service Worker Pre-Cache is built, after which the actual application is built. 
 
 And lastly, the biggest difference in terms of debugging is the fact that no files are generated in development mode, due to the development server’s memory cache. This can be seen by browsing our folder structures. In development mode the `Magento-Theme` folder will not appear. 
@@ -257,10 +266,10 @@ npm or Node package manager allows us to use some nifty aliases that are defined
 If you’re using our Docker environment you don’t have to run anything. Docker does the job on its own.
 
 However, if you decide to develop on your local machine, the following commands might come in handy: 
-1)	[`npm ci <package-name>`](#`npm-ci-<package-name>`)
-2)	[`npm run build`](#`npm-run-build`)
-3)	[`npm run pm2-watch`](#`npm-run-pm2-watch`)
-4)	[`npm run extract-translations`](#`npm-run-extract-translations`)
+1)	[`npm ci <package-name>`](#npm-ci-package-name)
+2)	[`npm run build`](#npm-run-build)
+3)	[`npm run pm2-watch`](#npm-run-pm2-watch)
+4)	[`npm run extract-translations`](#npm-run-extract-translations)
 
 ### `npm ci <package-name>`
 If you’re running an existing Magento instance and you want to install a theme you need to run `npm ci` first. Not `npm install` or `npm i`. 
