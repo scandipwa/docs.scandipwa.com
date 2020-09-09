@@ -34,8 +34,8 @@ Topics covered in this tutorial:
     2.6.	[The Development Server](#the-development-server) <br>
     2.7.	[The HTML Entry File](#the-html-entry-file) <br>
     2.8.	[Debugging And Building](#debugging-and-building) <br>
-3.	[The `config` Folder](#3-the-config-folder)
-4.	[Available Commands](#4-available-commands)
+3.	[The `config` Folder](#3-the-config-folder) <br>
+4.	[Available Commands](#4-available-commands) <br>
 
 ## 1. What Is Webpack?
 Webpack allows us to bundle a theme or an application. It’s run in the development set-up in order to create prioritized bundles of modules and files that will then be run as the application starts. 
@@ -65,13 +65,13 @@ Luckily, webpack has a different tool for each of these transformations.
 So, what are these loaders? Loaders are webpack features that allow you to load a specific type of asset.
 
 Let’s look at a simple CSS flexbox example, using the shorthand `flex`, which combines `flex-grow`, `flex-shrink` and `flex-basis`:
-```css
+```text
 flex: 101;
 ```
 Due to the fact that not all browsers support the shorthand properties of `flex`, we need to add certain vendor prefixes to it, in order to make our code render the same way in different browsers. The prefixes are as follows `-webkit` for Chrome and Safari, `-moz` for Firefox, `-o` for Opera and `-ms` for Internet Explorer.
 
 Fortunately, webpack has a `postcss-loader`, which will do this for you using the `autoprefixer` plug-in. So, the processed code will look something like this:
-```css
+```text
 …
 -webkit-flex: 101;  # Chrome and Safari
 -moz-flex: 101;     # Mozilla
