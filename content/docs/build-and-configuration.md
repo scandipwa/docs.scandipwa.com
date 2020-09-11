@@ -255,7 +255,7 @@ npm or Node package manager allows us to use some nifty aliases that are defined
 If you’re using our Docker environment you don’t have to run anything. Docker does the job on its own.
 
 However, if you decide to develop on your local machine, the following commands might come in handy: 
-1)	[`npm ci <package-name>`](#npm-ci-package-name)
+1)	[`npm ci`](#npm-ci)
 2)	[`npm run build`](#npm-run-build)
 3)	[`npm run pm2-watch`](#npm-run-pm2-watch)
 4)	[`npm run extract-translations`](#npm-run-extract-translations)
