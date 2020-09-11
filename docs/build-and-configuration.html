@@ -52,9 +52,544 @@
     "></path><polygon fill="currentColor" points="
       45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,
       14.9 62.8,22.9 71.5,22.9
-      "></polygon></svg></a></div></div></div></header><div class="css-1tv5sxm css-15lkjjo"><div class="css-5v0gxc css-95xunl"><div class="css-12vsfho"><div class="css-tctv7l"><div class="css-10335ra"><article class="css-174qq1k"><header class="css-hgc6lu"><h1 class="css-vqj14j">Theme Build and Configuration</h1></header><div class="css-124oy3v"><div class="css-1xtc414"><h2 id="working-with-theme-build-and-configuration"><a href="#working-with-theme-build-and-configuration" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Working with Theme build and configuration</h2>
-<p>ScandiPWA Frontend Lead Alfreds is covering the theme build and configuration of the ScandiPWA theme. The specific theme of the video are: Webpack, production and development builds and the difference between them.</p>
-<div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; " > <div class="video"> <iframe src="https://www.youtube.com/embed/DUmx_95V1Ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%; "></iframe> </div> </div></div></div></article><div class="css-1kbu8hg"><div><div style="opacity:0;transition:opacity 0.5s ease" class="css-1egtd8l"><div style="transform:translate(0px, 40px);transition:transform 0.5s ease" class="css-x8vket"><nav class="css-18bhv22 css-1aai96l"><div><button aria-controls="section_028848466839291254" class="css-1j8jxus"><div class="css-200vt3">Start &amp; Upgrade<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+      "></polygon></svg></a></div></div></div></header><div class="css-1tv5sxm css-15lkjjo"><div class="css-5v0gxc css-95xunl"><div class="css-12vsfho"><div class="css-tctv7l"><div class="css-10335ra"><article class="css-174qq1k"><header class="css-hgc6lu"><h1 class="css-vqj14j">Theme Build and Configuration</h1></header><div class="css-124oy3v"><div class="css-1xtc414"><div class="gatsby-resp-iframe-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; " > <div class="video"> <iframe src="https://www.youtube.com/embed/DUmx_95V1Ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style=" position: absolute; top: 0; left: 0; width: 100%; height: 100%; "></iframe> </div> </div>
+<p>Topics covered in this tutorial:</p>
+<ol>
+<li><a href="#1-what-is-webpack">What Is Webpack?</a> <br>
+1.1.	<a href="#webpack-source-and-destination-folders">webpack: Source And Destination Folders</a></li>
+<li><a href="#2-differences-between-production-and-development-set-up">Differences Between Production And Development Set-Up</a> <br>
+2.1.	<a href="#code-minification-and-splitting">Code Minification And Splitting</a> <br>
+2.2.	<a href="#the-manifest">The Manifest</a> <br>
+2.3.	<a href="#service-worker-pre-cache">Service Worker Pre-cache</a> <br>
+2.4.	<a href="#the-source-map">The Source Map</a> <br>
+2.5.	<a href="#the-hot-reload">The Hot Reload</a> <br>
+2.6.	<a href="#the-development-server">The Development Server</a> <br>
+2.7.	<a href="#the-html-entry-file">The HTML Entry File</a> <br>
+2.8.	<a href="#debugging-and-building">Debugging And Building</a> <br></li>
+<li><a href="#3-the-config-folder">The <code class="gatsby-code-text">config</code> Folder</a> <br></li>
+<li><a href="#4-available-commands">Available Commands</a> <br></li>
+</ol>
+<h2 id="1-what-is-webpack"><a href="#1-what-is-webpack" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. What Is Webpack?</h2>
+<p>Webpack allows us to bundle a theme or an application. It’s run in the development set-up in order to create prioritized bundles of modules and files that will then be run as the application starts. </p>
+<p>The reason why we need to bundle our application is because assets like (images, styles, modules etc.) are not included by default. Furthermore, there are a number of features that are not unanimously supported by all browsers.</p>
+<p>For example, we can type:</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="30604630850961568000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`import 'abc';
+import 'react';`, `30604630850961568000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="jsx"><pre class="gatsby-code-jsx"><code class="gatsby-code-jsx"><span class="token keyword">import</span> <span class="token string">'abc'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'react'</span><span class="token punctuation">;</span></code></pre></div>
+<p>Keep in mind that the <code class="gatsby-code-text">node_modules</code> folder is never shared, so we can’t access the exact <code class="gatsby-code-text">&#39;react&#39;</code> file from there and we would not be able to open this file in a browser. </p>
+<p>If we try:</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="22468715569406440000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`import 'style.scss';`, `22468715569406440000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="jsx"><pre class="gatsby-code-jsx"><code class="gatsby-code-jsx"><span class="token keyword">import</span> <span class="token string">'style.scss'</span><span class="token punctuation">;</span></code></pre></div>
+<p>The browser won’t understand the <code class="gatsby-code-text">.scss</code> file, so we will need to transform it into a <code class="gatsby-code-text">.css</code> file. The browser also doesn’t know what <code class="gatsby-code-text">&#39;react&#39;</code> or the other modules are, so we need to include them into our script as well.</p>
+<p>Things like arrow functions <code class="gatsby-code-text">( ) =&gt; {…}</code>, classes and class proposal properties (e.g., <code class="gatsby-code-text">prop = 1;</code>) are not included by default or supported by most browsers, so we need to transform these features into a format that older browsers will understand. Simply put, if the code is written in ECMAScript5, we need to find a way to transform it into ES2015. </p>
+<p>Luckily, webpack has a different tool for each of these transformations.</p>
+<ul>
+<li><code class="gatsby-code-text">webpack</code> in itself is responsible for handling the imports and their dependencies</li>
+<li><code class="gatsby-code-text">babel-loader</code> – helps you compile code from newer versions of JavaScript down to a version that will be supported by your environment</li>
+<li><code class="gatsby-code-text">sass-loader</code> – transforms the more easily maintainable .scss files to .css files</li>
+</ul>
+<p>So, what are these loaders? Loaders are webpack features that allow you to load a specific type of asset.</p>
+<p>Let’s look at a simple CSS flexbox example, using the shorthand <code class="gatsby-code-text">flex</code>, which combines <code class="gatsby-code-text">flex-grow</code>, <code class="gatsby-code-text">flex-shrink</code> and <code class="gatsby-code-text">flex-basis</code>:</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="5047338978326988000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`flex: 101;`, `5047338978326988000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="text"><pre class="gatsby-code-text"><code class="gatsby-code-text">flex: 101;</code></pre></div>
+<p>Due to the fact that not all browsers support the shorthand properties of <code class="gatsby-code-text">flex</code>, we need to add certain vendor prefixes to it, in order to make our code render the same way in different browsers. The prefixes are as follows <code class="gatsby-code-text">-webkit</code> for Chrome and Safari, <code class="gatsby-code-text">-moz</code> for Firefox, <code class="gatsby-code-text">-o</code> for Opera and <code class="gatsby-code-text">-ms</code> for Internet Explorer.</p>
+<p>Fortunately, webpack has a <code class="gatsby-code-text">postcss-loader</code>, which will do this for you using the <code class="gatsby-code-text">autoprefixer</code> plug-in. So, the processed code will look something like this:</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="81970976512581810000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`…
+-webkit-flex: 101;  # Chrome and Safari
+-moz-flex: 101;     # Mozilla
+-o-flex: 101;       # Opera
+-ms-flex: 101;      # Internet Explorer
+…`, `81970976512581810000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="text"><pre class="gatsby-code-text"><code class="gatsby-code-text">…
+-webkit-flex: 101;  # Chrome and Safari
+-moz-flex: 101;     # Mozilla
+-o-flex: 101;       # Opera
+-ms-flex: 101;      # Internet Explorer
+…</code></pre></div>
+<p>It might be inconvenient in development to import or load CSS files as they are. For example, if we have multiple CSS files, we don’t want them to load one by one. We might want them to load simultaneously or we might want them to load inside JavaScript. This can also be done by different webpack loaders.</p>
+<p>To quickly sum up, webpack is a code transformation tool that can handle JavaScript and other files using various loaders. It will take your source files and output transformed files into a destination folder, while also simultaneously optimizing the code, plugging in extensions, or performing other tasks that you’ve set.</p>
+<h3 id="webpack-source-and-destination-folders"><a href="#webpack-source-and-destination-folders" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>webpack: Source And Destination Folders</h3>
+<p>Let’s look at our folder structure:</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="46843691675298340000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂pwa
+ ┣ 📂Magento_Theme
+ ┣ 📂src
+ ┃ ┣ 📂app			 
+ ┃ ┣ 📂config
+ ┗ ┗ 📂public  	`, `46843691675298340000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂pwa
+ ┣ 📂Magento_Theme
+ ┣ 📂src
+ ┃ ┣ 📂app			 
+ ┃ ┣ 📂config
+ ┗ ┗ 📂public  	</code></pre></div>
+<p>So, what happens when you run <code class="gatsby-code-text">webpack</code>? It takes a source with all of its contents, e.g. <code class="gatsby-code-text">src/</code> and outputs it into a destination, for example <code class="gatsby-code-text">Magento_Theme/</code>.</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="6432398700575659000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂pwa
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┗ 📂web
+ ┣ 📂src
+ ┃ ┣ 📂app    
+ ┃ ┃ ┣ 📜<name>.js
+ ┃ ┃ ┗ 📜<name>.scss 
+ ┃ ┣ 📂config
+ ┃ ┗ 📂public  
+ ┗   ┗ 📜index.production.phtml`, `6432398700575659000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂pwa
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┗ 📂web
+ ┣ 📂src
+ ┃ ┣ 📂app    
+ ┃ ┃ ┣ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.js
+ ┃ ┃ ┗ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.scss 
+ ┃ ┣ 📂config
+ ┃ ┗ 📂public  
+ ┗   ┗ 📜index.production.phtml</code></pre></div>
+<p>In this case <code class="gatsby-code-text">webpack</code> or more specifically <code class="gatsby-code-text">html-webpack-plugin</code> will take the <code class="gatsby-code-text">index.production.phtml</code> or <code class="gatsby-code-text">index.development.phtml</code> and rename it to <code class="gatsby-code-text">root.phtml</code> and place it into <code class="gatsby-code-text">Magento_Theme/templates</code> folder. </p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="47601570107675980000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂pwa
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜root.phtml
+ ┃ ┗ 📂web
+ ┣ 📂src
+ ┃ ┣ 📂app    
+ ┃ ┃ ┣ 📜<name>.js
+ ┃ ┃ ┗ 📜<name>.scss 
+ ┃ ┣ 📂config
+ ┃ ┗ 📂public  
+ ┗   ┗ 📜index.production.phtml`, `47601570107675980000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂pwa
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜root.phtml
+ ┃ ┗ 📂web
+ ┣ 📂src
+ ┃ ┣ 📂app    
+ ┃ ┃ ┣ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.js
+ ┃ ┃ ┗ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.scss 
+ ┃ ┣ 📂config
+ ┃ ┗ 📂public  
+ ┗   ┗ 📜index.production.phtml</code></pre></div>
+<p>Now Magento will understand that there’s a theme that’ll override the root template. Same with JavaScript and style files, which after processing will appear in the <code class="gatsby-code-text">Magento_Theme/web</code> folder. This is how <code class="gatsby-code-text">webpack</code> helps Magento understand ScandiPWA as a theme.</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="92498785509012700000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂pwa
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜root.phtml
+ ┃ ┣ 📂web
+ ┃ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📂icons
+ ┃ ┃ ┃ ┗📜<name>.bundle.js
+ ┃ ┗ ┗ 📂<...>
+ ┣ 📂src
+ ┃ ┣ 📂app    
+ ┃ ┃ ┣ 📜<name>.js
+ ┃ ┃ ┗ 📜<name>.scss 
+ ┃ ┣ 📂config
+ ┃ ┗ 📂public  
+ ┗   ┗ 📜index.production.phtml`, `92498785509012700000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂pwa
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜root.phtml
+ ┃ ┣ 📂web
+ ┃ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📂icons
+ ┃ ┃ ┃ ┗📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.bundle.js
+ ┃ ┗ ┗ 📂<span class="token operator">&lt;</span><span class="token punctuation">..</span>.<span class="token operator">></span>
+ ┣ 📂src
+ ┃ ┣ 📂app    
+ ┃ ┃ ┣ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.js
+ ┃ ┃ ┗ 📜<span class="token operator">&lt;</span>name<span class="token operator">></span>.scss 
+ ┃ ┣ 📂config
+ ┃ ┗ 📂public  
+ ┗   ┗ 📜index.production.phtml</code></pre></div>
+<h2 id="2-differences-between-production-and-development-set-up"><a href="#2-differences-between-production-and-development-set-up" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Differences Between Production And Development Set-Up</h2>
+<p>If we take a look at the <code class="gatsby-code-text">root.phtml</code> and <code class="gatsby-code-text">index.production.phtml</code> files, we can see that they’re very similar. However, the style files will look completely different. This is because, in the process of parsing the code, the <code class="gatsby-code-text">babel</code> plug-in will transform and optimize it. </p>
+<p>This is where the differences between the production and development set-up will come in.</p>
+<table>
+<thead>
+<tr>
+<th>PRODUCTION</th>
+<th>DEVELOPMENT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#code-minification-and-splitting">Code is minified</a></td>
+<td><a href="#the-source-map">Source maps</a></td>
+</tr>
+<tr>
+<td><a href="#code-minification-and-splitting">Code splitting or bundling</a></td>
+<td><a href="#the-hot-reload">Hot reload (<code class="gatsby-code-text">NODE_ENV</code>)</a></td>
+</tr>
+<tr>
+<td><a href="#service-worker-pre-cache">Service Worker Pre-Cache to pre-load assets</a></td>
+<td><a href="#the-development-server">Dev server (with cache)</a></td>
+</tr>
+<tr>
+<td><a href="#the-html-entry-file"><code class="gatsby-code-text">index.production.phtml</code></a></td>
+<td><a href="#the-html-entry-file"><code class="gatsby-code-text">index.development.html</code></a></td>
+</tr>
+<tr>
+<td><a href="#debugging-and-building">TWO-STEP BUILD</a></td>
+<td><a href="#debugging-and-building">NO FILES GENERATED</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="code-minification-and-splitting"><a href="#code-minification-and-splitting" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Code Minification And Splitting</h3>
+<p>In the production set-up code will be minified by the <code class="gatsby-code-text">babel</code> plug-in, i.e. all of the unnecessary characters will be removed, making it appear as a single line. </p>
+<p><code class="gatsby-code-text">Webpack</code> will ensure that the code will get split into multiple parts, in this specific case its 20 bundles. Code splitting allows us to load the code when needed, thus making the website faster and more efficient. Besides bundling, <code class="gatsby-code-text">webpack</code> also ensures that the code is loaded as needed according to priority.</p>
+<h3 id="the-manifest"><a href="#the-manifest" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The <code class="gatsby-code-text">manifest</code></h3>
+<p>Let’s look at the <code class="gatsby-code-text">manifest</code> a little. It doesn’t differ between the development and production set-ups. The <code class="gatsby-code-text">manifest</code> is a specific feature of PWA or Progressive Web Applications in general. It is automatically generated and allows us to install the application correctly. </p>
+<p>PWA manifests usually include things like the app name, author, version, description and a list of resources among other things.</p>
+<h3 id="service-worker-pre-cache"><a href="#service-worker-pre-cache" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Service Worker Pre-cache</h3>
+<p>The <code class="gatsby-code-text">precache-manifest</code>, however, is only generated in production. Service Worker Pre-cache will download all of the split code or bundles by itself without a specific request and return the bundles immediately when requested. </p>
+<p>The pre-loaded bundles will also ensure that all of the application will be available to you offline even though you haven’t visited it. This only applies to the application’s parts like ‘my account’, ‘card’, ‘checkout’, etc., not the actual data.</p>
+<h3 id="the-source-map"><a href="#the-source-map" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Source Map</h3>
+<p>One of the things that only appears in development is a source map. Source maps provide a reference for the code, mapping the minified or transformed code to the original source, thus being a handy debugging tool.</p>
+<h3 id="the-hot-reload"><a href="#the-hot-reload" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Hot Reload</h3>
+<p>Not all of the logic can be executed in development mode.</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="25736985586010630000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂source
+ ┣ 📂<…>
+ ┣ 📂src
+ ┃ ┣ 📂app	
+ ┃ ┃ ┣ 📂<…>
+ ┃ ┃ ┗ 📜index.js		 
+ ┃ ┣ 📂config
+ ┃ ┣ 📂public
+ ┗ ┗ 📂sw 	`, `25736985586010630000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂source
+ ┣ 📂<span class="token operator">&lt;</span>…<span class="token operator">></span>
+ ┣ 📂src
+ ┃ ┣ 📂app	
+ ┃ ┃ ┣ 📂<span class="token operator">&lt;</span>…<span class="token operator">></span>
+ ┃ ┃ ┗ 📜index.js		 
+ ┃ ┣ 📂config
+ ┃ ┣ 📂public
+ ┗ ┗ 📂sw 	</code></pre></div>
+<p>If we go to the <code class="gatsby-code-text">source</code> folder and open the main <code class="gatsby-code-text">index.js</code> file, we can see that some logic runs only in development, more specifically it’s the hot reload.</p>
+<p>The value <code class="gatsby-code-text">process.env.NODE_ENV === ‘development’</code> ensures that our React application or any other dependent application will have hot reload enabled, that is - the app will reload automatically any time our code changes.</p>
+<p>The app is kept running on the development server with periodic injections of new file versions that are edited at runtime. The main plus of hot reload is the fact that the app’s state is not lost, which is especially useful when customizing a theme.</p>
+<h3 id="the-development-server"><a href="#the-development-server" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Development Server</h3>
+<p>The development server is what allows us to use hot reload and memory cache. Only changed files are regenerated, which allows us to perform bundling quicker. </p>
+<p>This is why if you run <code class="gatsby-code-text">npm run build</code> it takes a long time every time, but if you run <code class="gatsby-code-text">npm run watch</code> it takes a long time only once and any subsequent loads will be quick.</p>
+<h3 id="the-html-entry-file"><a href="#the-html-entry-file" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The HTML Entry File</h3>
+<p>Another thing that differs between the production and development set-up is the HTML entry file. In a production environment, this file is called <code class="gatsby-code-text">index.production.phtml</code> and in development, it’s <code class="gatsby-code-text">index.development.html</code>.</p>
+<h3 id="debugging-and-building"><a href="#debugging-and-building" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debugging And Building</h3>
+<p>It’s worthwhile mentioning that in production set-up, the build process itself is different, i.e. the production set-up application follows a two-step build process where first the Service Worker Pre-Cache is built, after which the actual application is built. </p>
+<p>And lastly, the biggest difference in terms of debugging is the fact that no files are generated in development mode, due to the development server’s memory cache. This can be seen by browsing our folder structures. In development mode the <code class="gatsby-code-text">Magento-Theme</code> folder will not appear. </p>
+<h2 id="3-the-config-folder"><a href="#3-the-config-folder" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.	The <code class="gatsby-code-text">config</code> Folder</h2>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="73312319373391710000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂source
+ ┣ 📂<…>
+ ┣ 📂src
+ ┃ ┣ 📂app     
+ ┃ ┣ 📂config
+ ┃ ┃ ┣ 📜<…>
+ ┃ ┃ ┣ 📜babel.config.js
+ ┃ ┃ ┣ 📜meta.config.js
+ ┃ ┃ ┣ 📜tests.config.js
+ ┃ ┃ ┣ 📜webpack.core.config.js
+ ┃ ┃ ┣ 📜webpack.development.config.js
+ ┃ ┃ ┣ 📜webpack.extract-translations.config.js
+ ┃ ┃ ┣ 📜webpack.production.config.js
+ ┃ ┃ ┗ 📜webpack.sw.config.js
+ ┃ ┣ 📂public
+ ┗ ┗ 📂sw     `, `73312319373391710000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂source
+ ┣ 📂<span class="token operator">&lt;</span>…<span class="token operator">></span>
+ ┣ 📂src
+ ┃ ┣ 📂app     
+ ┃ ┣ 📂config
+ ┃ ┃ ┣ 📜<span class="token operator">&lt;</span>…<span class="token operator">></span>
+ ┃ ┃ ┣ 📜babel.config.js
+ ┃ ┃ ┣ 📜meta.config.js
+ ┃ ┃ ┣ 📜tests.config.js
+ ┃ ┃ ┣ 📜webpack.core.config.js
+ ┃ ┃ ┣ 📜webpack.development.config.js
+ ┃ ┃ ┣ 📜webpack.extract-translations.config.js
+ ┃ ┃ ┣ 📜webpack.production.config.js
+ ┃ ┃ ┗ 📜webpack.sw.config.js
+ ┃ ┣ 📂public
+ ┗ ┗ 📂sw     </code></pre></div>
+<p>A brief overview of the <code class="gatsby-code-text">config</code> folder would be as follows:</p>
+<ul>
+<li>
+<p><code class="gatsby-code-text">webpack.development.config.js</code> and <code class="gatsby-code-text">webpack.production.config.js</code></p>
+<ul>
+<li>The differences are as mentioned in <a href="#2-differences-between-production-and-development-set-up">section 2</a>.</li>
+</ul>
+</li>
+<li>
+<p><code class="gatsby-code-text">webpack.extract-translations.config.js</code></p>
+<ul>
+<li>Extracts the internationalization strings from the application. We need to do this periodically in order to update the <code class="gatsby-code-text">.json</code> files with new translations.</li>
+</ul>
+</li>
+</ul>
+<p>We can execute this webpack config file by running the <code class="gatsby-code-text">extract-translations</code> command. We can execute npm commands by typing <code class="gatsby-code-text">npm run &lt;name-of-command&gt;</code>, e.g. <code class="gatsby-code-text">npm run extract-translations</code>, you can read more about npm <a href="https://docs.npmjs.com/" target="_blank" rel="nofollow noopener noreferrer">here</a>. Running a npm command this way ensures that the configuration preset in <code class="gatsby-code-text">package.json</code> file is used.</p>
+<ul>
+<li>
+<p><code class="gatsby-code-text">webpack.sw.config.js</code></p>
+<ul>
+<li>The Service Worker configuration file is a part of the two-step build production set-up.</li>
+</ul>
+</li>
+<li>
+<p><code class="gatsby-code-text">webpack.core.config.js</code></p>
+<ul>
+<li>Configuration of core contribution.</li>
+</ul>
+</li>
+<li>
+<p><code class="gatsby-code-text">babel.config.js</code></p>
+<ul>
+<li>Configuration of the <code class="gatsby-code-text">babel-loader</code>. Read more in <a href="https://webpack.js.org/loaders/babel-loader/" target="_blank" rel="nofollow noopener noreferrer">webpack documentation</a>, as well as <a href="https://babeljs.io/docs/en/" target="_blank" rel="nofollow noopener noreferrer">babel documentation</a>.</li>
+</ul>
+</li>
+<li>
+<p><code class="gatsby-code-text">meta.config.js</code></p>
+<ul>
+<li>Configuration of meta tags that need to be included into our HTML document.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-available-commands"><a href="#4-available-commands" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4.	Available Commands</h2>
+<p>npm or Node package manager allows us to use some nifty aliases that are defined in the <code class="gatsby-code-text">package.json</code> file. This file can be found in the main <code class="gatsby-code-text">source</code> folder. </p>
+<p><code class="gatsby-code-text">npm run build</code> is the most valuable command preset in the <code class="gatsby-code-text">package.json</code> file, because running it allows Magento to recognize a production ready theme. </p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="48005932600493064000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`&quot;scripts&quot;: {
+
+  &quot;build&quot;: &quot;npm run build-sw && webpack --config ./src/config/webpack.production.config.js&quot;,
+
+  &quot;build-sw&quot;: &quot;webpack --config ./src/config/webpack.sw.config.js --mode=production&quot;,
+}`, `48005932600493064000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="jsx"><pre class="gatsby-code-jsx"><code class="gatsby-code-jsx"><span class="token string">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+
+  <span class="token string">"build"</span><span class="token operator">:</span> <span class="token string">"npm run build-sw &amp;&amp; webpack --config ./src/config/webpack.production.config.js"</span><span class="token punctuation">,</span>
+
+  <span class="token string">"build-sw"</span><span class="token operator">:</span> <span class="token string">"webpack --config ./src/config/webpack.sw.config.js --mode=production"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p> These are only two of the ready made scripts. Check out more npm presets in the <code class="gatsby-code-text">package.json</code> file.</p>
+<h3 id="what-to-run-in-which-situation"><a href="#what-to-run-in-which-situation" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What To Run In Which Situation?</h3>
+<p>If you’re using our Docker environment you don’t have to run anything. Docker does the job on its own.</p>
+<p>However, if you decide to develop on your local machine, the following commands might come in handy: </p>
+<ol>
+<li><a href="#npm-ci-package-name"><code class="gatsby-code-text">npm ci &lt;package-name&gt;</code></a></li>
+<li><a href="#npm-run-build"><code class="gatsby-code-text">npm run build</code></a></li>
+<li><a href="#npm-run-pm2-watch"><code class="gatsby-code-text">npm run pm2-watch</code></a></li>
+<li><a href="#npm-run-extract-translations"><code class="gatsby-code-text">npm run extract-translations</code></a></li>
+</ol>
+<h3 id="npm-ci-package-name"><a href="#npm-ci-package-name" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="gatsby-code-text">npm ci &lt;package-name&gt;</code></h3>
+<p>If you’re running an existing Magento instance and you want to install a theme you need to run <code class="gatsby-code-text">npm ci</code> first. Not <code class="gatsby-code-text">npm install</code> or <code class="gatsby-code-text">npm i</code>. </p>
+<p><code class="gatsby-code-text">npm ci</code> ensures that you’ll get a more reliable build by firstly deleting your <code class="gatsby-code-text">node_modules</code> folder giving you a fresh start, as well as looking into your <code class="gatsby-code-text">package-lock.json</code> file and installing dependencies of a specified version, instead of modifying the <code class="gatsby-code-text">package-lock.json</code> file like <code class="gatsby-code-text">npm i</code> does.</p>
+<p><code class="gatsby-code-text">npm ci</code> is a security measure that allows us to not break our replication in case of one of the dependencies having a new broken minor release.</p>
+<h3 id="npm-run-build"><a href="#npm-run-build" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="gatsby-code-text">npm run build</code></h3>
+<p>The next command you run will be different depending on your needs. If you want to compile a theme and test if Magento is able to recognize it, you need to run <code class="gatsby-code-text">npm run build</code>. This will build the theme and generate a <code class="gatsby-code-text">Magento_Theme</code> folder.</p>
+<div
+              class="gatsby-code-button-container"
+              data-toaster-id="68073254034380630000"
+              data-toaster-class="gatsby-code-button-toaster customToasterClass"
+              data-toaster-text-class="gatsby-code-button-toaster-text customToasterTextClass"
+              data-toaster-text="Copied"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`📂<parent-folder>
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜root.phtml
+ ┗ ┗ 📂web`, `68073254034380630000`)"
+            >
+              <div
+                class="gatsby-code-button customButtonClass"
+                data-tooltip=""
+              >
+                Copy<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<div class="gatsby-highlight" data-language="bash"><pre class="gatsby-code-bash"><code class="gatsby-code-bash">📂<span class="token operator">&lt;</span>parent-folder<span class="token operator">></span>
+ ┣ 📂Magento_Theme
+ ┃ ┣ 📂templates
+ ┃ ┃ ┗ 📜root.phtml
+ ┗ ┗ 📂web</code></pre></div>
+<p>If you have the <code class="gatsby-code-text">Magento_Theme</code> folder with <code class="gatsby-code-text">root.phtml</code> file and <code class="gatsby-code-text">web</code> folder, it means that Magento should be able to recognize the theme.</p>
+<p>If your application has the <code class="gatsby-code-text">Magento_Theme</code> folder with its contents, but Magento is not able to recognize the theme, you should check the Magento tables and look whether your theme’s name is added to the list.</p>
+<h3 id="npm-run-pm2-watch"><a href="#npm-run-pm2-watch" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="gatsby-code-text">npm run pm2-watch</code></h3>
+<p>This command will start the development server, which will be restarted every time you create a new folder. You need to restart the server when creating a new folder because of the memory cache. If you’re creating a new folder with what you want to override a specific component, you need to recompile and the <code class="gatsby-code-text">pm2</code> or process manager will handle this and restart the watching process.</p>
+<p>The development server will be started in the port <code class="gatsby-code-text">:3003</code>, keep in mind that Magento might not function properly, because the request to <code class="gatsby-code-text">/graphql</code> might not be properly sent. </p>
+<p>In this case you might need to change the request-URI constant <code class="gatsby-code-text">cons REQUEST_URI</code> in the <code class="gatsby-code-text">util-request</code> which can be found in <code class="gatsby-code-text">source</code>.</p>
+<p>Another approach would be by adding a NGINX config, which you can locate in our front-end configuration containers as well.</p>
+<p>If none of these solutions work, we would recommend developing your application in our Docker environment which includes everything you need to start building applications seamlessly.</p>
+<h3 id="npm-run-extract-translations"><a href="#npm-run-extract-translations" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="gatsby-code-text">npm run extract-translations</code></h3>
+<p>This command will parse through all of your files and find every single template literal ( —(` `); ) that you’ve added. Notice that there should be a simple string in between the backticks, not a variable. After that, the contents of the backticks will be put into the <code class="gatsby-code-text">i18n</code> internationalization folder under the specific language, e.g. all English strings will be appended to the <code class="gatsby-code-text">en_US.json</code> file.</p>
+<p>If a language file’s string translation is <code class="gatsby-code-text">null</code>, that means that we don’t have a translation for the specific term at the moment, so feel free to contribute if you know the language.</p>
+<h2 id="to-docker-or-not-to-docker"><a href="#to-docker-or-not-to-docker" aria-hidden class="anchor"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>To Docker Or Not To Docker?</h2>
+<p>The use of <code class="gatsby-code-text">npm run build</code>, <code class="gatsby-code-text">npm run pm2-watch</code> and <code class="gatsby-code-text">npm run extract-translations</code> is not needed if you choose to develop in our Docker environment. These commands will only be required if you decide to install on your local machine.</p>
+<p>However, the command <code class="gatsby-code-text">npm ci &lt;package-name&gt;</code> is always needed when you pull the latest changes, because we want to make sure that the latest working versions of the packages are installed.</p></div></div></article><div class="css-1kbu8hg"><div><div style="opacity:0;transition:opacity 0.5s ease" class="css-1egtd8l"><div style="transform:translate(0px, 40px);transition:transform 0.5s ease" class="css-x8vket"><nav class="css-18bhv22 css-1aai96l"><div><button aria-controls="section_03919320291658863" class="css-1j8jxus"><div class="css-200vt3">Start &amp; Upgrade<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -63,7 +598,7 @@
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_028848466839291254" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/linux.html">Linux</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/mac.html">MacOs</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/with-remote-m2.html">Remote Magento Instance</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/update.html">Theme Upgrade</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/automated-setup.html">Automated Setup</a></li></ul></div><div><button aria-controls="section_07901512399627071" class="css-1j8jxus"><div class="css-200vt3">A to Z Overview<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_03919320291658863" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/linux.html">Linux</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/mac.html">MacOs</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/with-remote-m2.html">Remote Magento Instance</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/update.html">Theme Upgrade</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/automated-setup.html">Automated Setup</a></li></ul></div><div><button aria-controls="section_06999850652443906" class="css-1j8jxus"><div class="css-200vt3">A to Z Overview<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -72,7 +607,7 @@
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_07901512399627071" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/motivation.html">Motivation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/challenges.html">Challenges</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure-ui.html">File structure and UI components</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/rewriting-extending.html">Rewriting and extending theme</a></li></ul></div><div><button aria-controls="section_08759084211900658" class="css-1j8jxus"><div class="css-200vt3">FAQ<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_06999850652443906" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/motivation.html">Motivation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/challenges.html">Challenges</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure-ui.html">File structure and UI components</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/rewriting-extending.html">Rewriting and extending theme</a></li></ul></div><div><button aria-controls="section_03309460300353808" class="css-1j8jxus"><div class="css-200vt3">FAQ<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -81,7 +616,7 @@
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_08759084211900658" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/development.html">Development</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/installing.html">Installation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/billing-and-license.html">Billing and license</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/product-support.html">Product support</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/what-is-pwa.html">What is PWA?</a></li></ul></div><div><button aria-controls="section_0373000795487749" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Introductory<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_03309460300353808" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/development.html">Development</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/installing.html">Installation</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/billing-and-license.html">Billing and license</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/product-support.html">Product support</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/what-is-pwa.html">What is PWA?</a></li></ul></div><div><button aria-controls="section_06563977373353176" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Introductory<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -90,7 +625,7 @@
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_0373000795487749" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/base-template.html">Base Template</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/extension.html">Customizing and Overwriting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/creating-resolver.html">Creating GraphQL resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-and-inspect.html">Debugging and Inspecting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/frontend-setup.html">Setting Up Frontend</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure.html">File Structure</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/data-flow.html">Data Flow</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/technology-stack.html">Technology Stack</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/configuration.html">Changing environment</a></li><li class="css-atv6j6"><a aria-current="page" class="css-1b7a3df" href="/docs/build-and-configuration.html"><span class="css-nmtjfb"></span>Theme Build and Configuration</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/caching.html">Implementing Caching for New Caching Identities</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/parent-theme.html">Implementing a parent theme</a></li></ul></div><div><button aria-controls="section_022599190781641143" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Intermediate<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_06563977373353176" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/base-template.html">Base Template</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/extension.html">Customizing and Overwriting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/creating-resolver.html">Creating GraphQL resolver</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-and-inspect.html">Debugging and Inspecting</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/frontend-setup.html">Setting Up Frontend</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/file-structure.html">File Structure</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/data-flow.html">Data Flow</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/technology-stack.html">Technology Stack</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/configuration.html">Changing environment</a></li><li class="css-atv6j6"><a aria-current="page" class="css-1b7a3df" href="/docs/build-and-configuration.html"><span class="css-nmtjfb"></span>Theme Build and Configuration</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/caching.html">Implementing Caching for New Caching Identities</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/parent-theme.html">Implementing a parent theme</a></li></ul></div><div><button aria-controls="section_09213962663517474" class="css-1j8jxus"><div class="css-200vt3">How-To Tutorials - Intermediate<svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="10" height="10" class="css-1odjxkc"><g transform="translate(904.92214,-879.1482)"><path d="
           m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,
           -55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,
           0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,
@@ -99,7 +634,7 @@
           55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864
           -231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,
           -104.0616 -231.873,-231.248 z
-        " fill="currentColor"></path></g></svg></div></button><ul id="section_022599190781641143" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-in-chrome.html">Debugging in Chrome</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/xdebug.html">Configuring XDebug</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/cli.html">CLI in Docker</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/postman-graphql-playground.html">Postman &amp; GraphQL Playground</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/vsc-extensions.html">VSCode Extensions</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/plugin-mechanism.html">ScandiPWA plugins</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/eslint-stylelint.html">ESlint &amp; StyleLint</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/contribute.html">How to Contribute</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/migrate-newer-version.html">Migrating to a Newer Version</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/coding-standard.html">BEM and Coding Standards</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/tools.html">Tools of ScandiPWA</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/react-best-practices.html">React Best Practices</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/best-practices-styles.html">Best Practices Working with Styles</a></li></ul></div></nav></div></div><div role="button" tabindex="0" class="css-t3yz8c"><div class="css-tctv7l"><div class="css-7ef8f8"><div class="BurgerButon"><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div></div></div></div></div></div></div></div></div></div></div></div><footer class="css-vn0yrr"><div class="css-tctv7l"><div class="css-1fr488m"><div class="css-142w44y"><div class="css-1i3z83x"><div class="css-1gwkwnu"><a href="https://scandipwa.com/privacy.html" target="_blank" rel="noopener" class="css-dvkktt">Privacy Policy<svg x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="css-83uoqv"><path fill="currentColor" d="
+        " fill="currentColor"></path></g></svg></div></button><ul id="section_09213962663517474" class="css-14d3mgr"><li class="css-atv6j6"><a class="css-19pur11" href="/docs/debug-in-chrome.html">Debugging in Chrome</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/xdebug.html">Configuring XDebug</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/cli.html">CLI in Docker</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/postman-graphql-playground.html">Postman &amp; GraphQL Playground</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/vsc-extensions.html">VSCode Extensions</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/plugin-mechanism.html">ScandiPWA plugins</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/eslint-stylelint.html">ESlint &amp; StyleLint</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/contribute.html">How to Contribute</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/migrate-newer-version.html">Migrating to a Newer Version</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/coding-standard.html">BEM and Coding Standards</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/tools.html">Tools of ScandiPWA</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/react-best-practices.html">React Best Practices</a></li><li class="css-atv6j6"><a class="css-19pur11" href="/docs/best-practices-styles.html">Best Practices Working with Styles</a></li></ul></div></nav></div></div><div role="button" tabindex="0" class="css-t3yz8c"><div class="css-tctv7l"><div class="css-7ef8f8"><div class="BurgerButon"><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div><div class="BurgerButton-Line"></div></div></div></div></div></div></div></div></div></div></div></div><footer class="css-vn0yrr"><div class="css-tctv7l"><div class="css-1fr488m"><div class="css-142w44y"><div class="css-1i3z83x"><div class="css-1gwkwnu"><a href="https://scandipwa.com/privacy.html" target="_blank" rel="noopener" class="css-dvkktt">Privacy Policy<svg x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="css-83uoqv"><path fill="currentColor" d="
       M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,
       0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z
     "></path><polygon fill="currentColor" points="
