@@ -32,7 +32,7 @@ ScandiPWA v3 (currently in beta) supports frontend plugins, which allow reusing 
 
 > **Note**:
 >
-> this videos are going to be updated, they are **much less relevant** then the text documentation. Use them to understand the main workflows, but seek **ONLY** these guidelines that are described in this article, because many things changed since these two videos have been released.
+> These videos are going to be updated, they are **much less relevant** then the text documentation. Use them to understand the main workflow, but seek **ONLY** these guidelines that are described in this article, because many things changed since these two videos have been released.
 
 ### Implementing an extension from scratch
 <div class="video">
@@ -44,13 +44,13 @@ ScandiPWA v3 (currently in beta) supports frontend plugins, which allow reusing 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/N2TJJbSDTbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## Extension's file structure
+## Extension file structure
 
-ScandiPWA extension is M2 composer package with one extra directory - `scandipwa`. Inside of it ScandiPWA frontend-related functionality is stored. Any other M2 related folders with backend-related functionality can be stored in such package. You see `etc` and `Model` in this example, but these are not the only possible ones.
+A ScandiPWA extension is a M2 composer package with an additional directory - `scandipwa`, which contains ScandiPWA frontend-related functionality. The extension can contain any other M2 directories for implementing backend functionality. For example, the extension below has the `etc` and `Model` directories, 
 
-All _directories_ inside of `scandipwa` are optional, nevertheless following the provided structure is mandatory. You see `app` and `sw` subdirectories in it, these folders' structure is the same as you see in `vendor/scandipwa/source/src/(app|sw)` and they have the same meaning: inside of them are all parts that your extension requires: extra components, queries, routes etc.
+All _directories_ inside of `scandipwa` are optional. However, following the specified structure is mandatory - the `app` and `sw` subdirectories of `scandipwa` have the same structure as `vendor/scandipwa/source/src/(app|sw)`. These directories have the same meaning: `component` is for your extension's components, `query` is for GraphQl queries, etc.
 
-`Plugin` directory contains plugin definitions: which functionality parts are you plugging into and how you want to change their behaviour. More about that below. All the files with `.plugin.js` extension will be found there and imported into the application.
+THe `plugin` directory can contain files specifying the configuration and implementation of your plugins. Details will be provided below.
 
 ```bash
 📦my-awesome-extension
@@ -66,205 +66,242 @@ All _directories_ inside of `scandipwa` are optional, nevertheless following the
  ┃   ┃ ┣ 📂route
  ┃   ┃ ┣ 📂store
  ┃   ┃ ┣ 📂util
- ┃   ┃ ┗ 📂plugin  # Plugging logic declarations
- ┃   ┃   ┗ 📜<name>.plugin.js
+ ┃   ┃ ┗ 📂plugin
+ ┃   ┃   ┗ 📜<name>.plugin.js # Pluggin configuration and implementation
  ┃   ┗ 📂 sw       # Plugins and functionality for the Service Worker context
  ┃     ┣ 📂handler
  ┃     ┣ 📂util
- ┃     ┗ 📂plugin  # Plugging logic declarations
- ┃       ┗ 📜<name>.plugin.js
+ ┃     ┗ 📂plugin
+ ┃       ┗ 📜<name>.plugin.js # Pluggin configuration and implementation
  ┣ 📜package.json  # JS dependencies
  ┗ 📜composer.json # Composer dependencies and the PACKAGE NAME which is mandatory
 ```
 
-## A step-by-step algorithm of creating a simple extension
+## Creating a simple extension
 
-This document is a more relevant alternative to the video tutorials above. You are still welcome to watch them in order to learn the general approach from an example. Start with understanding how you wish to change ScandiPWA logic. Find the places which need modification.
+> **Note**:
+>
+> This section is more up-to-date than the videos above.
 
-1. Create a `localmodules` directory in the magento root of your application. Then create a composer package there. Inside of it, in `src/scandipwa/app/plugin`, create `<name>.plugin.js` file.
+1. Create a `localmodules` directory in the Magento root of your application. This directory will be used to store extensions that are in development.
 
-2. Create a function that is going to wrap around the original namespace member, following the guidelines above. This function is going to be called instead of the original member, very similar to the Magento 2 **"around plugins."**
+2. In the `localmodules` directory, create a regular Composer package.
+
+3. In a subdirectory of your package, `src/scandipwa/app/plugin`, create a file named `<name>.plugin.js`.
+
+4. Implement your plugin's logic (see "Plugin implementation")
+
+5. Configure your plugin's target (see "Plugin configuration")
+
+6. Enable your extension in scandipwa.json (see "Enabling extensions")
+
+7. Restart your frontend container for the configuration to take effect. This is necessary whenever the scandipwa.json file is changed.
+
+### Plugin implementation
+
+Plugins are used to alter the behavior of functions or classes. This is done by creating wrappers for existing values to control their new behavior, similarly to Magento "around" plugins/interceptors.
+
+There are 2 main types of plugins: plugins that wrap around functions and those that wrap around other properties.
+
+#### Function plugins
+Each plugin which wraps around a **_function_** is a function with the following arguments.
+- `args`: an array of the original arguments that were passed to the function
+- `callback`: a function that calls the original method (bound to the instance), or the next plugin if another plugin is configured
+- `instance`: the instance that the function was called on
+
+The plugin is itself the new function that the target function should be replaced with. Whatever the plugin returns is what callers of the function will get.
+
+Example:
+
+```javascript
+// It is essential that wrapper function is an arrow function if you are writing a class.
+const aroundFunction = (args, callback, instance) => {
+	// Use array destructuring to get specific arguments from the array
+	const [foo] = args;
+
+    console.log(`The first argument is ${foo}`)
+
+	// Call the original function with the original arguments
+    callback(...args);
+}
+```
 
 >**Note**:
 >
-> It is recommended to stick to the naming convention regarding the arguments of these functions.
+> It is recommended to follow the naming convention for the arguments of these functions for consistency and clarity
 
-Each member which wraps around a **_function_** has the following arguments.
-- `args` is an array of original arguments that are passed to the function this one is wrapped around.
+#### Property plugins
 
-- `callback` is a function that calls the next plugin if there is one, or the original method (bound to the instance), when all plugins defined for this method are applied.
+Each plugin that wraps around a **_property_**  is a function with the following arguments:
 
-- `instance` references the instance of class that you are plugging into.
+- `prop` is the value you are wrapping around
+- `instance` the instance this property belongs to
 
-Each member which wraps around a **_property_**  has the following arguments:
+Unlike function plugins, the plugin is a function that returns the new value that the property should now be replaced with. Any users of the property will now get the new value.
 
-- `prop` is a member you are plugging into.
-
-- `instance` same as above.
 
 ```javascript
-// This wraps around the member function, logs the arguments and adds one to the first argument
-// It is essential that wrapper function is an arrow function, if you are writing a class.
-const aroundFunction = (args, callback, instance) => {
-	// Arguments, which have been passed to the member
-	// Either original or already modified by other plugins.
-    console.log(args);
-
-	// Use array destructuring to get specific arguments from the array
-	const [something] = args;
-
-	// The callback is always bound to the `instance`, you do not need to provide context here.
-	// It is impossible to bind the callback to something else hence.
-    callback(...args);
-}
-
-// This wraps around a property
+// We can wrap around any value - objects, arrays, strings...
+// Example: wrapping around an object
 const property = (prop, instance) => {
     return {
-        ...prop,
-        // And adds this new value to it
+        ...prop, // Keep the original values
+        // Let's add a new value to this object
         someAddedValue: 'new value!'
     }
 }
 
+// We can also wrap around a class!
 const classWrapper = (Class) => {
-    // Return the original class intact
-    return Class;
-
-    // Return the original class wrapped into HOC or something else
+    // E.g: return the original class wrapped with a HOC
     return withRouter(Class);
-    return connect(...)(Class);
-
-    // Replace the original class with something else
-	// DANGEROUS and NOT RECOMMENDED
-    return OtherClass;
 }
 ```
 
-3. Create the configuration in the bottom of `.plugin.js` file. This object must be a default export. The following things are defined in this configuration:
+### Plugin configuration
 
-- Which namespace to modify
+Once you have created your plugin functions, you need to specify which values you want to plug in to. For this, each plugin file should have a default export - an object specifying the plugin configuration.
 
-- How what exactly in the namespace would you like to modify
+In the plugin configuration, you can specify the following information:
 
-  - **'member-function'** plugins intercept calls to **instance members**. These plugins are used to change the behavior of member functions, which are called on instance.
+**The target namespace**:
 
-  - **'member-property'** is an approach to change **properties**, which are not available on prototypes, e.g. state in a way it's defined throughout the ScandiPWA (`state = { ... };`). Do not use this for class properties, which are arrow functions (`onUpdate = () => {....}`), use the _member-function_ for that.
+Every class and function that can be plugged in to has a namespace, indicated with the `@namespace` decorator.
 
-  - **'static-member'** plugins enable changing classes' **static members**.
+**What** aspect of the namespace you want to modify...
 
-  - **'function'** is an approach to change **functions** which are not class members, e.g. `mapStateToProps` or `mapDispatchToProps`.
+If you are plugging into a class: 
 
-  - **'class'** is an approach to modify **classes**. These plugins are able to modify the class, wrapping it into HOC or, in extreme cases, replacing it with other class. Replacing is not recommended because it is not well-compatible with potential other plugins wrapping around members of the same namespaces.
-
-- Name of the member to modify (for everything apart of 'function' and 'class' plugins, which are the only namespaces members and have reduced structure)
-
-- Optional: a position, in which this plugin will be called. **Defaults to 100**. There may be multiple plugins for a single member if there are several extensions active in the application. The closer the position to 0 - the sooner it is called. The higher a position - the later. Non-unique.
+- Specify `class` and a property plugin if you want to replace the entire class (e.g with a version of the class that is wrapped in another class).
+- Specify `member-function` and a function plugin if you want to alter the behavior of the class's method. E.g: plug in to `render` or `componentDidMount`.
+- Specify `member-property` and a property plugin if you want to alter the value of a field of the class. E.g: plug in to `state`.
+- Specify `static-member` and a property plugin if you want to modify a static field of the class.
 
 > **Note**:
 >
-> You can create class members that do not exist in the original classes and they will be called as you'd expect writing them directly in the class. It is useful when you need some lifecycle member functions that are not present in the original class. **REMEMBER** to call `callback` even if the original member is not present, that will make your plugin compatible with other plugins around the same member, by calling them after your plugin finishes its work.
+> If you want to plug in to a class member that is an arrow function, use `member-function`, not `member-property`.
 
-Configuration should follow this format:
+If you are plugging in to a function that is not part of a class and has its own namespace: Use the `function` plugin type to wrap around the function, and implement a function plugin.
+
+**Name**: if you are targetting a class member, you must specify its name,
+
+**Position** (Optional, defaults to 100): Specifies the order in which plugins will be applied. Plugins with a lower position will be called before plugins with a higher position.
+
+> **Note**:
+>
+> You can create class members that do not exist in the original classes and they will be called as you'd expect writing them directly in the class. It is useful when you need some lifecycle member functions that are not present in the original class. **Remember** to call `callback` even if the original member is not present, that will make your plugin compatible with other plugins around the same member, by calling them after your plugin finishes its work.
+
+### Plugin configuration object format
 
 ```javascript
-const config = {
-    namespace: {
+export default {
+    '<namespace>': {
         'member-function': {
-            '<name>': Plugins1
+            '<name>': plugin
         },
         'member-property': {
-            '<name>': Plugins2
+            '<name>': plugin
         },
         'static-member': {
-            '<name>': Plugins3
+            '<name>': plugin
         },
 
-        // Reduced structure for functions and classes
-        'function': Plugins4,
-        'class': Plugins5
+        'function': plugin,
+        'class': plugin
     }
 }
 ```
 
-Where `Plugins` is either a function, an object or an Array of functions/objects. See valid `Plugins` blocks' example below.
+Where *plugin* can be in one of the following formats:
 
 ```javascript
-// Simplest option, you are going to use it in most cases
-const Plugins1 = A;
+const somePlugin = (args, callback, instance) => callback(...args)
 
-// If you need more granular logic around one original member
-const Plugins2 = [B, C];
+// To specify a simple plugin, use:
+somePlugin
 
-// Specify a position to execute your plugins sooner/later in the pipeline
-const Plugins3 = {
-    position: 0,
-    implementation: aVeryImportantFunction
-};
+// If you want to specify multiple plugins for the same namespace and target:
+[somePlugin, someOtherPlugin]
 
-// Same as 2nd option, but with positions.
-const Plugins4 = [
+// If you want to specify a position for your plugin:
+{
+    position: 42,
+    implementation: somePlugin
+}
+
+// If you want to specify multiple plugins for the same namespace and target, as well as a position for each:
+[
     {
-        position: 0,
-        implementation: oneMoreVeryImportantFunction
+        position: 42,
+        implementation: somePlugin
     },
     {
-        position: 1000,
-        implementation: notVeryImportantFunction
+        position: 1984,
+        implementation: someOtherPlugin
     }
 ];
 ```
 
-The example below demonstrates an example of multiple syntax opportunities for writing a configuration part.
+Example:
 
 ```javascript
+const hideMenuPlugin = (args, callback, instance) => null;
+
+
 const config = {
-    namespace: {
+    'Component/Header/Component': {
         'member-function': {
-            '<name>': B
+            'renderMenu': hideMenuPlugin
         },
         'member-property': {
-            '<name>': [
-                {
-                    implementation: D
+            'renderMap': {
+                    implementation: alterRenderMapPlugin,
+                    position: 101
                 }
-            ]
         },
         'static-member': {
-            '<name>': [
+            'propTypes': [
                 {
-                    position: E,
-                    implementation: F
+                    position: 66,
+                    implementation: updatePropTypesPlugin
+                },
+                {
+                    position: 67,
+                    implementation: anotherUpdatePropTypesPlugin
                 }
             ]
         },
-        'function': [ I, J ],
-        'class': K
+    },
+    'Component/Header/Container/mapDispatchToProps': {
+        'function': mapDispatchToPropsPlugin
     }
 }
 ```
 
-4. Activate your plugin. In the FE root of your theme, there is a file called `scandipwa.json`. It is responsible for theme's configuration. Active plugins should be defined there.
+### Enabling extensions
 
-Contents:
+In the frontend root of the ScandiPWA theme, there is a file called `scandipwa.json`. In this file, you can specify the path to the extensions that the theme should use. Without specifying an extension here, all of it's plugins will be ignored.
 
-- `<extension name>`: should be picked by you, it is not related to any functionality, just denotes which plugin files are meant for which extension. Put anything you like here.
+The plugins are specified in the `extensions` section of `scandipwa.json`. It has the following format:
 
-- `<path>`: a single relative path from Magento root to the extension's root.
-
-The format for the 'extensions' block of this file is the following:
-```javascript
+```json5
 {
     // ...
     "extensions": {
-        "PayPal": "vendor/scandipwa/paypal-graphql",
-        "<extension2>": "<path2>",
-        /** other extensions */
+        "<name>": "<path>",
+        "<name2>": "<path2>",
+        /** ... */
+        // Example:
+       "PayPal": "vendor/scandipwa/paypal-graphql",
     }
     // ...
 }
 ```
 
-## Plugins for plugins!
+Where:
+- `<name>` is an arbitrary name for the plugin
+- `<path>` is the relative path from Magento root to the extension's root
 
-ScandiPWA allows **plugging into plugins**. All classes that your plugin requires should be assigned namespaces by wrapping them into the `middleware` function. The only exception is that plugin class in `.plugin.js` file **cannot** be plugged into due to configuration builder's limitations. It still can be overriden as described in the extension guide though.
+## Plugging in to other plugins' classes
+
+ScandiPWA allows plugging into plugins' classes, such as the components, queries, etc. The plugin configuration files (`.plugin.js`) cannot be plugged into however, due to the configuration builder's limitations. Plugins can still be overridden in the theme though.
