@@ -21,7 +21,13 @@ micro_nav:
     <iframe width="560" height="315" src="https://www.youtube.com/embed/BWBvjkpIaY8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-## How to set-up ScandiPWA base and install the base theme
+Topics covered in this tutorial:
+- [Setting up ScandiPWA](#setting-up-scandipwa)
+- [Making A Contribution: Front-End](#making-a-contribution-front-end)
+- [Making A Contribution: Back-End](#making-a-contribution-back-end)
+
+
+## Setting up ScandiPWA
 The first thing you need to do is make sure you have [forked](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) and [cloned](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) the `scandipwa-base` project.
 
 First, let's open up the terminal and navigate to the project's directory.
@@ -108,13 +114,13 @@ Next, use `frontlogs` to see if `core` has compiled and type `scandipwa.local` i
 
 Next, using whatever text editor you fancy, open the folder `src/local-modules/base-theme` and start customising!
 
+## Making A Contribution: Front-End
 > **Note**
 >
 > Your feature branches must be made from the stable branch.
 
 Note that any contributions must be made to the stable branch, which at this point is `2.x-stable`.
 
-## Making A Contribution: Front-End
 So, after you've made the changes save them, [`checkout`](https://git-scm.com/docs/git-checkout) to the latest stable [branch](https://git-scm.com/docs/git-branch) and [`git stash pop`](https://git-scm.com/docs/git-stash)
 
 The standard sequence after making changes:
@@ -130,6 +136,7 @@ After doing this you can commit as usual:
 ```bash
 git add <files>
 git commit -m "your-message"
+git push
 git push -u origin <your-branch-name>
 ```
 After this you should see <your-branch-name> in your GitHub account and create a pull request.
@@ -137,12 +144,54 @@ After this you should see <your-branch-name> in your GitHub account and create a
 After this the pull request will be reviewed by our fabulous maintainers and either be approved or closed.
 
 ## Making A Contribution: Back-End
-Clone the repo the same way as previously.
+Clone the repo the same way as previously, you can choose e.g. `store-graphql`.
 
 If you want to contribute to one of the back-end features, you have to select a one patch number higher than that of the available ones.
 
 So if the latest release is 1.0.2, yours will be 1.0.3
 
-First we need to find out which version we currently have
+First we need to find out which version we currently have, so let's enter the container:
+```bash
+inapp bash
+composer info scandipwa/store-graphql
+```
+At this current time latest version is 1.0.2
+```bash
+composer config repo.<your-name> path <your/path>
+```
+Or in this specific case:
+```bash
+composer config repo.store path localmodules/store-graphql/
+cat composer.json # check that there's a store module
+```
+So now we need to make sure that store is installed on our local system as a higher version.
 
-....
+Using a text editor open `src/localmodules/store-graphql` open `composer.json` file and specify a new version, in this case `1.0.3`.
+
+> **Note**
+>
+>Do not commit the `composer.json` changes.
+
+Next, let's update:
+```bash
+composer update scandipwa/store-graphql
+```
+After this the `src/localmodules/store-graphql` will be symlinked with the vendor folders. This way any change you perform on the origin folder will be reflected in Magento.
+
+After making changes, `exit` the container and go to the `store-graphql` directory.
+```bash
+cd src/localmodules/store-graphql
+```
+We can check out if our changes are registered by using `git status`.
+
+After this we can use a similar sequence as previously:
+```bash
+git checkout -b feature-branch-1
+git add src
+git commit -m "Some message"
+git push
+git push origin feature-branch-1
+```
+We can use `git status` at any time to see what the state of our commit is.
+
+After this we can go to our GitHub account and open a pull request.
