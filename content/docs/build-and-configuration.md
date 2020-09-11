@@ -260,7 +260,7 @@ However, if you decide to develop on your local machine, the following commands 
 3)	[`npm run pm2-watch`](#npm-run-pm2-watch)
 4)	[`npm run extract-translations`](#npm-run-extract-translations)
 
-### `npm ci <package-name>`
+### `npm ci`
 If you’re running an existing Magento instance and you want to install a theme you need to run `npm ci` first. Not `npm install` or `npm i`. 
 
 `npm ci` ensures that you’ll get a more reliable build by firstly deleting your `node_modules` folder giving you a fresh start, as well as looking into your `package-lock.json` file and installing dependencies of a specified version, instead of modifying the `package-lock.json` file like `npm i` does.
@@ -299,4 +299,4 @@ If a language file’s string translation is `null`, that means that we don’t 
 ## To Docker Or Not To Docker?
 The use of `npm run build`, `npm run pm2-watch` and `npm run extract-translations` is not needed if you choose to develop in our Docker environment. These commands will only be required if you decide to install on your local machine.
 
-However, the command `npm ci <package-name>` is always needed when you pull the latest changes, because we want to make sure that the latest working versions of the packages are installed.
+However, the command `npm ci` is always needed when you pull the latest changes, because we want to make sure that the latest working versions of the packages are installed.
