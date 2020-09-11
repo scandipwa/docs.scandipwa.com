@@ -15,40 +15,33 @@ micro_nav:
   title: Docker
 
 ---
-
-## Watch the tutorial
-
-In the video below, ScandiPWA front-end lead Alfred will talk about the tech stack behind ScandiPWA, the difference between Magento tech stack, and demonstrate how to work with the ScandiPWA theme.
-
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/fJV6wUZvvWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Topics covered in this tutorial:
 - [The Magento Tech Stack](#the-magento-tech-stack)
-- [What does CSR mean?](#what-does-csr-mean)
-    - [Why is CSR more efficient?](#why-is-csr-more-efficient)
-    - [Single-page application and CSR](#single-page-application-and-csr)
-- [Magento vs. ScandiPWA tech stack](#magento-vs-scandipwa-tech-stack)
-    - [JSX: a brief overview](#jsx-a-brief-overview)
-    - [Some notes on ReactJS](#some-notes-on-reactjs)
-    - [Why is JSX a valid alternative for the layout system?](#why-is-jsx-a-valid-alternative-for-the-layout-system)
-    - [React component lifecycle methods](#react-component-lifecycle-methods)
+- [What Does CSR Mean?](#what-does-csr-mean)
+    - [Why Is CSR More Efficient?](#why-is-csr-more-efficient)
+    - [Single-Page Application And CSR](#single-page-application-and-csr)
+- [Magento Vs. ScandiPWA Tech Stack](#magento-vs-scandipwa-tech-stack)
+    - [JSX: A Brief Overview](#jsx-a-brief-overview)
+    - [Some Notes On ReactJS](#some-notes-on-reactjs)
+    - [Why Is JSX A Valid Alternative For The Layout System?](#why-is-jsx-a-valid-alternative-for-the-layout-system)
+    - [React Component Lifecycle Methods](#react-component-lifecycle-methods)
 
 
-## The Magento tech stack
+## The Magento Tech Stack
 Magento has a layout/template system, it uses the `.phtml` format to declare the templates, `.less` files to declare styles and `.xml` for layouts.
 
-```text
-Magento file system:
-PHTML <-- templates
-LESS <-- style
-XML <-- layouts
-```
+> **Magento file system:**
+>
+>- PHTML <-- templates <br>
+>- LESS <-- style <br>
+>- XML <-- layouts
 
 The tech stack used in Magento file systems is mostly useful for server side rendering or SSR and ScandiPWA is not a server side application. ScandiPWA is a client side rendered or CSR application.
-
-## What does CSR mean?
+## What Does CSR Mean?
 CSR or client-side rendering means that a client's browser is used as a machine to render the data. We are only providing an algorithm that generates HTML for the client from data that gets passed to it.
 
 The data that gets passed to the algorithm comes from our GraphQL server, which is also known as Magento 2 or M2 in our current example.
@@ -64,43 +57,43 @@ So, to sum up, Magento works as our GraphQL server which sends data to our clien
 +---------+
 ```
 
-## Why is CSR more efficient?
+## Why Is CSR More Efficient?
 CSR is considered more efficient, because this way we (or the browser) "know" everything about the application and we can immediatelly render any page necessary, if we have the data.
 
-Furthermore, if we don't have the data, we can predict what should appear on the page and render some placeholders.
+Furthermore, if we don't have the data, we can predict what should appear on the page and render some placeholders that are shown to the client while data is loading.
 
 In short, it allows us to have a very smooth browsing experience and our screen will no longer be blank inbetween pages. In turn, what you will see during loading time is a nice placeholder. This is possible thanks to the fact that the browser is not downloading the whole HTML document, only fetching the data.
 
-|Benefits of CSR in a single-page application|
-|-------------|
-|smoother browsing experience|
-|animated transitions|
-|faster second page load|
-|faster website overall| 
-<br>
+> **Benefits of CSR in a single-page application**
+>
+> - smoother browsing experience
+> - animated transitions
+> - faster second page load
+> - faster website overall
+
 We can not only have a smoother browsing experience and animated transitions, but also faster second page loads. The second page can be loaded faster due to the fact that we don't have to download the HTML file every time, we're effectively reusing the previous HTML that has been cached in the client's browser. This is the main difference between CSR and SSR, where the HTML is almost never cached in the browser.
 
 
-CSR applications also don't have any render-blocking resources, because scripts are used for rendering the page, instead of HTML. Thus CSR marks a new era of web applications.
+CSR applications also don't have any render-blocking resources, because scripts are used for rendering the page, instead of HTML. Thus CSR marks a new era for web applications.
 
-### Single-page application and CSR
+### Single-Page Application And CSR
 You might say that Magento's 'card' and 'check-out' are also rendered on a client. Yes, but Magento can not be called a single page application.
 
-Single-page application or SPA as a title can only be claimed if every page of an application is rendered on a client. So the previously mentioned benefits of CSR only apply to true single-page applications, not the CSR itself. 
+Single-page application or SPA as a title can only be claimed if every page of an application is rendered on a client. So the previously mentioned benefits of CSR only apply to true single-page applications, not the client-side rendering itself. 
 
-This means that we can't simply take our old Magento with it's template systems, old styles and layouts which are used to generate HTML on the server and transform it to a client side rendered application. 
+This means that we can't simply take our old Magento with it's template systems, old styles and layouts which are used to generate HTML on the server and transform it to a client-side rendered application. 
 
 In order to transform Magento's file system into a client side renderable application we need to make some transformations.
 
-## Magento vs. ScandiPWA tech stack
+## Magento Vs. ScandiPWA Tech Stack
 
-|Tech stack:| Magento | ScandiPWA|
+|| Magento | ScandiPWA|
 |-----------|---------|----------|
 |Template:| PHTML|JSX|
 |Style:|LESS|SCSS|
 |Rendering:|XML|React|
 
-Instead of PHTML for templates, we use JSX which contains HTML-like syntax for React applications. It allows you to use HTML in JavaScript code. It has the template string literals inside, allowing it to function just like a PHTML template, except now it happens in the front-end world.  
+Instead of PHTML for templates, we use JSX which contains HTML-like syntax for React applications. It effectively allows you to use HTML syntax in JavaScript code. It has the template string literals inside, allowing it to function just like a PHTML template, except now it happens in the front-end world.  
 
 Instead of XML for layouts, we use React. We've already replaced two of the previously mentioned Magento file system's attributes with JavaScript, which means that everything can be done using one programming language, thus flattening the learning-curve. 
 
@@ -111,13 +104,13 @@ Both Syntactically Awesome Stylesheets (Sass) and Leaner CSS (LESS) are CSS prep
 
 Instead of LESS, we've opted to use SCSS which is a newer version of Sass, due to the fact that it's more formal and pleasant to use.
 
-```text
-The ScandiPWA stack:
-JSX <- templates (HTML-like mark-up language for JavaScript)
-SCSS <- style
-React <- classes (instead of layouts) declare rendering methods (JavaScript)
-```
-## JSX: a brief overview
+> **The ScandiPWA stack:**
+>
+> - **JSX** - templates (HTML-like mark-up language for JavaScript) <br>
+> - **SCSS** - style, CSS preprocessor <br>
+> - **ReactJS** - classes (instead of layouts) declare rendering methods (JavaScript)
+
+## JSX: A Brief Overview
 Let's create an element using JSX:
 ```jsx
 return(
@@ -163,7 +156,7 @@ return(
 ```
 JSX is a very powerful tool, not to mention much more visually appealing than pure JavaScript. JSX lets you create elements in a more efficient and developer-friendly way.
 
-## Some notes on ReactJS
+## Some Notes On ReactJS
 Some concepts of React are indeed very complex and hard to understand. At the moment we'll only talk about class components, because we, as Magento developers, are *super* confident in OOP world.
 
 ```php
@@ -176,7 +169,7 @@ class Bread extends Component{
 }
 ```
 
-### Why is JSX a valid alternative for the layout system?
+### Why Is JSX A Valid Alternative For The Layout System?
 This is due to the fact that it's possible to split the rendering process into multiple functions. For example by making `renderElOne()` and `render()` functions that each render a different part of the `Component`:
 
 ```php
@@ -195,9 +188,9 @@ Each of the render functions can be later extended, overriden or plugged into.
 
 Of course, we don't have very powerful functionality, like we had in the Magento's layout system, where we were able to take one element from the footer and place it in the header only with a few lines of code. But this is powerful enough to let us rearrange these elements and perform various actions, in addition to them being defined in one place.
 
-### React component lifecycle methods
+### React Component Lifecycle Methods
 The JavaScript components are relatively simple, they have the so-called lifecycle methods. Therefore, mastering the JavaScript `class` will make you ready for developing on ScandiPWA. 
 
-If you want to read more about React component lifecycle methods, you can do so [here](#https://reactjs.org/docs/react-component.html).
+If you want to read more about React component lifecycle methods, you can do so [here](https://reactjs.org/docs/react-component.html).
 
 This is all of the ScandiPWA tech stack, except for GraphQL, about which we'll talk about in a different tutorial.
