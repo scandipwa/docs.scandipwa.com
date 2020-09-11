@@ -27,23 +27,6 @@ page_nav:
 
 ScandiPWA v3 (currently in beta) supports frontend plugins, which allow reusing one piece of code throughout a lot of completely different projects. This guide is devoted to explaining all the functionality related to plugins.
 
-
-## Watch outdated explanation videos with correct general approach
-
-> **Note**:
->
-> These videos are going to be updated, they are **much less relevant** then the text documentation. Use them to understand the main workflow, but seek **ONLY** these guidelines that are described in this article, because many things changed since these two videos have been released.
-
-### Implementing an extension from scratch
-<div class="video">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9f6rpIrlNMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-### Implementing an extension from customization
-<div class="video">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/N2TJJbSDTbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 ## Extension file structure
 
 A ScandiPWA extension is a M2 composer package with an additional directory - `scandipwa`, which contains ScandiPWA frontend-related functionality. The extension can contain any other M2 directories for implementing backend functionality. For example, the extension below has the `etc` and `Model` directories, 
@@ -97,13 +80,13 @@ THe `plugin` directory can contain files specifying the configuration and implem
 
 7. Restart your frontend container for the configuration to take effect. This is necessary whenever the scandipwa.json file is changed.
 
-### Plugin implementation
+## Plugin implementation
 
 Plugins are used to alter the behavior of functions or classes. This is done by creating wrappers for existing values to control their new behavior, similarly to Magento "around" plugins/interceptors.
 
 There are 2 main types of plugins: plugins that wrap around functions and those that wrap around other properties.
 
-#### Function plugins
+### Function plugins
 Each plugin which wraps around a **_function_** is a function with the following arguments.
 - `args`: an array of the original arguments that were passed to the function
 - `callback`: a function that calls the original method (bound to the instance), or the next plugin if another plugin is configured
@@ -130,7 +113,7 @@ const aroundFunction = (args, callback, instance) => {
 >
 > It is recommended to follow the naming convention for the arguments of these functions for consistency and clarity
 
-#### Property plugins
+### Property plugins
 
 Each plugin that wraps around a **_property_**  is a function with the following arguments:
 
@@ -158,7 +141,7 @@ const classWrapper = (Class) => {
 }
 ```
 
-### Plugin configuration
+## Plugin configuration
 
 Once you have created your plugin functions, you need to specify which values you want to plug in to. For this, each plugin file should have a default export - an object specifying the plugin configuration.
 
@@ -191,7 +174,7 @@ If you are plugging in to a function that is not part of a class and has its own
 >
 > You can create class members that do not exist in the original classes and they will be called as you'd expect writing them directly in the class. It is useful when you need some lifecycle member functions that are not present in the original class. **Remember** to call `callback` even if the original member is not present, that will make your plugin compatible with other plugins around the same member, by calling them after your plugin finishes its work.
 
-### Plugin configuration object format
+## Plugin configuration object format
 
 ```javascript
 export default {
@@ -278,7 +261,7 @@ const config = {
 }
 ```
 
-### Enabling extensions
+## Enabling extensions
 
 In the frontend root of the ScandiPWA theme, there is a file called `scandipwa.json`. In this file, you can specify the path to the extensions that the theme should use. Without specifying an extension here, all of it's plugins will be ignored.
 
@@ -305,3 +288,19 @@ Where:
 ## Plugging in to other plugins' classes
 
 ScandiPWA allows plugging into plugins' classes, such as the components, queries, etc. The plugin configuration files (`.plugin.js`) cannot be plugged into however, due to the configuration builder's limitations. Plugins can still be overridden in the theme though.
+
+## Outdated video tutorials
+
+> **Note**:
+>
+> You may use these videos for general guidance of the plugin development process, but please be aware that they are outdated. Read the documentation above for the most up-to-date details
+
+### Implementing an extension from scratch
+<div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9f6rpIrlNMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Implementing an extension from customization
+<div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/N2TJJbSDTbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
