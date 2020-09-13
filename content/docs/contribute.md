@@ -134,14 +134,13 @@ Check-out the git reference [here](https://git-scm.com/docs).
 
 After doing this you can commit as usual:
 ```bash
-git add <files>
+git add <file-name>
 git commit -m "your-message"
 git push
-git push -u origin <your-branch-name>
+git push origin <your-branch-name>
 ```
-After this you should see <your-branch-name> in your GitHub account and create a pull request.
-
-After this the pull request will be reviewed by our fabulous maintainers and either be approved or closed.
+After this you should see <your-branch-name> in your GitHub account and create a pull request. 
+Then the pull request will be reviewed by our fabulous maintainers and either be approved or closed.
 
 ## Making A Contribution: Back-End
 Clone the repo the same way as previously, you can choose e.g. `store-graphql`.
@@ -182,16 +181,15 @@ After making changes, `exit` the container and go to the `store-graphql` directo
 ```bash
 cd src/localmodules/store-graphql
 ```
-We can check out if our changes are registered by using `git status`.
+We can check out if our changes are registered by using `git status`, in fact can use `git status` any time to see what the state of our commit is.
+
 
 After this we can use a similar sequence as previously:
 ```bash
 git checkout -b feature-branch-1
-git add src
+git add src         # add the whole folder
 git commit -m "Some message"
 git push
 git push origin feature-branch-1
 ```
-We can use `git status` at any time to see what the state of our commit is.
-
 After this we can go to our GitHub account and open a pull request.
