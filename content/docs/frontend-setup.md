@@ -58,22 +58,16 @@ dcf up -d --remove-orphans
 <tr>
 <td>M2 handles all requests</td>
 <td><pre>
-              back-end
-     +--+      server
-/graphql|      +----+
-/admin  +----->+ M2 |
-     +--+      +----+
+/graphql      back-end 
+/admin  -----> server
+                 M2        
 </td>
 </tr>
 <tr>
 <td><pre> npm run build </td>
 <td><pre>
-                +------------+
-      +--+      |            |
-/category|      |   webpack  |
-/123 etc.+----->+dev - server|
-      +--+      |            |
-                +------------+
+/category       webpack 
+/123 etc. ---> dev server
 </td>
 </tr>
 <tr>
