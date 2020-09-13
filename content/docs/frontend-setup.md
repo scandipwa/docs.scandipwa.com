@@ -18,13 +18,17 @@ micro_nav:
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/TqJw883qvrA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+Topics covered in this tutorial:
+- [How To Start The Development Set-Up?](#how-to-start-the-development-set-up)
+- [Working With The Front-End Container: Difference Between The Production And Development Set-Up](#working-with-the-front-end-container-difference-between-the-production-and-development-set-up)
+- [Overriding A Component: Step-By-Step Walkthrough](#overriding-a-component-step-by-step-walkthrough)
 
+## What Is A Front-End Container?
 ScandiPWA Docker set-up comes with two options. You can either wither with or without front-end.
 
-What is a front-end container?
-A front-end container completely replaces the front-end for the application. So, instead of the Magento server providing you with the front-end, the webpack dev server does it.
+A front-end container completely replaces the front-end for the application. So, instead of the Magento server providing you with the front-end, the `webpack` dev server does it.
 
-## How to start the development set-up?
+## How To Start The Development Set-Up?
 You can check out one of our [Docker set-up tutorials](https://docs.scandipwa.com/docs/linux.html) to find out more about the recommended aliases.
 
 To start the development set-up use:
@@ -42,7 +46,7 @@ use
 dcf up -d --remove-orphans
 ```
 
-## Differences in working with the front-end container between the production and development set-up
+## Working With The Front-End Container: Difference Between The Production And Development Set-Up
 
 <table>
 <tr><th>PROD</th><th>DEV</th></tr>
@@ -87,8 +91,9 @@ dcf up -d --remove-orphans
 <td></td>
 <td>In-memory caching - quick recompilation</td>
 </tr>
+</table>
 
-### The development set-up:
+### The Development Set-Up
 - To start, use an additional file `docker-compose-frontend.yml` or the `dcf` alias.
 - `/graphql` and `/admin` will be handled by Magento.
 - `/category`, `/products` etc. will be handled by the `webpack` dev server
@@ -101,7 +106,7 @@ dcf up -d --remove-orphans
         - Dev server watches the files from your theme directory `app/design/frontend/Scandiweb/pwa`. Recompiles after every change.
         - In-memory caching allows for quick recompilation of only the files which are changed or hot-reloading.
 
-### The production set-up:
+### The Production Set-Up
 - Every request is handled by Magento
 - Any change in the ScandiPWA folder will require for you to run the command `npm run build` from its directory.
     - Any change requires full recompilement unlike in the development mode, where only the changed files are recompiled.
@@ -111,10 +116,11 @@ dcf up -d --remove-orphans
 
 > **Note**
 >
-> First set-up must be done in production mode, without the front-end container
+> The first set-up must be done in production mode, without the front-end container
 
-You can check out our Docker set-up docs for a [step-by-step guide](https://docs.scandipwa.com/docs/linux.html) on how to correctly set-up.
+You can check out our docs for a [step-by-step guide](https://docs.scandipwa.com/docs/linux.html) on how to correctly set-up.
 
+## Overriding A Component: Step-By-Step Walkthrough
 If you don't want to debug, change the `.env` file's `PROJECT-IMAGE = xdebug` to `PROJECT-IMAGE = latest`.
 Now, when force recreating with `dcf up -d --remove-orphans` we see that the front-end container gets set up.
 
