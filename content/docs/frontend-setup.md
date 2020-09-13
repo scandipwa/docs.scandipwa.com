@@ -48,7 +48,21 @@ dcf up -d --remove-orphans
 ```
 
 ## Working With The Front-End Container: Difference Between The Production And Development Set-Up
+<style>
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+</style>
 <table>
 <tr><th>PROD</th><th>DEV</th></tr>
 <tr>
