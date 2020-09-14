@@ -25,15 +25,17 @@ page_nav:
 
 ---
 
-ScandiPWA v3 (currently in beta) supports frontend plugins, which allow reusing one piece of code throughout a lot of completely different projects. This guide is devoted to explaining all the functionality related to plugins.
+As of v3, ScandiPWA supports frontend plugins - reusable extensions that, once created, can be used in any project using ScandiPWA v3. These can be used to modify the functionality of almost any part of ScandiPWA.
 
 ## Extension file structure
 
-A ScandiPWA extension is a M2 composer package with an additional directory - `scandipwa`, which contains ScandiPWA frontend-related functionality. The extension can contain any other M2 directories for implementing backend functionality. For example, the extension below has the `etc` and `Model` directories, 
+A ScandiPWA extension is a M2 composer package with an additional directory - `scandipwa`, which contains ScandiPWA frontend-related functionality. The extension can contain any other M2 directories for implementing backend functionality. For example, the extension below has the `etc` and `Model` directories.
 
-All _directories_ inside of `scandipwa` are optional. However, following the specified structure is mandatory - the `app` and `sw` subdirectories of `scandipwa` have the same structure as `vendor/scandipwa/source/src/(app|sw)`. These directories have the same meaning: `component` is for your extension's components, `query` is for GraphQl queries, etc.
+All directories in `scandipwa` are optional. However, following the specified structure is mandatory - the `app` and `sw` subdirectories of `scandipwa` must have the same structure as `vendor/scandipwa/source/src/(app|sw)`. These directories have the same meaning: `component` is for your extension's components, `query` is for GraphQl queries, etc.
 
-THe `plugin` directory can contain files specifying the configuration and implementation of your plugins. Details will be provided below.
+The `plugin` directory can contain files specifying the configuration and implementation of your plugins. Details will be provided below.
+
+A ScandiPWA extension's file structure overview:
 
 ```bash
 📦my-awesome-extension
@@ -50,31 +52,27 @@ THe `plugin` directory can contain files specifying the configuration and implem
  ┃   ┃ ┣ 📂store
  ┃   ┃ ┣ 📂util
  ┃   ┃ ┗ 📂plugin
- ┃   ┃   ┗ 📜<name>.plugin.js # Pluggin configuration and implementation
+ ┃   ┃   ┗ 📜<name>.plugin.js # Plugin configuration and implementation
  ┃   ┗ 📂 sw       # Plugins and functionality for the Service Worker context
  ┃     ┣ 📂handler
  ┃     ┣ 📂util
  ┃     ┗ 📂plugin
- ┃       ┗ 📜<name>.plugin.js # Pluggin configuration and implementation
+ ┃       ┗ 📜<name>.plugin.js # Plugin configuration and implementation
  ┣ 📜package.json  # JS dependencies
  ┗ 📜composer.json # Composer dependencies and the PACKAGE NAME which is mandatory
 ```
 
 ## Creating a simple extension
 
-> **Note**:
->
-> This section is more up-to-date than the videos above.
-
 1. Create a `localmodules` directory in the Magento root of your application. This directory will be used to store extensions that are in development.
 
 2. In the `localmodules` directory, create a regular Composer package.
 
-3. In a subdirectory of your package, `src/scandipwa/app/plugin`, create a file named `<name>.plugin.js`.
+3. In a subdirectory of your package, `src/scandipwa/app/plugin`, create files for your plugins. By convention, these end with `.plugin.js`
 
-4. Implement your plugin's logic (see "Plugin implementation")
+    4. Implement your plugin's logic (see "Plugin implementation")
 
-5. Configure your plugin's target (see "Plugin configuration")
+    5. Configure your plugin's target (see "Plugin configuration")
 
 6. Enable your extension in scandipwa.json (see "Enabling extensions")
 
@@ -84,12 +82,12 @@ THe `plugin` directory can contain files specifying the configuration and implem
 
 Plugins are used to alter the behavior of functions or classes. This is done by creating wrappers for existing values to control their new behavior, similarly to Magento "around" plugins/interceptors.
 
-There are 2 main types of plugins: plugins that wrap around functions and those that wrap around other properties.
+There are 2 main types of plugins: plugins that wrap around functions and those that wrap around other properties. Function plugins act as wrappers for the function they plug in to, and are called every time the original function is called. Property plugins are called to initialize the property, and must return the value that the property should have.
 
 ### Function plugins
-Each plugin which wraps around a **_function_** is a function with the following arguments.
+Each plugin which wraps around a function is a function with the following arguments.
 - `args`: an array of the original arguments that were passed to the function
-- `callback`: a function that calls the original method (bound to the instance), or the next plugin if another plugin is configured
+- `callback`: a function that calls the original method, or the next plugin if another plugin is configured
 - `instance`: the instance that the function was called on
 
 The plugin is itself the new function that the target function should be replaced with. Whatever the plugin returns is what callers of the function will get.
@@ -104,7 +102,7 @@ const aroundFunction = (args, callback, instance) => {
 
     console.log(`The first argument is ${foo}`)
 
-	// Call the original function with the original arguments
+    // Call the original function with the original arguments
     callback(...args);
 }
 ```
@@ -118,7 +116,7 @@ const aroundFunction = (args, callback, instance) => {
 Each plugin that wraps around a **_property_**  is a function with the following arguments:
 
 - `prop` is the value you are wrapping around
-- `instance` the instance this property belongs to
+- `instance` the instance this property belongs to (if any)
 
 Unlike function plugins, the plugin is a function that returns the new value that the property should now be replaced with. Any users of the property will now get the new value.
 
@@ -147,26 +145,22 @@ Once you have created your plugin functions, you need to specify which values yo
 
 In the plugin configuration, you can specify the following information:
 
-**The target namespace**:
-
-Every class and function that can be plugged in to has a namespace, indicated with the `@namespace` decorator.
+**The target namespace**: Every class and function that can be plugged in to has a namespace, indicated with the `@namespace` decorator.
 
 **What** aspect of the namespace you want to modify...
 
-If you are plugging into a class: 
+(A) If you are plugging into a *class*: 
 
-- Specify `class` and a property plugin if you want to replace the entire class (e.g with a version of the class that is wrapped in another class).
+- Specify `class` and a property plugin if you want to replace the entire class (e.g. with a version of the class that is wrapped in another class). While technically possible to replace the class with another class entirely, this is not recommended.
 - Specify `member-function` and a function plugin if you want to alter the behavior of the class's method. E.g: plug in to `render` or `componentDidMount`.
 - Specify `member-property` and a property plugin if you want to alter the value of a field of the class. E.g: plug in to `state`.
 - Specify `static-member` and a property plugin if you want to modify a static field of the class.
 
-> **Note**:
->
-> If you want to plug in to a class member that is an arrow function, use `member-function`, not `member-property`.
+If you want to plug in to a class member that is an arrow function, use `member-function`, not `member-property`.
 
-If you are plugging in to a function that is not part of a class and has its own namespace: Use the `function` plugin type to wrap around the function, and implement a function plugin.
+(B) If you are plugging in to a *function* that is not part of a class and has its own namespace: Use the `function` plugin type to wrap around the function, and implement a function plugin.
 
-**Name**: if you are targetting a class member, you must specify its name,
+**Name**: if you are targetting a class member, you must specify its name.
 
 **Position** (Optional, defaults to 100): Specifies the order in which plugins will be applied. Plugins with a lower position will be called before plugins with a higher position.
 
@@ -174,7 +168,7 @@ If you are plugging in to a function that is not part of a class and has its own
 >
 > You can create class members that do not exist in the original classes and they will be called as you'd expect writing them directly in the class. It is useful when you need some lifecycle member functions that are not present in the original class. **Remember** to call `callback` even if the original member is not present, that will make your plugin compatible with other plugins around the same member, by calling them after your plugin finishes its work.
 
-## Plugin configuration object format
+### Plugin configuration object format
 
 ```javascript
 export default {
@@ -195,10 +189,11 @@ export default {
 }
 ```
 
-Where *plugin* can be in one of the following formats:
+Where *plugin* can be in one of the following four formats:
 
 ```javascript
-const somePlugin = (args, callback, instance) => callback(...args)
+// example plugin:
+// const somePlugin = (args, callback, instance) => callback(...args)
 
 // To specify a simple plugin, use:
 somePlugin
@@ -222,16 +217,16 @@ somePlugin
         position: 1984,
         implementation: someOtherPlugin
     }
-];
+]
 ```
 
 Example:
 
 ```javascript
-const hideMenuPlugin = (args, callback, instance) => null;
+// e.g.
+// const hideMenuPlugin = (args, callback, instance) => null;
 
-
-const config = {
+export default {
     'Component/Header/Component': {
         'member-function': {
             'renderMenu': hideMenuPlugin
@@ -258,12 +253,27 @@ const config = {
     'Component/Header/Container/mapDispatchToProps': {
         'function': mapDispatchToPropsPlugin
     }
-}
+};
 ```
+
+### Listing plugin files
+For ScandiPWA to be able to detect what plugins your extension has, you must create a file called `<extension root>/src/scandipwa/index.js`. This file should have a default export - an array of paths to your plugin files.
+
+Example:
+
+```javascript
+
+module.exports = [
+    './app/plugin/somePluginFile.js',
+    './app/plugin/anotherPlugin.js',
+];
+```
+
+Where `somePluginFile.js` is a plugin file as described above.
 
 ## Enabling extensions
 
-In the frontend root of the ScandiPWA theme, there is a file called `scandipwa.json`. In this file, you can specify the path to the extensions that the theme should use. Without specifying an extension here, all of it's plugins will be ignored.
+In the frontend root of the ScandiPWA theme, there is a file called `scandipwa.json`. In this file, you can specify the path to the extensions that the theme should use. Without specifying an extension here, all of its plugins will be ignored.
 
 The plugins are specified in the `extensions` section of `scandipwa.json`. It has the following format:
 
@@ -273,7 +283,6 @@ The plugins are specified in the `extensions` section of `scandipwa.json`. It ha
     "extensions": {
         "<name>": "<path>",
         "<name2>": "<path2>",
-        /** ... */
         // Example:
        "PayPal": "vendor/scandipwa/paypal-graphql",
     }
