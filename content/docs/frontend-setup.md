@@ -52,7 +52,7 @@ dcf up -d --remove-orphans
 |PRODUCTION SET-UP|DEVELOPMENT SET-UP|
 |---|---|
 ||`...-f frontend.compose.frontend.yml...`|
-|M2 <br> handles **all** requests |`/graphql`, `/admin` --> **M2** back-end server|
+|M2 <br> handles **all** requests |`/graphql`, `/admin` --> M2 **back-end** server|
 |`npm run build` | `/category`, `/123` etc. --> `webpack` dev server|
 |Customization works|No customization|
 |URL rewrites work|No URL/rewrites/redirects|
