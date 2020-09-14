@@ -70,13 +70,15 @@ A ScandiPWA extension's file structure overview:
 
 3. In a subdirectory of your package, `src/scandipwa/app/plugin`, create files for your plugins. By convention, these end with `.plugin.js`
 
-    4. Implement your plugin's logic (see "Plugin implementation")
+    i. Implement your plugin's logic (see [Plugin implementation](#plugin-implementation))
 
-    5. Configure your plugin's target (see "Plugin configuration")
+    ii. Configure your plugin's target (see [Plugin configuration](#plugin-configuration))
 
-6. Enable your extension in scandipwa.json (see "Enabling extensions")
+8. List your plugin files in `index.js` (see [Listing plugin files](#listing-plugin-files))
 
-7. Restart your frontend container for the configuration to take effect. This is necessary whenever the scandipwa.json file is changed.
+7. Enable your extension in scandipwa.json (see [Enabling extensions](#enabling-extensions))
+
+8. Restart your frontend container for the configuration to take effect. This is necessary whenever the scandipwa.json file is changed.
 
 ## Plugin implementation
 
@@ -100,10 +102,10 @@ const aroundFunction = (args, callback, instance) => {
 	// Use array destructuring to get specific arguments from the array
 	const [foo] = args;
 
-    console.log(`The first argument is ${foo}`)
+	console.log(`The first argument is ${foo}`)
 
-    // Call the original function with the original arguments
-    callback(...args);
+	// Call the original function with the original arguments
+	callback(...args);
 }
 ```
 
@@ -134,7 +136,7 @@ const property = (prop, instance) => {
 
 // We can also wrap around a class!
 const classWrapper = (Class) => {
-    // E.g: return the original class wrapped with a HOC
+    // E.g: return the original class wrapped in a HOC
     return withRouter(Class);
 }
 ```
