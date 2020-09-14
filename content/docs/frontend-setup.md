@@ -49,44 +49,15 @@ dcf up -d --remove-orphans
 
 ## Working With The Front-End Container: Difference Between The Production And Development Set-Up
 
-<table>
-<tr><th>PROD</th><th>DEV</th></tr>
-<tr>
-<td></td>
-<td><pre>... -f docker-compose.frontend.yml ...</td>
-</tr>
-<tr>
-<td>M2 handles all requests</td>
-<td><pre>
-/graphql      back-end 
-/admin  -----> server
-                 M2        
-</td>
-</tr>
-<tr>
-<td><pre> npm run build </td>
-<td><pre>
-/category       webpack 
-/123 etc. ---> dev server
-</td>
-</tr>
-<tr>
-<td>Customization works</td>
-<td>No customization</td>
-</tr>
-<tr>
-<td>URL rewrites work</td>
-<td>No URL rewrites/redirects</td>
-</tr>
-<tr>
-<td></td>
-<td>Dev server watches the files</td>
-</tr>
-<tr>
-<td></td>
-<td>In-memory caching - quick recompilation</td>
-</tr>
-</table>
+|PRODUCTION SET-UP|DEVELOPMENT SET-UP|
+|---|---|
+||`...-f frontend.compose.frontend.yml...`|
+|M2 <br> handles **all** requests |`/graphql`, `/admin` --> M2 **back-end** server|
+|`npm run build` | `/category`, `/123` etc. --> `webpack` dev server|
+|Customization works|No customization|
+|URL rewrites work|No URL/rewrites/redirects|
+||Dev server watches the files|
+||In-memory caching - quick recompilation|
 
 ### The Development Set-Up
 - To start, use an additional file `docker-compose-frontend.yml` or the `dcf` alias.
@@ -107,7 +78,7 @@ dcf up -d --remove-orphans
     - Any change requires full recompilement unlike in the development mode, where only the changed files are recompiled.
 - URL rewrites work
 - Customization works
-    - If you want to check-out your customization, you need to switch into production mode and remove `-f docker-compose.frontend.yml` from the stack
+    - If you want to check out your customization, you need to switch into production mode and remove `-f docker-compose.frontend.yml` from the stack
 
 > **Note**
 >
@@ -127,7 +98,7 @@ If you see the following output, the front-end is ready. You can open a browser 
 ```
 Open the folder `scandipwa-base/src/app/design/frontend/Scandiweb/pwa/src` and create an `app` folder in it. 
 
-You can check the ScandiPWA [VSCode extension](https://github.com/scandipwa/scandipwa-development-toolkit) to improve the speed of your workflow.
+You can check out the ScandiPWA [VSCode extension](https://github.com/scandipwa/scandipwa-development-toolkit) to improve the speed of your workflow.
 
 Assuming that you have the extension installed, search for `ScandiPWA: Extend source component` and select `Breadcrumbs` as a component to override. Press ok and then `Extend them!`.
 
