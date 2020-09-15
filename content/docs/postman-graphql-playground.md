@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: Postman & GraphQL Playground
-description: In this guide you can find out how to streamline your workflow with Postman, GraphQL playground and some other tools
+description: In this guide you can find out how to streamline your workflow with Postman, GraphQL Playground and some other tools
 
 # Micro navigation
 micro_nav:
@@ -67,6 +67,6 @@ Some of the major features are:
     - Useful for finding bugs that happen radomly, i.e. in a specific period of time.
 
 ## Database Management Tools
-[DBeaver](https://dbeaver.io/) for Linux. You can check out the user-guide [here](https://github.com/dbeaver/dbeaver/wiki).
+The team of ScandiPWA recommends [DBeaver](https://dbeaver.io/) for Linux. You can check out the user-guide [here](https://github.com/dbeaver/dbeaver/wiki).
 
 MySQL database management application for Mac - [Sequel Pro](https://www.sequelpro.com/). Read how to get started [here](https://sequelpro.com/docs).
