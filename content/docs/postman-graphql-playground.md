@@ -19,7 +19,7 @@ micro_nav:
     <iframe width="560" height="315" src="https://www.youtube.com/embed/27IHNDG4Kaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-If you don't already have a preference of your own, check out the ScandiPWA tool recommendations for debugging and database management.
+If you don't already have a preference of your own, check out the ScandiPWA tool recommendations for testing, debugging and database management.
 
 Recommended tools:
 - [GraphQL Playground](https://github.com/prisma-labs/graphql-playground)
@@ -28,13 +28,14 @@ Recommended tools:
 - [Sequel Pro](https://www.sequelpro.com/) for Mac
 
 Topics covered:
-- GraphQL Playground features
-- Postman features
-- Database management tools
+- [GraphQL Playground features](#graphql-playground-features)
+- [Postman features](#postman-features)
+- [Database management tools](#database-management-tools)
 
 ## GraphQL Playground Features
-You can download the latest release for your platform of choice - Mac, Linux or Windows. 
+GraphQL Playground is an IDE for learning and using GraphQL. You can download the latest release for your platform of choice - Mac, Linux or Windows. 
 
+Features:
 - Ability to store schema, tabs and workspaces. 
 - 'DOCS' section lets you preview GraphQL queries, type details and specific fields of a schema.
 - The 'SCHEMA' tab allows you to preview the GraphQL schema and download it as a file. 
@@ -45,6 +46,7 @@ You can download the latest release for your platform of choice - Mac, Linux or 
 - Support for HTTP headers and query variables
     - Send requests with HTTP headers by adding them as a JSON object in the 'HTTP HEADERS' section.
 
+Drawbacks:
 - No proper error handling
     - If your GraphQL server responds with a non-json error you'll see:
     ```javascript
