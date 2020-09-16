@@ -33,12 +33,12 @@ Topics covered:
 - [Database management tools](#database-management-tools)
 
 ## GraphQL Playground Features
-GraphQL Playground is an IDE for learning and using GraphQL. You can download the latest release for your platform of choice - Mac, Linux or Windows. 
+GraphQL Playground is an IDE for learning and using GraphQL. You can download the latest release for your platform of choice - Mac, Linux or Windows.
 
 Features:
-- Ability to store schema, tabs and workspaces. 
+- Ability to store schema, tabs and workspaces.
 - 'DOCS' section lets you preview GraphQL queries, type details and specific fields of a schema.
-- The 'SCHEMA' tab allows you to preview the GraphQL schema and download it as a file. 
+- The 'SCHEMA' tab allows you to preview the GraphQL schema and download it as a file.
     - You can parse through 'SCHEMA' using regular expressions and search for 'DOCS' using the search field.
 - Ability to add multiple URLs
 - 'PRETTIFY' code feature
@@ -48,14 +48,17 @@ Features:
 
 Drawbacks:
 - No proper error handling
-    - If your GraphQL server responds with a non-json error you'll see:
-    ```javascript
-    "error": "Unexpected token < in JSON at position 0"
-    ```
-    - In this case you can 'Inspect Element' with the Inspector and you'll see how the request is sent in the 'Response' and 'Preview' tab. In this case it's:
-    ```text
-    502 Bad Gateway
-    ```
+- If your GraphQL server responds with a non-json error you'll see:
+
+```javascript
+"error": "Unexpected token < in JSON at position 0"
+```
+
+- In this case you can 'Inspect Element' with the Inspector and you'll see how the request is sent in the 'Response' and 'Preview' tab. In this case it's:
+
+```text
+502 Bad Gateway
+```
 
 ## Postman Features
 Postman is a user-friendly tool for API testing. If you're not sure whether or not this tool is for you, just `ctrl + F` your request [here](https://www.postman.com/postman-features/).
