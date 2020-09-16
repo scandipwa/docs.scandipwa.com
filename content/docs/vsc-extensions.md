@@ -118,8 +118,28 @@ In order to make the extension work, we also need to make an `app` folder inside
  ┃ ┣ 📂config
  ┗ ┗ 📂public  	
 ```
-Now we can try out the extension.
-We recommend to check the `Extend source component` command. Find this by pressing `ctrl + p` and writing `>extend source component`.
+Now we can try out the extension. This is a list of the available commands:
+|Prefix| 	Template|
+|---|---|
+|exdf 	|Default export declaration for IndexJS|
+|comp 	|Creates new ScandiPWA component|
+|ecomp 	|Extends Source ScandiPWA component|
+|cont 	|Creates new ScandiPWA container class|
+|econt 	|Extends Source ScandiPWA container class|
+|con 	|Connects component to redux|
+|mstp 	|Declares mapStateToProps|
+|mdtp 	|Declared mapDispatchToProps|
+|qc 	|Creates new ScandiPWA query|
+|eqc 	|Extends ScandiPWA Source query|
+|eroute 	|Extends ScandiPWA Source Route component|
+|ecroute 	|Extends ScandiPWA Source Route container|
+|crd 	|Creates reducer|
+|erd 	|Extends ScandiPWA reducer|
+|cdisp 	|Creates new ScandiPWA dispatcher|
+|edisp 	|Extends ScandiPWA dispatcher|
+
+
+We recommend to check out the `Extend source component` command first. Find this by pressing `ctrl + p` and writing `>extend source component`.
 
 Select `ScandiPWA: Extend source component` and you should see a list of extendable components. 
 
@@ -153,6 +173,6 @@ export class Breadcrumbs extends SourceBreadcrumbs{
      // Override original methods
 }
 ```
-We can click on the 'SourceBreadcrumbs' link in VSCode and it'll take us to the original class, in this case, the original `Breadcrumbs.component.js` file. This is where we can see what we can extend.
+We can click on the `SourceBreadcrumbs` link in VSCode and it'll take us to the original class, in this case, the original `Breadcrumbs.component.js` file. This is where we can see what we can extend.
 
 To learn more about how to extend ScandiPWA take a look at our [Extension doc](https://docs.scandipwa.com/docs/extension.html).
