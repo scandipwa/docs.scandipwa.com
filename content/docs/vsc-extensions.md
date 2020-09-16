@@ -119,6 +119,7 @@ In order to make the extension work, we also need to make an `app` folder inside
  ┗ ┗ 📂public  	
 ```
 Now we can try out the extension. This is a list of the available commands:
+
 |Prefix| 	Template|
 |---|---|
 |exdf 	|Default export declaration for IndexJS|
