@@ -27,7 +27,7 @@ micro_nav:
 ## What Is A Linter?
 According to [Wikipedia](https://en.wikipedia.org/wiki/Lint_(software)), lint, or a linter, is a tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs
 
-## Lint In Practice
+## Starting Out With Lint
 Install and enable [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for VSCode and it'll start to give you suggestions. 
 
 Open the `scandipwa-base/src/app/design/frontend/Scandiweb/pwa` folder.
