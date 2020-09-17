@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: FAQ product support
-description: Find the solution of product support issues here.
+title: Product support FAQ
+description: Find the solution for product support issues here.
 
 # Micro navigation
 micro_nav:
@@ -16,9 +16,9 @@ micro_nav:
 
 ---
 
-**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of community - please open a pull-request, or an issue with solution details.
+**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of the community - please open a pull-request, or an issue with solution details.
 
-Alternatively, write us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
+Alternatively, write to us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
 
 ## How can I report found issue with ScandiPWA base theme?
 
@@ -26,7 +26,7 @@ Report it in [ScandiPWA GitHub project](https://github.com/scandipwa/base-theme)
 
 ## How are found issues resolved?
 
-ScandiPWA is being activly maintaned by the core team. If an issue is reported or added to [GitHub](https://github.com/scandipwa/base-theme) it is priorized and fixed in the upcoming releases. All the releases are free and made fixes can be taken from them to apply on your existing projects.
+ScandiPWA is being actively maintained by the core team. If an issue is reported or added to [GitHub](https://github.com/scandipwa/base-theme) it is prioritized and fixed in the upcoming releases. All the releases are free and the fixes made can be taken from them to apply on your existing projects.
 
 ## How can I get help with my issue?
 
