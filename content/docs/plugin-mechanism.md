@@ -64,21 +64,17 @@ A ScandiPWA extension's file structure overview:
 
 ## Creating a simple extension
 
-1. Create a `localmodules` directory in the Magento root of your application. This directory will be used to store extensions that are in development.
-
-2. In the `localmodules` directory, create a regular Composer package.
-
-3. In a subdirectory of your package, `src/scandipwa/app/plugin`, create files for your plugins. By convention, these end with `.plugin.js`
+1. In a subdirectory of your package, `src/scandipwa/app/plugin`, create files for your plugins. By convention, these end with `.plugin.js`
 
     i. Implement your plugin's logic (see [Plugin implementation](#plugin-implementation))
 
     ii. Configure your plugin's target (see [Plugin configuration](#plugin-configuration))
 
-8. List your plugin files in `index.js` (see [Listing plugin files](#listing-plugin-files))
+2. List your plugin files in `index.js` (see [Listing plugin files](#listing-plugin-files))
 
-7. Enable your extension in scandipwa.json (see [Enabling extensions](#enabling-extensions))
+3. Enable your extension in scandipwa.json (see [Enabling extensions](#enabling-extensions))
 
-8. Restart your frontend container for the configuration to take effect. This is necessary whenever the scandipwa.json file is changed.
+4. Restart your frontend container for the configuration to take effect. This is necessary whenever the scandipwa.json file is changed.
 
 ## Plugin implementation
 
