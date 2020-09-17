@@ -253,7 +253,7 @@ class Home extends Component {
                           <li><a href="./docs/coding-standard.html">BEM and Coding Standards</a></li>
                           <li><a href="./docs/tools.html">Tools of ScandiPWA</a></li>
                           <li><a href="./docs/react-best-practices.html">React Best Practices</a></li>
-                          <li><a href="./docs/best-practices-styles.html">Best Practices Working with Styles</a></li>
+                          <li><a href="./docs/best-practices-styles.html">Best Practices For Working with Styles</a></li>
                         </ul>
                     </ol>
                   </div>
