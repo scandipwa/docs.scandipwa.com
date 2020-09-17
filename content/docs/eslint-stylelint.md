@@ -24,9 +24,6 @@ micro_nav:
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - linter for ECMAScript or JavaScript
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) - linter for your styles - CSS, SCSS and Less
 
-## What Is A Linter?
-According to [Wikipedia](https://en.wikipedia.org/wiki/Lint_(software)), lint, or a linter, is a tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs
-
 ## Starting Out With Lint
 Install and enable [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for VSCode and it'll start to give you suggestions. 
 
@@ -81,3 +78,6 @@ This will create a stylelint pop-up that'll say `Unexpected empty block`. If now
 >
 > You can run ESLint and style lint in GitHub actions
 
+Go to [ScandiPWA/base-theme actions](https://github.com/scandipwa/base-theme/actions) and you'll see an ESlint workflow. 
+
+You can copy the configuration from `.github` folder, `main.yml` file and use the output commands to comment on the pull request.

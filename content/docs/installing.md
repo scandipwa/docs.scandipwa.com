@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: FAQ about installation
-description: Here you can find solutions about installation
+description: Here you can find solutions for installation
 
 # Micro navigation
 micro_nav:
@@ -16,13 +16,13 @@ micro_nav:
 
 ---
 
-**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of community - please open a pull-request, or an issue with solution details.
+**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of the community - please open a pull-request, or an issue with solution details.
 
-Alternatively, write us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
+Alternatively, write to us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
 
 ## "Type Error occurred when creating object: ..\Search\Response\QueryResponse"
 
-The wrong version of elastic-search is installed. This might happen after migration to 2.14.0 from versions bellow. Try following:
+The wrong version of elastic-search is installed. This might happen after migration to 2.14.0 from versions bellow. Try the following:
 
 ```bash
 dcf down # stop the stack

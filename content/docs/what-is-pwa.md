@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: What is PWA?
-description: This guide tells about what is PWA.
+description: This guide talks about what is a PWA.
 
 # Micro navigation
 micro_nav:
@@ -16,22 +16,22 @@ micro_nav:
 
 ---
 
-**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of community - please open a pull-request, or an issue with solution details.
+**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of the community - please open a pull-request, or an issue with solution details.
 
-Alternatively, write us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
+Alternatively, write to us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
 
 ## What are the main benefits that come with PWA?
 
 PWAs give you a faster, more reliable, and more engaging verson of your eCommerce store.
 
 Here are the main benefits:
-- Increased your conversion rate
+- Increased conversion rate
 - Increased user time on your site
 - Improves user experience
 - Increases your organic search traffic
 - Native apps are usually more expensive to create and maintain than PWA
 - Your most loyal customers can save your app on their home screen
-- All of the above means you will improve your profits
+- All of the above means you will improve your profit
 
 ## What are the benefits of PWA for the user?
 
@@ -42,9 +42,9 @@ The main PWA benefits for the user:
 - PWAs use less data
 - 1-click access (save as an icon on your phone home screen)
 
-## What is the development time for PWA web app instead of Native app?
+## What is the development time for PWA web app instead of a Native app?
 
-The development of a PWA for your store is much quicker and so much more affordable than developing a native app. Apps can have a higher barrier to entry as your customers will need to head to their application store to download and install your app and wait for it to download.
+The development of a PWA for your store is much quicker and so much more affordable than developing a native app. Apps can have a higher entry barrier as your customers will need to head to their application store to download and install your app and wait for it to download.
 
 Bonus: PWAs can also be added to app stores for greater discoverability.
 

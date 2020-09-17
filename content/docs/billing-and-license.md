@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: Billing and license
-description: An article about Billing and license
+description: Find out more about Billing and license
 
 # Micro navigation
 micro_nav:
@@ -16,13 +16,13 @@ micro_nav:
 
 ---
 
-**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of community - please open a pull-request, or an issue with solution details.
+**If you have not found an answer to your issue** here, but happened to resolve it on your own / with help of the community - please open a pull-request, or an issue with solution details.
 
-Alternatively, write us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
+Alternatively, write to us in [Slack](https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk).
 
 ## How much does ScandiPWA theme cost?
 
-ScandiPWA is open-source publicly available for both personal and commerce usage.
+ScandiPWA is open-source publicly available for both personal and commercial usage.
 
 ## Under what license is ScandiPWA distributed?
 
