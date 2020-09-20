@@ -72,7 +72,7 @@ If you're using arrow functions while rendering an array, you'll be creating an 
 Instead of rendering your list element on every click, you should create a smaller component `<listItem>` that accepts a prop `Item`. So, instead of passing the `id` and creating an anonymous function on every click you create a smaller component and pass an `Item` property to it. This way rendering can be performed much faster.
 
 ## Use ESlint
-If you don't know how to configure ESlint, check out [how it's done]((https://docs.scandipwa.com/docs/eslint-stylelint.html)) in ScandiPWA.
+If you don't know how to configure ESlint, check out [how it's done](https://docs.scandipwa.com/docs/eslint-stylelint.html) in ScandiPWA.
 
 ESlint will allow you to maintain the most stringent of code standards, making your code easy, breezy and beautiful. If you choose to use the ScandiPWA ESlint configuration, contributing and consequently reviewing your code will be made much easier.
 
