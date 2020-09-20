@@ -26,10 +26,9 @@ micro_nav:
 5. [Guide to rewriting](#guide-to-rewriting)
 6. [Rewriting simple components like Header](#rewriting-simple-components-like-header)
 7. [Overriding and extending the styles](#overriding-and-extending-the-styles)
-8. [Rewriting styles only](#rewriting-styles-only)
-9. [Creating a new page and adding it to the router](#creating-a-new-page-and-adding-it-to-the-router)
-10. [Creating a container with connection to global state](#creating-a-container-with-connection-to-global-state)
-11. [Extending the Header business logic (its state)](#extending-the-header-business-logic-its-state)
+8. [Creating a new page and adding it to the router](#creating-a-new-page-and-adding-it-to-the-router)
+9. [Creating a container with connection to global state](#creating-a-container-with-connection-to-global-state)
+10. [Extending the Header business logic (its state)](#extending-the-header-business-logic-its-state)
 
 ## Structured data explanation and testing example
 We can go to a page in `scandipwa.local`, Inspect it and copy the HTML. After this when going to [Google schema checker](https://search.google.com/structured-data/testing-tool) we'll be able to see info about the organization. This information is originally declared in the `Header.component.js` file.
