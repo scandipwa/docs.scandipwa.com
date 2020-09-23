@@ -250,3 +250,7 @@ The best way would be to create a Magento widget with title and field for conten
 ## Cache clean command not working: bin/magento c:c
 
 You should never run commands from your host machine if you are using Docker. You should run it from the container using the in app command.
+
+## ERROR: TypeError: this.state is null
+
+State must be defined in constructor. Pass the state from container to component as prop and use the field in the component as porp.
