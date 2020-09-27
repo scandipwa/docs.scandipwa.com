@@ -23,13 +23,13 @@ page_nav:
 
 ## VSCode
 
-The tools and editors are essential. For PHP - there is a standard "PHPStorm" for React development we encourage using [VSCode](https://code.visualstudio.com/). This is a very popular code editor, with a powerful extension API. We even [have our own](https://github.com/scandipwa/scandipwa-development-toolkit) to help you develop your store faster! Watch the video to configure your editor!
+The tools and editors are essential. For PHP - there is a standard "PHPStorm" for React development we encourage using [VSCode](https://code.visualstudio.com/). This is a very popular code editor, with a powerful extension API. We even [have our own](https://github.com/scandipwa/scandipwa-development-toolkit) to help you develop your store faster. You can check out our in-depth instructions [here](https://docs.scandipwa.com/docs/vsc-extensions.html).
 
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/hmzcmb611x0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-The  VSCode extensions mentioned:
+VSCode extension overview:
 - [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) - the comment highlights
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - write without typos
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) - remote debugger for chrome
@@ -41,9 +41,11 @@ The  VSCode extensions mentioned:
 
 ## ESLint and StyleLint - code-style validators
 
-Matching code-style is very important. The consistent tabulation, the proper imports, everything matters! We even made [our own ESLint plugin](https://www.npmjs.com/package/@scandipwa/eslint-plugin-scandipwa-guidelines) (for the next ScandiPWA version)!
+Matching code-style is very important. Consistent tabulation, proper imports, everything matters! We even made [our own ESLint plugin](https://www.npmjs.com/package/@scandipwa/eslint-plugin-scandipwa-guidelines) (for the next ScandiPWA version)! You can check out our dedicated doc [here](https://docs.scandipwa.com/docs/eslint-stylelint.html).
 
-> **Note**: it is mandatory to install the ESLint and StyleLint! This will help a lot later, when inspecting the source code or contributing! Please do not skip this step!
+> **Note**: 
+>
+> It is mandatory to install ESLint and StyleLint if you want to work with ScandiPWA! This will help a lot later, when inspecting the source code or contributing! Please do not skip this step!
 
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/3nO6m4zDnqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -51,7 +53,7 @@ Matching code-style is very important. The consistent tabulation, the proper imp
 
 ## Chrome remote Debugging
 
-Configuring the remote debugging can be quite challenging. Debugging in the browser requires additional tools. Watch the tutorial video, and configure your Chrome and VSCode for remote debugging.
+Configuring the remote debugging can be quite challenging. Debugging in the browser requires additional tools. Watch the tutorial video, [read the doc](https://docs.scandipwa.com/docs/debug-in-chrome.html) and configure your Chrome and VSCode for remote debugging.
 
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/cyDwoVLH_hA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -63,7 +65,7 @@ Chrome extensions mentioned in this video:
 
 ## GraphQL Playground
 
-Knowing the GraphQL schema is important. Using reliable tools from the very begging is crucial for fast delivery. Install them beforehand.
+Knowing the GraphQL schema is important. Using reliable tools from the very beginning is crucial for fast delivery. Read our [doc](https://docs.scandipwa.com/docs/postman-graphql-playground.html) and install them beforehand.
 
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/27IHNDG4Kaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
