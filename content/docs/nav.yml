@@ -1,5 +1,7 @@
 - title: Start & Upgrade
   items:
+    - id: environment-set-up
+      title: Setting Up The Environment
     - id: linux
       title: Linux
     - id: mac
@@ -10,10 +12,8 @@
       title: Theme Upgrade
     - id: automated-setup
       title: Automated Setup
-- title: Getting Started
+- title: Core & Theme
   items:
-    - id: environment-set-up
-      title: Setting Up The Environment
     - id: core-react-concepts
       title: Core React Concepts
     - id: theme-styling
