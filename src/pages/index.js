@@ -207,6 +207,13 @@ class Home extends Component {
                           <li><a href="./docs/update.html">Theme Upgrade</a></li>
                           <li><a href="./docs/automated-setup.html">Automated Setup</a></li>
                         </ul>
+                        <li css={{fontSize: 20}}>Getting Started</li>
+                        <ul>
+                          <li><a href="./docs/environment-set-up.html">Setting Up The Environment</a></li>
+                          <li><a href="./docs/core-react-concepts.html">Core React Concepts</a></li>
+                          <li><a href="./docs/theme-styling.html">Styling A Theme</a></li>
+                          <li><a href="./docs/main-components.html">ScandiPWA Main Components</a></li>
+                        </ul>
                       <li css={{fontSize: 20}}>A to Z Overview</li>
                         <ul>
                           <li><a href="./docs/motivation.html">Motivation</a></li>
