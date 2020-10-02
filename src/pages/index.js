@@ -199,20 +199,20 @@ class Home extends Component {
                   <div className="MainLinks">
                     <span css={{fontSize: 24}}>Sections</span>
                     <ol>
+                      <li css={{fontSize: 20}}>React & PWA for Dummies</li>
+                        <ul>
+                          <li><a href="./docs/setting-up-environment-and-talking-theory.html">Setting Up Environment and Talking Theory</a></li>
+                          <li><a href="./docs/learning-react-hands-on.html">Learning React Hands-on</a></li>
+                          <li><a href="./docs/styling-it.html">Styling It</a></li>
+                          <li><a href="./docs/learning-scandipwa-way.html">Learning ScandiPWA Way</a></li>
+                        </ul>
                       <li css={{fontSize: 20}}>Start & Upgrade</li>
                         <ul>
-                          <li><a href="./docs/environment-set-up.html">Setting Up The Environment</a></li>
                           <li><a href="./docs/linux.html">Linux</a></li>
                           <li><a href="./docs/mac.html">MacOS</a></li>
                           <li><a href="./docs/with-remote-m2.html">Remote Magento Instance</a></li>
                           <li><a href="./docs/update.html">Theme Upgrade</a></li>
                           <li><a href="./docs/automated-setup.html">Automated Setup</a></li>
-                        </ul>
-                        <li css={{fontSize: 20}}>Core & Theme</li>
-                        <ul>
-                          <li><a href="./docs/core-react-concepts.html">Core React Concepts</a></li>
-                          <li><a href="./docs/theme-styling.html">Styling A Theme</a></li>
-                          <li><a href="./docs/main-components.html">ScandiPWA Main Components</a></li>
                         </ul>
                       <li css={{fontSize: 20}}>A to Z Overview</li>
                         <ul>

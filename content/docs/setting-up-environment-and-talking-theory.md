@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Setting Up The Environment
+title: Setting Up Environment and Talking Theory
 description: Setting Up The ScandiPWA Environment And Talking Theory
 
 # Micro navigation
@@ -25,9 +25,9 @@ Topics covered in this tutorial:
 - [History API](#history-api)
 - [React and JSX](#react-and-jsx)
 - [Setting Up The Environment](#setting-up-the-environment)
-    - [VSCode Extensions](#vscode-extensions)
-    - [Node](#node)
-    - [Yarn](#yarn)
+  - [VSCode Extensions](#vscode-extensions)
+  - [Node](#node)
+  - [Yarn](#yarn)
 - [Installing The ScandiPWA App](#installing-the-scandipwa-app)
 
 ## What's Wrong With jQuery?

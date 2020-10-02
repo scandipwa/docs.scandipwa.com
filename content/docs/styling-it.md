@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Styling A Theme
+title: Styling It
 description: How To Style Your ScandiPWA Theme
 
 # Micro navigation

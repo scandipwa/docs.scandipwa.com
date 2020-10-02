@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Core React Concepts
+title: Learning React Hands-on
 description: Going over core React concepts that will let you start working with ScandiPWA.
 
 # Micro navigation

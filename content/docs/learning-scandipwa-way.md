@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: ScandiPWA Main Components
+title: Learning ScandiPWA Way
 description: A brief look at the ScandiPWA main component files.
 
 # Micro navigation
@@ -20,14 +20,19 @@ micro_nav:
 
 In this tutorial we will talk about the main component files in ScandiPWA:
 - [.component](#component)
-- [.container](#container)
-- [.style](#style)
 - [.config](#config)
+- [Map approach for component types](#map-approach-for-component-types)
+- [.container](#container)
+- [Container structure: containerProps, containerFunctions](#container-structure-containerprops-containerfunctions)
+- [.style](#style)
 
 More specifically we will talk about:
+- [.component](#component)
+- [.config](#config)
 - [Map approach for component types](#map-approach-for-component-types)
+- [.container](#container)
 - [Container structure: containerProps, containerFunctions](#container-structure-containerprops-containerfunctions)
-- The props concept and delegation principle
+- [.style](#style)
 
 After watching this tutorial you should be able to discuss the following:
 - Using VSCode extension for component bootstrap
