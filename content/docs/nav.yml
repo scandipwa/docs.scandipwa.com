@@ -1,7 +1,15 @@
+- title: React & PWA for Dummies
+  items:
+    - id: setting-up-environment-and-talking-theory
+      title: Setting Up Environment and Talking Theory
+    - id: learning-react-hands-on
+      title: Learning React Hands-on
+    - id: styling-it
+      title: Styling It
+    - id: learning-scandipwa-way
+      title: Learning ScandiPWA Way
 - title: Start & Upgrade
   items:
-    - id: environment-set-up
-      title: Setting Up The Environment
     - id: linux
       title: Linux
     - id: mac
@@ -12,14 +20,6 @@
       title: Theme Upgrade
     - id: automated-setup
       title: Automated Setup
-- title: Core & Theme
-  items:
-    - id: core-react-concepts
-      title: Core React Concepts
-    - id: theme-styling
-      title: Styling A Theme
-    - id: main-components
-      title: ScandiPWA Main Components
 - title: A to Z Overview
   items:
     - id: motivation
