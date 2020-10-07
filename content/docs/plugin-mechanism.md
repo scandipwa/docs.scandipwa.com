@@ -287,32 +287,38 @@ export default {
 };
 ```
 
+## Plugging into other plugins' classes
+
+ScandiPWA allows plugging into plugins' classes, such as components, queries, etc. The plugin configuration files (`.plugin.js`) cannot be plugged into. `.plugin.js` files' contents can only be modified by overriding them in a theme.
+
 ## Enabling extensions
 
-In the frontend root of the ScandiPWA theme, there is a file called `scandipwa.json`. In this file, you can specify the path to the extensions that the theme should use. Without specifying an extension here, all of its plugins will be ignored.
+1. Properly place your extension
 
-The plugins are specified in the `extensions` section of `scandipwa.json`. It has the following format:
+Any ScandiPWA extension is an M2 module, hence the placement must be the same in order for the M2 backend part to work properly. The only viable place to install the extension without any additional actions is the `app/code/<vendor>/<module>` directory.
+
+2. Enable the backend part using the standard M2 way: `magento se:up`, if necessary also `magento mo:en <module name>` can be used.
+
+3. Reference the extension from your theme's `scandipwa.json`. In this file, you can specify the path to the extensions that the theme should use. Without specifying an extension here, all of its plugins will be ignored.
+
+The `scandipwa.json` has the following format:
 
 ```json5
 {
     // ...
     "extensions": {
         "<name>": "<P>",
-        "<name2>": "<P2>",
-        // Example:
-       "PayPal": "vendor/scandipwa/paypal-graphql",
+        // Examples:
+        "PayPal": "vendor/scandipwa/paypal-graphql",
+        "GTM": "app/code/ScandiPWA/GtmGraphQl",
     }
     // ...
 }
 ```
 
-Where:
+Explanation:
 - `<name>` is an arbitrary name for the plugin
 - `<P>` is the relative path from Magento root to the extension's root
-
-## Plugging into other plugins' classes
-
-ScandiPWA allows plugging into plugins' classes, such as the components, queries, etc. The plugin configuration files (`.plugin.js`) cannot be plugged into due to the configuration builder's limitations. `.plugin.js` file contents can be overridden in the theme only.
 
 ## Outdated video tutorials
 
