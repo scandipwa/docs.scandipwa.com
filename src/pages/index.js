@@ -8,7 +8,7 @@ import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createCanonicalUrl from 'utils/createCanonicalUrl';
 import {babelURL} from 'site-constants';
-import './../css/index.css'
+import './../css/index.css';
 
 class Home extends Component {
   state = {
@@ -131,40 +131,40 @@ class Home extends Component {
                         paddingTop: 65,
                       },
                     }}>
-                      <a
-                        href="https://github.com/scandipwa/base-theme"
-                        css={{
-                          fontSize: 20,
-                          color: colors.brand,
-                          marginRight: 20,
-                          [media.lessThan('small')]: {
-                            marginBottom: 20,
-                          },
-                          transition: 'color .1s linear',
-                          cursor: 'pointer',
-                          ':hover': {
-                            color: '#fff',
+                    <a
+                      href="https://github.com/scandipwa/base-theme"
+                      css={{
+                        fontSize: 20,
+                        color: colors.brand,
+                        marginRight: 20,
+                        [media.lessThan('small')]: {
+                          marginBottom: 20,
+                        },
+                        transition: 'color .1s linear',
+                        cursor: 'pointer',
+                        ':hover': {
+                          color: '#fff',
                         },
                       }}>
                         GitHub
-                      </a>
-                      <a
-                        href="https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk"
-                        css={{
-                          fontSize: 20,
-                          color: colors.brand,
-                          marginRight: 20,
-                          [media.lessThan('small')]: {
-                            marginBottom: 20,
-                          },
-                          transition: 'color .1s linear',
-                          cursor: 'pointer',
-                          ':hover': {
-                            color: '#fff',
+                    </a>
+                    <a
+                      href="https://join.slack.com/t/scandipwa/shared_invite/enQtNzE2Mjg1Nzg3MTg5LTQwM2E2NmQ0NmQ2MzliMjVjYjQ1MTFiYWU5ODAyYTYyMGQzNWM3MDhkYzkyZGMxYTJlZWI1N2ExY2Q1MDMwMTk"
+                      css={{
+                        fontSize: 20,
+                        color: colors.brand,
+                        marginRight: 20,
+                        [media.lessThan('small')]: {
+                          marginBottom: 20,
+                        },
+                        transition: 'color .1s linear',
+                        cursor: 'pointer',
+                        ':hover': {
+                          color: '#fff',
                         },
                       }}>
                         Slack
-                      </a>
+                    </a>
                     <CtaItem>
                       <ButtonLink
                         to="/docs/linux.html"
@@ -196,74 +196,78 @@ class Home extends Component {
                     },
                   },
                 ]}>
-                  <div className="MainLinks">
-                    <span css={{fontSize: 24}}>Sections</span>
-                    <ol>
-                      <li css={{fontSize: 20}}>React & PWA for Dummies</li>
-                        <ul>
-                          <li><a href="./docs/setting-up-environment-and-talking-theory.html">Setting Up Environment and Talking Theory</a></li>
-                          <li><a href="./docs/learning-react-hands-on.html">Learning React Hands-on</a></li>
-                          <li><a href="./docs/styling-it.html">Styling It</a></li>
-                          <li><a href="./docs/learning-scandipwa-way.html">Learning ScandiPWA Way</a></li>
-                        </ul>
-                      <li css={{fontSize: 20}}>Start & Upgrade</li>
-                        <ul>
-                          <li><a href="./docs/linux.html">Linux</a></li>
-                          <li><a href="./docs/mac.html">MacOS</a></li>
-                          <li><a href="./docs/with-remote-m2.html">Remote Magento Instance</a></li>
-                          <li><a href="./docs/update.html">Theme Upgrade</a></li>
-                          <li><a href="./docs/automated-setup.html">Automated Setup</a></li>
-                        </ul>
-                      <li css={{fontSize: 20}}>A to Z Overview</li>
-                        <ul>
-                          <li><a href="./docs/motivation.html">Motivation</a></li>
-                          <li><a href="./docs/challenges.html">Challenges</a></li>
-                          <li><a href="./docs/file-structure-ui.html">File structure and UI components</a></li>
-                          <li><a href="./docs/rewriting-extending.html">Rewriting and extending theme</a></li>
-                        </ul>
-                      <li css={{fontSize: 20}}>FAQ</li>
-                        <ul>
-                          <li><a href="./docs/installing.html">Installation</a></li>
-                          <li><a href="./docs/development.html">Development</a></li>
-                          <li><a href="./docs/billing-and-license.html">Billing and license</a></li>
-                          <li><a href="./docs/product-support.html">Product support</a></li>
-                          <li><a href="./docs/what-is-pwa.html">What is PWA?</a></li>
-                        </ul>
-                      <li css={{fontSize: 20}}>How-to tutorials - Introductory</li>
-                        <ul>
-                          <li><a href="./docs/base-template.html">Base template</a></li>
-                          <li><a href="./docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li>
-                          <li><a href="./docs/extension.html">Customizing and Overwriting</a></li>
-                          <li><a href="./docs/creating-resolver.html">Creating GraphQL resolver</a></li>
-                          <li><a href="./docs/debug-and-inspect.html">Debugging and Inspecting</a></li>
-                          <li><a href="./docs/frontend-setup.html">Setting Up Frontend</a></li>
-                          <li><a href="./docs/file-structure.html">File Structure</a></li>
-                          <li><a href="./docs/data-flow.html">Data Flow</a></li>
-                          <li><a href="./docs/technology-stack.html">Technology Stack</a></li>
-                          <li><a href="./docs/configuration.html">Changing environment</a></li>
-                          <li><a href="./docs/build-and-configuration.html">Theme Build and Configuration</a></li>
-                          <li><a href="./docs/caching.html">Implementing Caching for New Caching Identities</a></li>
-                          <li><a href="./docs/parent-theme.html">Implementing a parent theme</a></li>
-                        </ul>
-                      <li css={{fontSize: 20}}>How-to tutorials - Intermediate</li>
-                        <ul>
-                          <li><a href="./docs/debug-in-chrome.html">Debugging in Chrome</a></li>
-                          <li><a href="./docs/xdebug.html">Configuring XDebug</a></li>
-                          <li><a href="./docs/cli.html">CLI in Docker</a></li>
-                          <li><a href="./docs/postman-graphql-playground.html">Postman & GraphQL Playground</a></li>
-                          <li><a href="./docs/vsc-extensions.html">VSCode Extensions</a></li>
-                          <li><a href="./docs/plugin-mechanism.html">ScandiPWA plugins</a></li>
-                          <li><a href="./docs/eslint-stylelint.html">ESlint & StyleLint</a></li>
-                          <li><a href="./docs/contribute.html">How to Contribute</a></li>
-                          <li><a href="./docs/migrate-newer-version.html">Migrating to a Newer Version</a></li>
-                          <li><a href="./docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li>
-                          <li><a href="./docs/coding-standard.html">BEM and Coding Standards</a></li>
-                          <li><a href="./docs/tools.html">Tools of ScandiPWA</a></li>
-                          <li><a href="./docs/react-best-practices.html">React Best Practices</a></li>
-                          <li><a href="./docs/best-practices-styles.html">Best Practices For Working with Styles</a></li>
-                        </ul>
-                    </ol>
-                  </div>
+                <div className="MainLinks">
+                  <span css={{fontSize: 24}}>Sections</span>
+                  <ol>
+                    <li css={{fontSize: 20}}>React & PWA for Dummies</li>
+                    <ul>
+                      <li><a href="./docs/setting-up-environment-and-talking-theory.html">Setting Up Environment and Talking Theory</a></li>
+                      <li><a href="./docs/learning-react-hands-on.html">Learning React Hands-on</a></li>
+                      <li><a href="./docs/styling-it.html">Styling It</a></li>
+                      <li><a href="./docs/learning-scandipwa-way.html">Learning ScandiPWA Way</a></li>
+                    </ul>
+                    <li css={{fontSize: 20}}>Start & Upgrade</li>
+                    <ul>
+                      <li><a href="./docs/linux.html">Linux</a></li>
+                      <li><a href="./docs/mac.html">MacOS</a></li>
+                      <li><a href="./docs/with-remote-m2.html">Remote Magento Instance</a></li>
+                      <li><a href="./docs/update.html">Theme Upgrade</a></li>
+                      <li><a href="./docs/automated-setup.html">Automated Setup</a></li>
+                    </ul>
+                    <li css={{fontSize: 20}}>A to Z Overview</li>
+                    <ul>
+                      <li><a href="./docs/motivation.html">Motivation</a></li>
+                      <li><a href="./docs/challenges.html">Challenges</a></li>
+                      <li><a href="./docs/file-structure-ui.html">File structure and UI components</a></li>
+                      <li><a href="./docs/rewriting-extending.html">Rewriting and extending theme</a></li>
+                    </ul>
+                    <li css={{fontSize: 20}}>Containers' description</li>
+                    <ul>
+                      <li><a href="./docs/ngrok.html">Ngrok</a></li>
+                    </ul>
+                    <li css={{fontSize: 20}}>FAQ</li>
+                    <ul>
+                      <li><a href="./docs/installing.html">Installation</a></li>
+                      <li><a href="./docs/development.html">Development</a></li>
+                      <li><a href="./docs/billing-and-license.html">Billing and license</a></li>
+                      <li><a href="./docs/product-support.html">Product support</a></li>
+                      <li><a href="./docs/what-is-pwa.html">What is PWA?</a></li>
+                    </ul>
+                    <li css={{fontSize: 20}}>How-to tutorials - Introductory</li>
+                    <ul>
+                      <li><a href="./docs/base-template.html">Base template</a></li>
+                      <li><a href="./docs/connecting-resolver.html">Connecting to a GraphQL Resolver</a></li>
+                      <li><a href="./docs/extension.html">Customizing and Overwriting</a></li>
+                      <li><a href="./docs/creating-resolver.html">Creating GraphQL resolver</a></li>
+                      <li><a href="./docs/debug-and-inspect.html">Debugging and Inspecting</a></li>
+                      <li><a href="./docs/frontend-setup.html">Setting Up Frontend</a></li>
+                      <li><a href="./docs/file-structure.html">File Structure</a></li>
+                      <li><a href="./docs/data-flow.html">Data Flow</a></li>
+                      <li><a href="./docs/technology-stack.html">Technology Stack</a></li>
+                      <li><a href="./docs/configuration.html">Changing environment</a></li>
+                      <li><a href="./docs/build-and-configuration.html">Theme Build and Configuration</a></li>
+                      <li><a href="./docs/caching.html">Implementing Caching for New Caching Identities</a></li>
+                      <li><a href="./docs/parent-theme.html">Implementing a parent theme</a></li>
+                    </ul>
+                    <li css={{fontSize: 20}}>How-to tutorials - Intermediate</li>
+                    <ul>
+                      <li><a href="./docs/debug-in-chrome.html">Debugging in Chrome</a></li>
+                      <li><a href="./docs/xdebug.html">Configuring XDebug</a></li>
+                      <li><a href="./docs/cli.html">CLI in Docker</a></li>
+                      <li><a href="./docs/postman-graphql-playground.html">Postman & GraphQL Playground</a></li>
+                      <li><a href="./docs/vsc-extensions.html">VSCode Extensions</a></li>
+                      <li><a href="./docs/plugin-mechanism.html">ScandiPWA plugins</a></li>
+                      <li><a href="./docs/eslint-stylelint.html">ESlint & StyleLint</a></li>
+                      <li><a href="./docs/contribute.html">How to Contribute</a></li>
+                      <li><a href="./docs/migrate-newer-version.html">Migrating to a Newer Version</a></li>
+                      <li><a href="./docs/on-existing-m2.html">Installation on Existing Magento 2 Server</a></li>
+                      <li><a href="./docs/coding-standard.html">BEM and Coding Standards</a></li>
+                      <li><a href="./docs/tools.html">Tools of ScandiPWA</a></li>
+                      <li><a href="./docs/react-best-practices.html">React Best Practices</a></li>
+                      <li><a href="./docs/best-practices-styles.html">Best Practices For Working with Styles</a></li>
+                    </ul>
+                  </ol>
+                </div>
               </section>
             </div>
           </Container>
