@@ -31,8 +31,6 @@ Topics covered in this tutorial:
 - [Installing The ScandiPWA App](#installing-the-scandipwa-app)
 
 ## What's Wrong With jQuery?
-ScandiPWA v2 used [jQuery](https://jquery.com/) - an API for working with document object models or DOMs. Allegedly, jQuery lets you do more while writing less. So, why use something else?
-
 Each page of an application has a header, a footer and some content. We need to customize all of this periodically. The jQuery library theoretically allows us to have easy access to any specific element, but it would be very messy to implement as a jQuery template due to the fact that it consists of pure strings that are hard to edit.
 
 ## History API
