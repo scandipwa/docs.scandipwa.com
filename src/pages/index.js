@@ -256,7 +256,8 @@ class Home extends Component {
                       <li><a href="./docs/cli.html">CLI in Docker</a></li>
                       <li><a href="./docs/postman-graphql-playground.html">Postman & GraphQL Playground</a></li>
                       <li><a href="./docs/vsc-extensions.html">VSCode Extensions</a></li>
-                      <li><a href="./docs/plugin-mechanism.html">ScandiPWA plugins</a></li>
+                      <li><a href="./docs/plugin-mechanism.html">Plugins: implementation</a></li>
+                      <li><a href="./docs/interacting-with-plugins.html">Plugins: installation and marketplace</a></li>
                       <li><a href="./docs/eslint-stylelint.html">ESlint & StyleLint</a></li>
                       <li><a href="./docs/contribute.html">How to Contribute</a></li>
                       <li><a href="./docs/migrate-newer-version.html">Migrating to a Newer Version</a></li>

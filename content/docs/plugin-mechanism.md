@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: ScandiPWA plugins
+title: "Plugins: implementation"
 description: Definitive guide for ScandiPWA plugin functionality.
 
 # Micro navigation
